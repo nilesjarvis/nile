@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-gateway-stats-sheet",
+  "reference": {
+    "path": "../baselines/android/gateway-stats-sheet.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/gateway-stats-sheet.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "stats-sheet-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 350,
+        "startPoints": 0,
+        "endPoints": 150,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 30,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 350,
+        "startPoints": 0,
+        "endPoints": 150,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 30,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "momentum-card-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 350,
+        "startPoints": 150,
+        "endPoints": 350,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 80,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 350,
+        "startPoints": 150,
+        "endPoints": 350,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 80,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "momentum-card-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 30,
+        "startPoints": 190,
+        "endPoints": 400,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 80,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 30,
+        "startPoints": 190,
+        "endPoints": 400,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 80,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "summary-card-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 180,
+        "startPoints": 300,
+        "endPoints": 550,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 50,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 180,
+        "startPoints": 300,
+        "endPoints": 550,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 50,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "summary-card-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 180,
+        "startPoints": 380,
+        "endPoints": 600,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 50,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 180,
+        "startPoints": 380,
+        "endPoints": 600,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 50,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "recent-activity-divider-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 550,
+        "endPoints": 750,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0.5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 550,
+        "endPoints": 750,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0.5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "heatmap-active-cell-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 130,
+        "startPoints": 650,
+        "endPoints": 750,
+        "expectedHex": "#339CFF",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 130,
+        "startPoints": 650,
+        "endPoints": 750,
+        "expectedHex": "#339CFF",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "heatmap-active-cell-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 705,
+        "startPoints": 110,
+        "endPoints": 150,
+        "expectedHex": "#339CFF",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 705,
+        "startPoints": 110,
+        "endPoints": 150,
+        "expectedHex": "#339CFF",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "sheet-surface",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 120,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 120,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "momentum-card",
+      "expectedHex": "#242424",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 250,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 250,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "summary-card",
+      "expectedHex": "#0D0D0D",
+      "reference": {
+        "xPoints": 100,
+        "yPoints": 420,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 100,
+        "yPoints": 420,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "selected-period",
+      "expectedHex": "#F8F8F8",
+      "reference": {
+        "xPoints": 80,
+        "yPoints": 175,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 80,
+        "yPoints": 175,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "heatmap-maximum",
+      "expectedHex": "#339CFF",
+      "reference": {
+        "xPoints": 130,
+        "yPoints": 705,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 130,
+        "yPoints": 705,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "heatmap-empty",
+      "expectedHex": "#0D0D0D",
+      "reference": {
+        "xPoints": 105,
+        "yPoints": 680,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 105,
+        "yPoints": 680,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex paired native-scale review",
+    "notes": "Accepted under the user's wider native cross-platform tolerance after paired native-scale inspection. The exact totals, period selection, momentum, metric cards, recent-activity heatmap, labels, values, and flat colors match; no masks are used."
+  }
+}

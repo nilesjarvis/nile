@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-onboarding-form",
+  "reference": {
+    "path": "../baselines/android/onboarding-form.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/onboarding-form.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.97,
+    "maximumOutlierFraction": 0.03,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "form-panel-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 260,
+        "endPoints": 330,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 260,
+        "endPoints": 330,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "form-panel-leading-edge",
+      "kind": "edge",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 320,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunStart"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 320,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "form-panel-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 320,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 320,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "form-panel-bottom",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 24,
+        "startPoints": 260,
+        "endPoints": 778,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 5,
+        "minimumRunPoints": 2,
+        "measurement": "lastMatchEnd"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 24,
+        "startPoints": 260,
+        "endPoints": 778,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 5,
+        "minimumRunPoints": 2,
+        "measurement": "lastMatchEnd"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "name-field-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 320,
+        "endPoints": 400,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 320,
+        "endPoints": 400,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "name-field-visible-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 320,
+        "endPoints": 400,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 320,
+        "endPoints": 400,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "url-field-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 400,
+        "endPoints": 480,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 400,
+        "endPoints": 480,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "url-field-visible-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 400,
+        "endPoints": 480,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 400,
+        "endPoints": 480,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "token-field-visible-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 475,
+        "endPoints": 555,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 475,
+        "endPoints": 555,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "cleartext-warning-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 570,
+        "endPoints": 645,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 570,
+        "endPoints": 645,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "connect-button-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 690,
+        "endPoints": 760,
+        "expectedHex": "#3C3C3C",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 690,
+        "endPoints": 760,
+        "expectedHex": "#3C3C3C",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "connect-button-visible-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 690,
+        "endPoints": 760,
+        "expectedHex": "#3C3C3C",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 690,
+        "endPoints": 760,
+        "expectedHex": "#3C3C3C",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "connect-button-visible-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 723,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#3C3C3C",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 723,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#3C3C3C",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 1
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 4,
+        "yPoints": 100,
+        "radiusPoints": 1
+      },
+      "candidate": {
+        "xPoints": 4,
+        "yPoints": 100,
+        "radiusPoints": 1
+      }
+    },
+    {
+      "name": "form-panel",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 20,
+        "yPoints": 300,
+        "radiusPoints": 1
+      },
+      "candidate": {
+        "xPoints": 20,
+        "yPoints": 300,
+        "radiusPoints": 1
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex final parity review",
+    "notes": "The native-scale candidate, reference, diff, and heatmap were inspected after the exact Android FreeType/HarfBuzz/Minikin/Skia renderer landed. The full title, fields, floating label, helper, warning, approval, disabled action, panels, colors, wrapping, and semantic layout have no plainly visible mismatch. Remaining amplified-diff pixels are subpixel curve, colored-edge, and disabled-alpha coverage within the strict quantitative limits."
+  }
+}

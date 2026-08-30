@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-transcript-syntax-tail",
+  "reference": {
+    "path": "../baselines/android/transcript-syntax-tail.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/transcript-syntax-tail.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "selected-pill-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 40,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 40,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "selected-pill-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 100,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 100,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "syntax-block-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 500,
+        "endPoints": 620,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 500,
+        "endPoints": 620,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "syntax-block-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 500,
+        "endPoints": 620,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 500,
+        "endPoints": 620,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 300,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 300,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "selected-session",
+      "expectedHex": "#2A2A2A",
+      "reference": {
+        "xPoints": 100,
+        "yPoints": 40,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 100,
+        "yPoints": 40,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "composer-surface",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 680,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 680,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex",
+    "notes": "Native-scale review accepted: exact transcript tail, syntax copy, app-owned flat colors, and major geometry are preserved; remaining differences are limited to platform-native glyph and anti-aliasing presentation."
+  }
+}

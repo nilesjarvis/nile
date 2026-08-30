@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "fixture": "legacy-screenshot-onboarding",
+  "reference": {
+    "path": "../../../.reference/android/docs/screenshots/nile-onboarding.png",
+    "nativeScale": 2.625,
+    "systemChromeInsetsPixels": {
+      "top": 128,
+      "bottom": 63,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/checkpoints/visual-milestone-ui/33FE6EC3-1E7A-4E1D-A9FA-499E52BCF269.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1080,
+    "heightPixels": 2274
+  },
+  "thresholds": {
+    "minimumSSIM": 0.97,
+    "maximumOutlierFraction": 0.03,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 4,
+        "yPoints": 100,
+        "radiusPoints": 1
+      },
+      "candidate": {
+        "xPoints": 4,
+        "yPoints": 100,
+        "radiusPoints": 1
+      }
+    },
+    {
+      "name": "header-panel",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 30,
+        "yPoints": 30,
+        "radiusPoints": 1
+      },
+      "candidate": {
+        "xPoints": 30,
+        "yPoints": 30,
+        "radiusPoints": 1
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "rejected",
+    "reviewedBy": "Codex checkpoint",
+    "notes": "This immutable checked-in screenshot predates pinned source commit c9cb0c4 and still contains the removed Hermes Agent updater plus an initially expanded form. It is retained as historical evidence, not as the current semantic target; the source-current fixture is authoritative."
+  }
+}

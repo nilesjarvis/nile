@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-gateway-switch-dialog",
+  "reference": {
+    "path": "../baselines/android/gateway-switch-dialog.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/gateway-switch-dialog.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "dialog-panel-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 250,
+        "endPoints": 300,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 15,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 250,
+        "endPoints": 300,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 15,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "dialog-panel-bottom",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 480,
+        "endPoints": 530,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "lastMatchEnd"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 480,
+        "endPoints": 530,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "lastMatchEnd"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "dialog-panel-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 300,
+        "startPoints": 20,
+        "endPoints": 382,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 300,
+        "startPoints": 20,
+        "endPoints": 382,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "confirm-button-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 300,
+        "startPoints": 410,
+        "endPoints": 450,
+        "expectedHex": "#F8F8F8",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 300,
+        "startPoints": 410,
+        "endPoints": 450,
+        "expectedHex": "#F8F8F8",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "confirm-button-left",
+      "kind": "edge",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 438,
+        "startPoints": 160,
+        "endPoints": 210,
+        "expectedHex": "#F8F8F8",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 438,
+        "startPoints": 160,
+        "endPoints": 210,
+        "expectedHex": "#F8F8F8",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "confirm-button-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 438,
+        "startPoints": 150,
+        "endPoints": 370,
+        "expectedHex": "#F8F8F8",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 120,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 438,
+        "startPoints": 150,
+        "endPoints": 370,
+        "expectedHex": "#F8F8F8",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 120,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "dialog-panel",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 350,
+        "yPoints": 300,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 350,
+        "yPoints": 300,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "confirm-button",
+      "expectedHex": "#F8F8F8",
+      "reference": {
+        "xPoints": 320,
+        "yPoints": 438,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 320,
+        "yPoints": 438,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex",
+    "notes": "Native-scale review accepted: the exact running-turn warning, target gateway title, dimmed two-gateway Settings context, 320-by-224-point panel, warning treatment, and stay/switch actions match the pinned Android design; remaining differences are limited to platform text rasterization and system chrome."
+  }
+}

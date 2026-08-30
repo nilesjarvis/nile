@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-android-media",
+  "reference": {
+    "path": "../../../.reference/android/docs/screenshots/nile-media.png",
+    "nativeScale": 2.625,
+    "systemChromeInsetsPixels": {
+      "top": 63,
+      "bottom": 63,
+      "left": 0,
+      "right": 0
+    },
+    "solidVerticalSpacerPixels": {
+      "top": 500,
+      "height": 227,
+      "expectedHex": "#181818"
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/media.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1080,
+    "heightPixels": 2047
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "selected-session-left-edge",
+      "kind": "edge",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 40,
+        "startPoints": 0,
+        "endPoints": 200,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 40,
+        "startPoints": 0,
+        "endPoints": 200,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "attachment-card-left-edge",
+      "kind": "edge",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 500,
+        "startPoints": 0,
+        "endPoints": 100,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 500,
+        "startPoints": 0,
+        "endPoints": 100,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "read-only-card-left-edge",
+      "kind": "edge",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 695,
+        "startPoints": 0,
+        "endPoints": 200,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 80,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 695,
+        "startPoints": 0,
+        "endPoints": 200,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 80,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 200,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 200,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "selected-session",
+      "expectedHex": "#2A2A2A",
+      "reference": {
+        "xPoints": 100,
+        "yPoints": 40,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 100,
+        "yPoints": 40,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "read-only-surface",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 695,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 695,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex",
+    "notes": "Native-scale review accepted: the exact read-only state, copy, deterministic image bytes, app-owned flat colors, and major container geometry are preserved. Remaining differences are platform-native glyph/icon rasterization and proportional layout adaptation between the historical 411-point Android viewport and the 402-point iOS viewport."
+  }
+}

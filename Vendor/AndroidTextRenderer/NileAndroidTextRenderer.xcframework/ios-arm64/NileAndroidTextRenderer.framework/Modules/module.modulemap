@@ -1,0 +1,4 @@
+framework module NileAndroidTextRenderer {
+    umbrella header "NileAndroidTextRenderer.h"
+    export *
+}

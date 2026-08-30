@@ -1,0 +1,71 @@
+Printing with useUnmergedTree = 'true'
+Node #1 at (l=0.0, t=0.0, r=1206.0, b=2478.0)px
+ |-Node #2 at (l=0.0, t=72.0, r=1206.0, b=2406.0)px, Tag: 'niles.talk.surface'
+   PaneTitle = 'Talk with Hermes'
+    |-Node #4 at (l=24.0, t=96.0, r=168.0, b=240.0)px, Tag: 'niles.talk.close'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #5 at (l=60.0, t=132.0, r=132.0, b=204.0)px
+    |    ContentDescription = '[End Talk mode]'
+    |    Role = 'Image'
+    |-Node #7 at (l=442.0, t=124.0, r=764.0, b=173.0)px
+    | Text = '[Talk with Hermes]'
+    | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |-Node #8 at (l=511.0, t=173.0, r=695.0, b=212.0)px
+    | Text = '[Brand polish]'
+    | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |-Node #11 at (l=321.0, t=792.0, r=885.0, b=1356.0)px, Tag: 'niles.talk.orb'
+    |  |-Node #12 at (l=363.06, t=834.06, r=879.06, b=1350.06)px
+    |  |-Node #13 at (l=405.0, t=876.0, r=801.0, b=1272.0)px
+    |  |-Node #14 at (l=477.0, t=948.0, r=729.0, b=1200.0)px
+    |-Node #15 at (l=461.0, t=1440.0, r=746.0, b=1511.0)px, Tag: 'niles.talk.status'
+    | ContentDescription = '[Talk status]'
+    | LiveRegion = 'Polite'
+    | StateDescription = 'Listening…'
+    | Text = '[Listening…]'
+    | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |-Node #16 at (l=134.0, t=1535.0, r=1072.0, b=1581.0)px
+    | Text = '[Speak naturally. Hermes will respond when you pause.]'
+    | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |-Node #18 at (l=122.0, t=2145.0, r=398.0, b=2370.0)px, Tag: 'niles.talk.view_transcript'
+    | ContentDescription = '[End Talk mode and view transcript]'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #19 at (l=194.0, t=2163.0, r=326.0, b=2295.0)px
+    |  |  |-Node #20 at (l=248.0, t=2201.0, r=273.0, b=2258.0)px
+    |  |    Text = '[≡]'
+    |  |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |  |-Node #21 at (l=186.0, t=2313.0, r=335.0, b=2352.0)px
+    |    Text = '[Transcript]'
+    |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |-Node #22 at (l=465.0, t=2145.0, r=741.0, b=2370.0)px, Tag: 'niles.talk.primary'
+    |  |-Node #23 at (l=465.0, t=2145.0, r=741.0, b=2370.0)px, Tag: 'niles.talk.pause'
+    |    ContentDescription = '[Pause microphone]'
+    |    Focused = 'false'
+    |    Role = 'Button'
+    |    Actions = [OnClick, RequestFocus]
+    |    MergeDescendants = 'true'
+    |     |-Node #24 at (l=537.0, t=2163.0, r=669.0, b=2295.0)px
+    |     |  |-Node #25 at (l=591.0, t=2205.0, r=616.0, b=2254.0)px
+    |     |    Text = '[Ⅱ]'
+    |     |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |     |-Node #26 at (l=557.0, t=2313.0, r=649.0, b=2352.0)px
+    |       Text = '[Pause]'
+    |       Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+    |-Node #27 at (l=809.0, t=2145.0, r=1085.0, b=2370.0)px, Tag: 'niles.talk.end'
+      ContentDescription = '[End Talk mode]'
+      Focused = 'false'
+      Role = 'Button'
+      Actions = [OnClick, RequestFocus]
+      MergeDescendants = 'true'
+       |-Node #28 at (l=881.0, t=2163.0, r=1013.0, b=2295.0)px
+       |  |-Node #29 at (l=936.0, t=2205.0, r=959.0, b=2254.0)px
+       |    Text = '[×]'
+       |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+       |-Node #30 at (l=919.0, t=2313.0, r=975.0, b=2352.0)px
+         Text = '[End]'
+         Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]

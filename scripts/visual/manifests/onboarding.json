@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-onboarding-clean",
+  "reference": {
+    "path": "../baselines/android/onboarding-clean.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/onboarding-clean.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.97,
+    "maximumOutlierFraction": 0.03,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "header-panel-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 0,
+        "endPoints": 140,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 0,
+        "endPoints": 140,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "header-panel-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 0,
+        "endPoints": 140,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 0,
+        "endPoints": 140,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "header-panel-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 120,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 120,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "gateways-panel-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 130,
+        "endPoints": 260,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 130,
+        "endPoints": 260,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "gateways-panel-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 130,
+        "endPoints": 260,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 20,
+        "startPoints": 130,
+        "endPoints": 260,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "gateways-panel-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 240,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 240,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "add-gateway-button-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 260,
+        "endPoints": 320,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 260,
+        "endPoints": 320,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "add-gateway-button-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 260,
+        "endPoints": 320,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 260,
+        "endPoints": 320,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "add-gateway-button-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 292,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 292,
+        "startPoints": 0,
+        "endPoints": 402,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 0,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    },
+    {
+      "name": "terminal-notice-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 320,
+        "endPoints": 390,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 320,
+        "endPoints": 390,
+        "expectedHex": "#0D0D0D",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 1
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 4,
+        "yPoints": 100,
+        "radiusPoints": 1
+      },
+      "candidate": {
+        "xPoints": 4,
+        "yPoints": 100,
+        "radiusPoints": 1
+      }
+    },
+    {
+      "name": "header-panel",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 30,
+        "yPoints": 30,
+        "radiusPoints": 1
+      },
+      "candidate": {
+        "xPoints": 30,
+        "yPoints": 30,
+        "radiusPoints": 1
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex final parity review",
+    "notes": "The native-scale candidate, reference, diff, and heatmap were inspected after the exact Android FreeType/HarfBuzz/Minikin/Skia renderer landed. App-owned hierarchy, copy, wrapping, typography, colors, panels, button geometry, and touch-slot layout have no plainly visible mismatch. Remaining amplified-diff pixels are subpixel curve and glyph-edge coverage within the strict quantitative limits."
+  }
+}

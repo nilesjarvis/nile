@@ -1,0 +1,21 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Local Android and Hermes reference checkouts
+.reference/
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+*.xcconfig.local
+
+# macOS
+.DS_Store

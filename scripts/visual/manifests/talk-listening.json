@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-talk-listening",
+  "reference": {
+    "path": "../baselines/android/talk-listening.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/talk-listening.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "orb-outer-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 201,
+        "startPoints": 240,
+        "endPoints": 285,
+        "expectedHex": "#343434",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 201,
+        "startPoints": 240,
+        "endPoints": 285,
+        "expectedHex": "#343434",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "orb-outer-diameter",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 333,
+        "startPoints": 105,
+        "endPoints": 297,
+        "expectedHex": "#343434",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 333,
+        "startPoints": 105,
+        "endPoints": 297,
+        "expectedHex": "#343434",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "orb-middle-diameter",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 333,
+        "startPoints": 120,
+        "endPoints": 282,
+        "expectedHex": "#616161",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 333,
+        "startPoints": 120,
+        "endPoints": 282,
+        "expectedHex": "#616161",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "orb-inner-diameter",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 333,
+        "startPoints": 145,
+        "endPoints": 257,
+        "expectedHex": "#FFFFFF",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 333,
+        "startPoints": 145,
+        "endPoints": 257,
+        "expectedHex": "#FFFFFF",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "transcript-control-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 86,
+        "startPoints": 685,
+        "endPoints": 735,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 86,
+        "startPoints": 685,
+        "endPoints": 735,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "transcript-control-diameter",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 720,
+        "startPoints": 50,
+        "endPoints": 122,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 720,
+        "startPoints": 50,
+        "endPoints": 122,
+        "expectedHex": "#242424",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 5,
+        "measurement": "matchingSpan"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 201,
+        "yPoints": 180,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 201,
+        "yPoints": 180,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "orb-outer",
+      "expectedHex": "#343434",
+      "reference": {
+        "xPoints": 201,
+        "yPoints": 260,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 201,
+        "yPoints": 260,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "orb-middle",
+      "expectedHex": "#616161",
+      "reference": {
+        "xPoints": 201,
+        "yPoints": 285,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 201,
+        "yPoints": 285,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "orb-core",
+      "expectedHex": "#FFFFFF",
+      "reference": {
+        "xPoints": 201,
+        "yPoints": 333,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 201,
+        "yPoints": 333,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "control-surface",
+      "expectedHex": "#242424",
+      "reference": {
+        "xPoints": 86,
+        "yPoints": 710,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 86,
+        "yPoints": 710,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex",
+    "notes": "Native-scale review accepted for the exact listening state: app-owned full-screen graphite canvas, Material close icon, centered title/session hierarchy, static reduced-motion orb stack, status/detail copy, and Transcript/Pause/End controls match the pinned Android design. Remaining differences are limited to system-owned status/navigation chrome and platform text rasterization."
+  }
+}

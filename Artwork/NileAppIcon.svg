@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1024 1024"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">Nile app icon</title>
+  <desc id="description">
+    A warm ivory river bends across a deep navy field.
+  </desc>
+
+  <!-- Keep the source full bleed. Apple applies the platform icon mask. -->
+  <rect width="1024" height="1024" fill="#123B5D"/>
+
+  <!--
+    The narrow headwater opens into a single broad, flatter lower bend.
+    This is the canonical editable river geometry used by NileMark.swift.
+  -->
+  <path
+    fill="#F6F1E8"
+    transform="matrix(0.8 0 0 0.8 102.4 102.4)"
+    d="
+      M 566 106
+      C 625 128 676 168 710 220
+      C 749 285 759 358 732 426
+      C 703 500 639 549 557 584
+      C 495 610 445 631 418 664
+      C 397 690 392 718 408 744
+      C 433 785 493 806 564 802
+      C 643 798 711 763 764 704
+      C 811 743 854 782 892 817
+      C 868 850 836 879 797 905
+      C 735 946 660 969 579 970
+      C 424 973 286 912 225 804
+      C 176 716 193 613 270 536
+      C 327 485 393 454 465 424
+      C 520 401 563 379 584 351
+      C 603 326 603 299 588 270
+      C 572 240 548 214 520 198
+      C 532 161 548 131 566 106
+      Z
+    "
+  />
+</svg>

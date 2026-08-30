@@ -1,0 +1,287 @@
+Printing with useUnmergedTree = 'true'
+Node #1 at (l=0.0, t=0.0, r=1206.0, b=2478.0)px
+ |-Node #2 at (l=0.0, t=0.0, r=1206.0, b=2478.0)px
+   IsContainer = 'true'
+    |-Node #71 at (l=0.0, t=0.0, r=1206.0, b=2478.0)px
+       |-Node #72 at (l=0.0, t=0.0, r=1206.0, b=2478.0)px
+          |-Node #73 at (l=0.0, t=0.0, r=1206.0, b=72.0)px
+          |-Node #77 at (l=0.0, t=360.0, r=1206.0, b=2406.0)px
+          |  |-Node #92 at (l=0.0, t=564.0, r=1206.0, b=1924.0)px
+          |  |  |-Node #94 at (l=0.0, t=564.0, r=1206.0, b=1924.0)px, Tag: 'niles.transcript'
+          |  |    CollectionInfo = 'androidx.compose.ui.semantics.CollectionInfo@96e6549'
+          |  |    IsTraversalGroup = 'true'
+          |  |    VerticalScrollAxisRange = 'ScrollAxisRange(value=120.0, maxValue=120.0, reverseScrolling=false)'
+          |  |    Actions = [GetScrollViewportLength, IndexForKey, ScrollBy, ScrollByOffset, ScrollToIndex]
+          |  |     |-Node #145 at (l=286.0, t=528.0, r=1122.0, b=630.0)px
+          |  |     | Text = '[Refine the Android experience around the new visual direction.]'
+          |  |     | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |-Node #147 at (l=42.0, t=702.0, r=1164.0, b=1470.0)px
+          |  |     | LiveRegion = 'Polite'
+          |  |     |  |-Node #149 at (l=42.0, t=702.0, r=1032.0, b=1470.0)px
+          |  |     |  | Focused = 'false'
+          |  |     |  | Actions = [RequestFocus]
+          |  |     |  |  |-Node #152 at (l=42.0, t=702.0, r=900.0, b=773.0)px
+          |  |     |  |  | Text = '[Shaping the mobile agent experience]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #153 at (l=42.0, t=791.0, r=1032.0, b=949.0)px
+          |  |     |  |  | Text = '[I mapped the supplied reference into Nile' own interaction system: neutral graphite layers, compact status rows, and a single anchored composer.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #155 at (l=42.0, t=967.0, r=55.0, b=1013.0)px
+          |  |     |  |  | Text = '[•]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #156 at (l=79.0, t=967.0, r=948.0, b=1013.0)px
+          |  |     |  |  | Text = '[Keep the transcript visually quiet and content-first.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #158 at (l=42.0, t=1031.0, r=55.0, b=1077.0)px
+          |  |     |  |  | Text = '[•]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #159 at (l=79.0, t=1031.0, r=1032.0, b=1133.0)px
+          |  |     |  |  | Text = '[Reserve violet and cobalt for selections and primary actions.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #161 at (l=42.0, t=1151.0, r=55.0, b=1197.0)px
+          |  |     |  |  | Text = '[•]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #162 at (l=79.0, t=1151.0, r=839.0, b=1197.0)px
+          |  |     |  |  | Text = '[Use raised gray only for the user's message.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #163 at (l=42.0, t=1215.0, r=382.0, b=1286.0)px
+          |  |     |  |  | Text = '[Key takeaways]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #165 at (l=42.0, t=1304.0, r=74.0, b=1350.0)px
+          |  |     |  |  | Text = '[1.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #166 at (l=98.0, t=1304.0, r=1001.0, b=1350.0)px
+          |  |     |  |  | Text = '[Dense typography keeps more agent context visible.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #168 at (l=42.0, t=1368.0, r=74.0, b=1414.0)px
+          |  |     |  |  | Text = '[2.]'
+          |  |     |  |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |  |-Node #169 at (l=98.0, t=1368.0, r=1032.0, b=1470.0)px
+          |  |     |  |    Text = '[Low-contrast surfaces make state and content—not containers—the focus.]'
+          |  |     |  |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |-Node #170 at (l=1044.0, t=702.0, r=1164.0, b=822.0)px, Tag: 'niles.message.assistant.copy.assistant-1-eca83902'
+          |  |     |    Focused = 'false'
+          |  |     |    Role = 'Button'
+          |  |     |    Actions = [OnClick, RequestFocus]
+          |  |     |    MergeDescendants = 'true'
+          |  |     |     |-Node #171 at (l=1079.0, t=737.0, r=1130.0, b=788.0)px
+          |  |     |       ContentDescription = '[Copy response]'
+          |  |     |       Role = 'Image'
+          |  |     |-Node #173 at (l=42.0, t=1506.0, r=1164.0, b=1700.0)px
+          |  |     |  |-Node #177 at (l=111.0, t=1508.0, r=168.0, b=1547.0)px
+          |  |     |  | Text = '[Ran]'
+          |  |     |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |-Node #180 at (l=186.0, t=1508.0, r=826.0, b=1547.0)px
+          |  |     |  | Text = '[Built and tested the Android app]'
+          |  |     |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |-Node #181 at (l=1109.0, t=1508.0, r=1164.0, b=1547.0)px
+          |  |     |  | Text = '[18s]'
+          |  |     |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |  |-Node #183 at (l=87.0, t=1560.0, r=1164.0, b=1694.0)px
+          |  |     |    HorizontalScrollAxisRange = 'ScrollAxisRange(value=0.0, maxValue=0.0, reverseScrolling=false)'
+          |  |     |    IsTraversalGroup = 'true'
+          |  |     |    Actions = [ScrollBy, ScrollByOffset]
+          |  |     |     |-Node #184 at (l=111.0, t=1584.0, r=931.0, b=1670.0)px
+          |  |     |       Text = '[./gradlew testDebugUnitTest assembleDebug
+BUILD SUCCESSFUL]'
+          |  |     |       Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |-Node #186 at (l=42.0, t=1736.0, r=1164.0, b=1894.0)px
+          |  |       LiveRegion = 'Polite'
+          |  |        |-Node #188 at (l=42.0, t=1736.0, r=1032.0, b=1894.0)px
+          |  |        | Focused = 'false'
+          |  |        | Actions = [RequestFocus]
+          |  |        |  |-Node #191 at (l=42.0, t=1736.0, r=1032.0, b=1894.0)px
+          |  |        |    Text = '[The neutral graphite theme, violet actions, circular controls, and compact composer are ready for a final visual review.]'
+          |  |        |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |        |-Node #192 at (l=1044.0, t=1736.0, r=1164.0, b=1856.0)px, Tag: 'niles.message.assistant.copy.assistant-2-eca83903'
+          |  |          Focused = 'false'
+          |  |          Role = 'Button'
+          |  |          Actions = [OnClick, RequestFocus]
+          |  |          MergeDescendants = 'true'
+          |  |           |-Node #193 at (l=1079.0, t=1771.0, r=1130.0, b=1822.0)px
+          |  |             ContentDescription = '[Copy response]'
+          |  |             Role = 'Image'
+          |  |-Node #96 at (l=36.0, t=1984.0, r=1170.0, b=2346.0)px
+          |  |  |-Node #99 at (l=60.0, t=2052.0, r=180.0, b=2172.0)px, Tag: 'niles.goal.button'
+          |  |  | ContentDescription = '[Start a standing goal]'
+          |  |  | Role = 'Button'
+          |  |  | [Disabled]
+          |  |  | Actions = [OnClick]
+          |  |  | MergeDescendants = 'true'
+          |  |  |-Node #103 at (l=204.0, t=2046.0, r=336.0, b=2178.0)px
+          |  |  | Focused = 'false'
+          |  |  | Role = 'Button'
+          |  |  | Actions = [OnClick, RequestFocus]
+          |  |  | MergeDescendants = 'true'
+          |  |  |  |-Node #104 at (l=234.0, t=2076.0, r=306.0, b=2148.0)px
+          |  |  |    ContentDescription = '[Attach photo]'
+          |  |  |    Role = 'Image'
+          |  |  |-Node #105 at (l=336.0, t=1984.0, r=1002.0, b=2196.0)px, Tag: 'niles.composer'
+          |  |  | ContentDataType = 'AndroidContentDataType(androidAutofillType=1)'
+          |  |  | EditableText = 'Review the final interaction details'
+          |  |  | Focused = 'false'
+          |  |  | ImeAction = 'Send'
+          |  |  | InputText = 'Review the final interaction details'
+          |  |  | IsEditable = 'true'
+          |  |  | TextSelectionRange = 'TextRange(0, 0)'
+          |  |  | Actions = [GetTextLayoutResult, InsertTextAtCursor, OnAutofillText, OnClick, OnLongClick, PasteText, PerformImeAction, RequestFocus, SetSelection, SetText]
+          |  |  | MergeDescendants = 'true'
+          |  |  |  |-Node #109 at (l=336.0, t=1984.0, r=1002.0, b=2196.0)px
+          |  |  |  |-Node #111 at (l=384.0, t=2032.0, r=954.0, b=2148.0)px
+          |  |  |-Node #114 at (l=1002.0, t=2040.0, r=1146.0, b=2184.0)px, Tag: 'niles.composer.send'
+          |  |  | Focused = 'false'
+          |  |  | Role = 'Button'
+          |  |  | Actions = [OnClick, RequestFocus]
+          |  |  | MergeDescendants = 'true'
+          |  |  |  |-Node #115 at (l=1044.0, t=2082.0, r=1104.0, b=2142.0)px
+          |  |  |    ContentDescription = '[Send]'
+          |  |  |    Role = 'Image'
+          |  |  |-Node #117 at (l=48.0, t=2196.0, r=192.0, b=2340.0)px, Tag: 'niles.composer.speak_replies'
+          |  |  | ContentDescription = '[Automatically speak new Hermes replies]'
+          |  |  | Focused = 'false'
+          |  |  | Role = 'Switch'
+          |  |  | StateDescription = 'Off'
+          |  |  | ToggleableState = 'Off'
+          |  |  | Actions = [OnClick, RequestFocus]
+          |  |  | MergeDescendants = 'true'
+          |  |  |  |-Node #118 at (l=90.0, t=2238.0, r=150.0, b=2298.0)px
+          |  |  |-Node #120 at (l=216.0, t=2242.0, r=441.0, b=2295.0)px, Tag: 'niles.composer.model_name'
+          |  |  |  |-Node #121 at (l=240.0, t=2251.0, r=417.0, b=2286.0)px
+          |  |  |    Text = '[Gemini 3 Pro]'
+          |  |  |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |  |-Node #123 at (l=748.0, t=2196.0, r=1128.0, b=2340.0)px
+          |  |    Focused = 'false'
+          |  |    Actions = [OnClick, RequestFocus]
+          |  |    MergeDescendants = 'true'
+          |  |     |-Node #125 at (l=748.0, t=2240.0, r=868.0, b=2252.0)px, Tag: 'niles.composer.context_scale'
+          |  |     | ContentDescription = '[Context remaining]'
+          |  |     | ProgressBarRangeInfo = 'ProgressBarRangeInfo(current=0.65, range=0.0..1.0, steps=0)'
+          |  |     | StateDescription = '65% context left'
+          |  |     | MergeDescendants = 'true'
+          |  |     |  |-Node #126 at (l=748.0, t=2240.0, r=826.0, b=2252.0)px
+          |  |     |-Node #128 at (l=892.0, t=2226.0, r=1128.0, b=2265.0)px
+          |  |     | Text = '[65% context left]'
+          |  |     | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |     |-Node #129 at (l=845.0, t=2265.0, r=1128.0, b=2310.0)px
+          |  |       Text = '[1.9k↑ 760↓ · 4 calls]'
+          |  |       Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |  |-Node #78 at (l=42.0, t=390.0, r=1164.0, b=534.0)px
+          |     |-Node #79 at (l=42.0, t=390.0, r=732.0, b=534.0)px, Tag: 'niles.model_controls'
+          |     | Focused = 'false'
+          |     | Role = 'Button'
+          |     | Actions = [OnClick, RequestFocus]
+          |     | MergeDescendants = 'true'
+          |     |  |-Node #80 at (l=42.0, t=415.0, r=275.0, b=464.0)px
+          |     |  | Text = '[Brand polish]'
+          |     |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |     |  |-Node #82 at (l=42.0, t=464.0, r=429.0, b=509.0)px
+          |     |    Text = '[Gemini 3 Pro · effort high ▾]'
+          |     |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+          |     |-Node #83 at (l=732.0, t=390.0, r=876.0, b=534.0)px
+          |     | Focused = 'false'
+          |     | Role = 'Button'
+          |     | Actions = [OnClick, RequestFocus]
+          |     | MergeDescendants = 'true'
+          |     |  |-Node #84 at (l=774.0, t=432.0, r=834.0, b=492.0)px
+          |     |    ContentDescription = '[Rename session]'
+          |     |    Role = 'Image'
+          |     |-Node #85 at (l=876.0, t=390.0, r=1020.0, b=534.0)px
+          |     | Focused = 'false'
+          |     | Role = 'Button'
+          |     | Actions = [OnClick, RequestFocus]
+          |     | MergeDescendants = 'true'
+          |     |  |-Node #86 at (l=918.0, t=432.0, r=978.0, b=492.0)px
+          |     |    ContentDescription = '[Usage statistics]'
+          |     |    Role = 'Image'
+          |     |-Node #87 at (l=1020.0, t=390.0, r=1164.0, b=534.0)px
+          |       Focused = 'false'
+          |       Role = 'Button'
+          |       Actions = [OnClick, RequestFocus]
+          |       MergeDescendants = 'true'
+          |        |-Node #88 at (l=1062.0, t=432.0, r=1122.0, b=492.0)px
+          |          ContentDescription = '[Settings]'
+          |          Role = 'Image'
+          |-Node #130 at (l=0.0, t=72.0, r=1206.0, b=360.0)px
+             |-Node #132 at (l=0.0, t=72.0, r=1206.0, b=360.0)px
+             |  |-Node #195 at (l=30.0, t=96.0, r=1176.0, b=300.0)px, Tag: 'niles.sessions.strip'
+             |  |  |-Node #196 at (l=30.0, t=96.0, r=1176.0, b=300.0)px
+             |  |    CollectionInfo = 'androidx.compose.ui.semantics.CollectionInfo@6538e4e'
+             |  |    HorizontalScrollAxisRange = 'ScrollAxisRange(value=0.0, maxValue=100.0, reverseScrolling=false)'
+             |  |    IsTraversalGroup = 'true'
+             |  |    Actions = [GetScrollViewportLength, IndexForKey, ScrollBy, ScrollByOffset, ScrollToIndex]
+             |  |     |-Node #198 at (l=30.0, t=96.0, r=570.0, b=300.0)px, Tag: 'niles.session.pill.brand'
+             |  |     | Focused = 'false'
+             |  |     | Selected = 'true'
+             |  |     | Actions = [OnClick, RequestFocus]
+             |  |     | MergeDescendants = 'true'
+             |  |     |  |-Node #200 at (l=66.0, t=151.0, r=281.0, b=197.0)px
+             |  |     |  | Text = '[Brand polish]'
+             |  |     |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+             |  |     |  |-Node #202 at (l=66.0, t=206.0, r=190.0, b=245.0)px
+             |  |     |    Text = '[just now]'
+             |  |     |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+             |  |     |-Node #204 at (l=594.0, t=96.0, r=1134.0, b=300.0)px, Tag: 'niles.session.pill.gateway'
+             |  |     | Focused = 'false'
+             |  |     | Selected = 'false'
+             |  |     | StateDescription = 'Working'
+             |  |     | Actions = [OnClick, RequestFocus]
+             |  |     | MergeDescendants = 'true'
+             |  |     |  |-Node #206 at (l=630.0, t=164.0, r=651.0, b=185.0)px
+             |  |     |  |-Node #208 at (l=672.0, t=151.0, r=1005.0, b=197.0)px
+             |  |     |  | Text = '[Gateway hardening]'
+             |  |     |  | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+             |  |     |  |-Node #210 at (l=630.0, t=206.0, r=751.0, b=245.0)px
+             |  |     |    Text = '[Working]'
+             |  |     |    Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+             |  |     |-Node #212 at (l=1158.0, t=96.0, r=1698.0, b=300.0)px, Tag: 'niles.session.pill.release'
+             |  |       Focused = 'false'
+             |  |       Selected = 'false'
+             |  |       StateDescription = 'Needs input'
+             |  |       Actions = [OnClick, RequestFocus]
+             |  |       MergeDescendants = 'true'
+             |  |        |-Node #214 at (l=1194.0, t=161.0, r=1221.0, b=188.0)px
+             |  |        |-Node #216 at (l=1242.0, t=151.0, r=1542.0, b=197.0)px
+             |  |        | Text = '[Release checklist]'
+             |  |        | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+             |  |        |-Node #218 at (l=1194.0, t=206.0, r=1372.0, b=245.0)px
+             |  |          Text = '[Needs input]'
+             |  |          Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+             |  |-Node #136 at (l=507.0, t=300.0, r=651.0, b=360.0)px, Tag: 'niles.sessions.pull_handle'
+             |  | Focused = 'false'
+             |  | Actions = [OnClick, RequestFocus]
+             |  | MergeDescendants = 'true'
+             |  |  |-Node #137 at (l=531.0, t=324.0, r=627.0, b=336.0)px
+             |  |-Node #138 at (l=651.0, t=310.0, r=699.0, b=351.0)px, Tag: 'niles.sessions.needs_input_count'
+             |    Focused = 'false'
+             |    LiveRegion = 'Polite'
+             |    StateDescription = '1 session needs input'
+             |    Text = '[1]'
+             |    Actions = [ClearTextSubstitution, GetTextLayoutResult, OnClick, RequestFocus, SetTextSubstitution, ShowTextSubstitution]
+             |    MergeDescendants = 'true'
+             |-Node #140 at (l=0.0, t=360.0, r=1206.0, b=360.0)px
+               CollectionInfo = 'androidx.compose.ui.semantics.CollectionInfo@5438b6f'
+               IsTraversalGroup = 'true'
+               VerticalScrollAxisRange = 'ScrollAxisRange(value=0.0, maxValue=100.0, reverseScrolling=false)'
+               Actions = [GetScrollViewportLength, IndexForKey, ScrollBy, ScrollByOffset, ScrollToIndex]
+                |-Node #220 at (l=42.0, t=276.0, r=1164.0, b=495.0)px, Tag: 'niles.session.needs_input'
+                  Focused = 'false'
+                  Selected = 'false'
+                  StateDescription = 'Needs input'
+                  Actions = [OnClick, RequestFocus]
+                  MergeDescendants = 'true'
+                   |-Node #222 at (l=72.0, t=347.0, r=99.0, b=374.0)px
+                   |-Node #224 at (l=120.0, t=337.0, r=755.0, b=383.0)px
+                   | Text = '[Release checklist]'
+                   | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+                   |-Node #226 at (l=785.0, t=341.0, r=1014.0, b=380.0)px
+                   | Text = '[15 minutes ago]'
+                   | Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+                   |-Node #228 at (l=1026.0, t=306.0, r=1134.0, b=414.0)px, Tag: 'niles.session.pin.release'
+                   | ContentDescription = '[Pin session]'
+                   | Focused = 'false'
+                   | Role = 'Button'
+                   | Actions = [OnClick, RequestFocus]
+                   | MergeDescendants = 'true'
+                   |-Node #231 at (l=72.0, t=426.0, r=746.0, b=465.0)px
+                     Text = '[Needs input · Waiting for the signing decision.]'
+                     Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]

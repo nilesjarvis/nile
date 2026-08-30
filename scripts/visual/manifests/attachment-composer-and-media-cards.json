@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-attachment-composer-and-media-cards",
+  "reference": {
+    "path": "../baselines/android/attachment-composer-and-media-cards.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/attachment-composer-and-media-cards.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "selected-pill-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 40,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 40,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "selected-pill-height",
+      "kind": "size",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 100,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 100,
+        "startPoints": 0,
+        "endPoints": 100,
+        "expectedHex": "#2A2A2A",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "composer-surface-bottom",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 700,
+        "endPoints": 778,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "lastMatchEnd"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 700,
+        "endPoints": 778,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "lastMatchEnd"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "thumbnail-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 50,
+        "startPoints": 570,
+        "endPoints": 640,
+        "expectedHex": "#3489CA",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 50,
+        "startPoints": 570,
+        "endPoints": 640,
+        "expectedHex": "#3489CA",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "thumbnail-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 630,
+        "startPoints": 10,
+        "endPoints": 180,
+        "expectedHex": "#3489CA",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 630,
+        "startPoints": 10,
+        "endPoints": 180,
+        "expectedHex": "#3489CA",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 40,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "canvas",
+      "expectedHex": "#181818",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 200,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 200,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "selected-session",
+      "expectedHex": "#2A2A2A",
+      "reference": {
+        "xPoints": 100,
+        "yPoints": 40,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 100,
+        "yPoints": 40,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "composer-surface",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 200,
+        "yPoints": 620,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 200,
+        "yPoints": 620,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "thumbnail",
+      "expectedHex": "#3489CA",
+      "reference": {
+        "xPoints": 50,
+        "yPoints": 610,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 50,
+        "yPoints": 610,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex",
+    "notes": "Native-scale review accepted: exact transcript and attachment state, copy, two pending-image previews, app-owned flat colors, and major container geometry are preserved; remaining differences are limited to platform-native glyph, icon, and anti-aliasing presentation."
+  }
+}

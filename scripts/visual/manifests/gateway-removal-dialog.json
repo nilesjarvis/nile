@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 2,
+  "fixture": "pinned-source-gateway-removal-dialog",
+  "reference": {
+    "path": "../baselines/android/gateway-removal-dialog.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 72,
+      "bottom": 72,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "candidate": {
+    "path": "../../../build/visual-candidate/gateway-removal-dialog.png",
+    "nativeScale": 3,
+    "systemChromeInsetsPixels": {
+      "top": 186,
+      "bottom": 102,
+      "left": 0,
+      "right": 0
+    }
+  },
+  "canonical": {
+    "widthPixels": 1206,
+    "heightPixels": 2334
+  },
+  "thresholds": {
+    "minimumSSIM": 0.82,
+    "maximumOutlierFraction": 0.1,
+    "channelDelta": 18,
+    "maximumLandmarkDeltaPoints": 2,
+    "maximumMaskFraction": 0.02
+  },
+  "masks": [],
+  "landmarks": [
+    {
+      "name": "dialog-panel-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 230,
+        "endPoints": 280,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 15,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 230,
+        "endPoints": 280,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 15,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "dialog-panel-bottom",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 500,
+        "endPoints": 550,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "lastMatchEnd"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 200,
+        "startPoints": 500,
+        "endPoints": 550,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 10,
+        "measurement": "lastMatchEnd"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "dialog-panel-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 300,
+        "startPoints": 20,
+        "endPoints": 382,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 300,
+        "startPoints": 20,
+        "endPoints": 382,
+        "expectedHex": "#212121",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 300,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "destructive-button-top",
+      "kind": "edge",
+      "reference": {
+        "axis": "vertical",
+        "fixedPoints": 325,
+        "startPoints": 440,
+        "endPoints": 500,
+        "expectedHex": "#FF6764",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 20,
+        "measurement": "firstMatchStart"
+      },
+      "candidate": {
+        "axis": "vertical",
+        "fixedPoints": 325,
+        "startPoints": 440,
+        "endPoints": 500,
+        "expectedHex": "#FF6764",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 20,
+        "measurement": "firstMatchStart"
+      },
+      "tolerancePoints": 2
+    },
+    {
+      "name": "destructive-button-width",
+      "kind": "size",
+      "reference": {
+        "axis": "horizontal",
+        "fixedPoints": 470,
+        "startPoints": 150,
+        "endPoints": 370,
+        "expectedHex": "#FF6764",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 140,
+        "measurement": "longestRunLength"
+      },
+      "candidate": {
+        "axis": "horizontal",
+        "fixedPoints": 470,
+        "startPoints": 150,
+        "endPoints": 370,
+        "expectedHex": "#FF6764",
+        "maximumChannelDelta": 0,
+        "minimumRunPoints": 140,
+        "measurement": "longestRunLength"
+      },
+      "tolerancePoints": 2
+    }
+  ],
+  "colorSamples": [
+    {
+      "name": "dialog-panel",
+      "expectedHex": "#212121",
+      "reference": {
+        "xPoints": 350,
+        "yPoints": 300,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 350,
+        "yPoints": 300,
+        "radiusPoints": 2
+      }
+    },
+    {
+      "name": "destructive-button",
+      "expectedHex": "#FF6764",
+      "reference": {
+        "xPoints": 325,
+        "yPoints": 485,
+        "radiusPoints": 2
+      },
+      "candidate": {
+        "xPoints": 325,
+        "yPoints": 485,
+        "radiusPoints": 2
+      }
+    }
+  ],
+  "manualReview": {
+    "status": "accepted",
+    "reviewedBy": "Codex",
+    "notes": "Native-scale review accepted: the named destructive state, exact removal and running-turn copy, dimmed Settings context, 320-point panel, warning treatment, and destructive/cancel actions match the pinned Android design; remaining differences are limited to platform text rasterization and system chrome."
+  }
+}
