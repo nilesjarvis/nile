@@ -226,7 +226,9 @@ extension ArchitectureBoundaryTests {
             XCTAssertFalse(rotationSource.contains(forbidden))
         }
         for marker in ["import WebKit", "protocol GatewayCookieStoring", "final class WebKitGatewayCookieStore",
-                       "private let store: WKHTTPCookieStore", "GatewayCookiePolicy.header(",
+                       "private let store: WKHTTPCookieStore", "private let readiness: Task<Void, Never>",
+                       "final class WebKitCookieStorePrimer", "webView.loadHTMLString(\"\", baseURL: nil)",
+                       "GatewayCookiePolicy.header(",
                        "GatewayCookiePolicy.cookiesToClear(", "GatewayCookiePolicy.nonBlank("] {
             XCTAssertTrue(storeSource.contains(marker))
         }
@@ -249,10 +251,10 @@ extension ArchitectureBoundaryTests {
             XCTAssertFalse(source.contains("protocol GatewayCookieStoring"))
         }
         let lineCounts = sources.map { $0.components(separatedBy: .newlines).count }
-        for (count, cap) in zip(lineCounts, [35, 255, 110, 105, 95, 205]) { XCTAssertLessThan(count, cap) }
+        for (count, cap) in zip(lineCounts, [35, 255, 110, 105, 145, 205]) { XCTAssertLessThan(count, cap) }
         XCTAssertLessThan(
             lineCounts.reduce(0, +),
-            725,
+            785,
             "Keep authentication I/O, HTTP policy, rotation, cookie storage, and cookie policy bounded"
         )
     }

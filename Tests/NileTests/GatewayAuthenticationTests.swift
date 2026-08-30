@@ -538,10 +538,9 @@ final class GatewayAuthenticationTests: XCTestCase, @unchecked Sendable {
     }
 
     @MainActor
-    func testWebKitCookieBridgeRetainsHttpOnlyCookiesAndFiltersHTTPSVariantsByScope() async throws {
+    func testWebKitCookieBridgePrimesExistingHttpOnlyCookiesAndFiltersHTTPSVariantsByScope() async throws {
         let websiteStore = WKWebsiteDataStore.nonPersistent()
         let webCookies = websiteStore.httpCookieStore
-        let store = WebKitGatewayCookieStore(store: webCookies)
         for (name, path) in [
             ("hermes_session_at", "/"),
             ("__Host-hermes_session_at", "/"),
@@ -565,6 +564,7 @@ final class GatewayAuthenticationTests: XCTestCase, @unchecked Sendable {
                 }
             }
         }
+        let store = WebKitGatewayCookieStore(dataStore: websiteStore)
 
         let root = try await store.cookieHeader(
             for: URL(

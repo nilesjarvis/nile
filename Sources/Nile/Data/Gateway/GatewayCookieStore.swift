@@ -13,9 +13,16 @@ protocol GatewayCookieStoring: Sendable {
 @MainActor
 final class WebKitGatewayCookieStore: GatewayCookieStoring, @unchecked Sendable {
     private let store: WKHTTPCookieStore
+    private let readiness: Task<Void, Never>
 
-    init(store: WKHTTPCookieStore = WKWebsiteDataStore.default().httpCookieStore) {
-        self.store = store
+    init(dataStore: WKWebsiteDataStore = .default()) {
+        store = dataStore.httpCookieStore
+        let primer = WebKitCookieStorePrimer()
+        // A cold WebKit data store may not expose persisted cookies until
+        // its network process has completed an initial document load.
+        readiness = Task { @MainActor in
+            await primer.prime(dataStore: dataStore)
+        }
     }
 
     func cookieHeader(for url: URL) async throws -> String? {
@@ -55,7 +62,8 @@ final class WebKitGatewayCookieStore: GatewayCookieStoring, @unchecked Sendable 
     }
 
     private func allCookies() async -> [HTTPCookie] {
-        await withCheckedContinuation { continuation in
+        await readiness.value
+        return await withCheckedContinuation { continuation in
             store.getAllCookies {
                 continuation.resume(returning: $0)
             }
@@ -76,5 +84,57 @@ final class WebKitGatewayCookieStore: GatewayCookieStoring, @unchecked Sendable 
                 continuation.resume()
             }
         }
+    }
+}
+
+@MainActor
+private final class WebKitCookieStorePrimer: NSObject, WKNavigationDelegate {
+    private var continuation: CheckedContinuation<Void, Never>?
+    private var webView: WKWebView?
+
+    func prime(dataStore: WKWebsiteDataStore) async {
+        let configuration = WKWebViewConfiguration()
+        configuration.websiteDataStore = dataStore
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.navigationDelegate = self
+        self.webView = webView
+        await withCheckedContinuation { continuation in
+            self.continuation = continuation
+            webView.loadHTMLString("", baseURL: nil)
+        }
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation?) {
+        finish()
+    }
+
+    func webView(
+        _ webView: WKWebView,
+        didFail navigation: WKNavigation?,
+        withError error: any Error
+    ) {
+        finish()
+    }
+
+    func webView(
+        _ webView: WKWebView,
+        didFailProvisionalNavigation navigation: WKNavigation?,
+        withError error: any Error
+    ) {
+        finish()
+    }
+
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        finish()
+    }
+
+    private func finish() {
+        guard let continuation else {
+            return
+        }
+        self.continuation = nil
+        webView?.navigationDelegate = nil
+        webView = nil
+        continuation.resume()
     }
 }
