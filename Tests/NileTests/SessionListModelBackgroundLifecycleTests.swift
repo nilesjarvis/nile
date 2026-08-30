@@ -270,7 +270,7 @@ extension SessionListModelTests {
     func testAppForegroundLifecycleIsForwardedToBackgroundController() {
         let controller = RecordingBackgroundController()
         let model = SessionListModel(
-            fixture: .androidBrand,
+            fixture: .showcase,
             backgroundController: controller
         )
 

@@ -86,7 +86,7 @@ extension SessionListModelTests {
     }
 
     func testRenameDialogIsUnavailableForOfflineAndReadOnlySessions() async {
-        let writable = SessionListModel(fixture: .androidBrand)
+        let writable = SessionListModel(fixture: .showcase)
         writable.setConnectionRecoveryPhase(.offline)
         writable.setRenameDialogVisible(true)
         XCTAssertFalse(writable.isRenameDialogVisible)
@@ -99,7 +99,7 @@ extension SessionListModelTests {
     func testSessionRenameForwarderPublishesNestedRuntimeObservation()
         async
     {
-        let model = SessionListModel(fixture: .androidBrand)
+        let model = SessionListModel(fixture: .showcase)
         let changed = expectation(
             description: "Session management observation changed"
         )

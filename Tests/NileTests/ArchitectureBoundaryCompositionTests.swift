@@ -83,7 +83,7 @@ extension ArchitectureBoundaryTests {
         for movedArgument in [
             "--nile-fixture-blocking-clarification",
             "--nile-fixture-blocking-secret",
-            "--nile-fixture-android-visual-model-picker",
+            "--nile-fixture-visual-model-picker",
             "--nile-fixture-goal-active",
         ] {
             XCTAssertFalse(planSource.contains(movedArgument))
@@ -364,8 +364,8 @@ extension ArchitectureBoundaryTests {
                 ["struct NileComposeText:", "struct NileMeasuredComposeText:"], 115
             ),
             (
-                "NileAndroidTextMeasurement.swift",
-                ["enum NileAndroidTextMeasurement {", "static func height(", "static func lineCount(", "static func letterSpacingPixels("], 145
+                "NileTextMeasurement.swift",
+                ["enum NileTextMeasurement {", "static func height(", "static func lineCount(", "static func letterSpacingPixels("], 145
             ),
             (
                 "NileMarkdown.swift",
@@ -411,16 +411,16 @@ extension ArchitectureBoundaryTests {
             }
         }
 
-        XCTAssertFalse(sources.joined(separator: "\n").contains("NileAndroidTextLabel"))
+        XCTAssertFalse(sources.joined(separator: "\n").contains("NileTextLabel"))
         XCTAssertFalse(sources.joined(separator: "\n").contains("var nileRGBA:"))
         XCTAssertEqual(
-            sources.filter { $0.contains("import NileAndroidTextRenderer") }.count,
+            sources.filter { $0.contains("import NileTextRenderer") }.count,
             1,
-            "Only live Android text measurement should import the renderer"
+            "Only live text measurement should import the renderer"
         )
         for forbidden in ["import UIKit", "struct TextStyle", "func scaledUIFont(", "extension DynamicTypeSize"] { XCTAssertFalse(sources[1].contains(forbidden)) }
-        for forbidden in ["static let bodyLargeStyle", "static let brandStyle", "static func font(", "import NileAndroidTextRenderer"] { XCTAssertFalse(sources[2].contains(forbidden)) }
-        XCTAssertTrue(sources[5].contains("import NileAndroidTextRenderer"))
+        for forbidden in ["static let bodyLargeStyle", "static let brandStyle", "static func font(", "import NileTextRenderer"] { XCTAssertFalse(sources[2].contains(forbidden)) }
+        XCTAssertTrue(sources[5].contains("import NileTextRenderer"))
         XCTAssertFalse(sources[6].contains("func parseMarkdownBlocks("))
         XCTAssertFalse(sources[6].contains("struct MarkdownTable: View"))
         XCTAssertFalse(sources[7].contains("func parseMarkdownBlocks("))

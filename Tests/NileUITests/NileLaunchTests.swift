@@ -102,10 +102,10 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(connect.isEnabled)
     }
 
-    func testPinnedAndroidOnboardingVisualFixtures() {
+    func testVisualRegressionOnboardingVisualFixtures() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-parity",
+            "--nile-fixture-visual-regression",
             "-AppleLanguages", "(en)",
             "-AppleLocale", "en_US",
             "-AppleInterfaceStyle", "Dark",
@@ -119,12 +119,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(addGateway.exists)
 
         let cleanScreenshot = XCTAttachment(screenshot: app.screenshot())
-        cleanScreenshot.name = "android-parity-onboarding-clean"
+        cleanScreenshot.name = "visual-regression-onboarding-clean"
         cleanScreenshot.lifetime = .keepAlways
         add(cleanScreenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-onboarding-clean"
+            name: "visual-regression-onboarding-clean"
         )
 
         addGateway.tap()
@@ -140,19 +140,19 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.secureTextFields["niles.gateway.token"].exists)
 
         let formScreenshot = XCTAttachment(screenshot: app.screenshot())
-        formScreenshot.name = "android-parity-onboarding-form"
+        formScreenshot.name = "visual-regression-onboarding-form"
         formScreenshot.lifetime = .keepAlways
         add(formScreenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-onboarding-form"
+            name: "visual-regression-onboarding-form"
         )
     }
 
-    func testGatewayRemovalRequiresConfirmationAndMatchesPinnedAndroid() {
+    func testGatewayRemovalRequiresConfirmationAndPreservesProductContract() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-gateway-removal",
+            "--nile-fixture-visual-gateway-removal",
             "--nile-fixture-reduced-motion",
             "-UIPreferredContentSizeCategoryName",
             "UICTContentSizeCategoryL",
@@ -203,12 +203,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Home Hermes"].exists)
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-gateway-removal-dialog"
+        screenshot.name = "visual-regression-gateway-removal-dialog"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-gateway-removal-dialog"
+            name: "visual-regression-gateway-removal-dialog"
         )
 
         app.buttons["niles.gateway.remove.cancel"].tap()
@@ -230,10 +230,10 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Home Hermes"].exists)
     }
 
-    func testRunningTurnGatewaySwitchRequiresConfirmationAndMatchesPinnedAndroid() {
+    func testRunningTurnGatewaySwitchRequiresConfirmationAndPreservesProductContract() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-gateway-switch",
+            "--nile-fixture-visual-gateway-switch",
             "--nile-fixture-reduced-motion",
             "-UIPreferredContentSizeCategoryName",
             "UICTContentSizeCategoryL",
@@ -277,12 +277,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertEqual(confirmSwitch.frame.height, 48, accuracy: 0.5)
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-gateway-switch-dialog"
+        screenshot.name = "visual-regression-gateway-switch-dialog"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-gateway-switch-dialog"
+            name: "visual-regression-gateway-switch-dialog"
         )
 
         dismissSwitch.tap()
@@ -305,10 +305,10 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(dialog.exists)
     }
 
-    func testPinnedAndroidBrandVisualFixtures() {
+    func testVisualRegressionBrandVisualFixtures() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-brand",
+            "--nile-fixture-visual-brand",
             "--nile-fixture-reduced-motion",
             "-UIPreferredContentSizeCategoryName",
             "UICTContentSizeCategoryL",
@@ -342,12 +342,12 @@ final class NileLaunchTests: XCTestCase {
         )
 
         let chat = XCTAttachment(screenshot: app.screenshot())
-        chat.name = "android-parity-brand-chat"
+        chat.name = "visual-regression-brand-chat"
         chat.lifetime = .keepAlways
         add(chat)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-brand-chat"
+            name: "visual-regression-brand-chat"
         )
 
         app.buttons["niles.sessions.pull_handle"].tap()
@@ -363,12 +363,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.buttons["niles.session.row.cli"].exists)
 
         let sessions = XCTAttachment(screenshot: app.screenshot())
-        sessions.name = "android-parity-brand-sessions"
+        sessions.name = "visual-regression-brand-sessions"
         sessions.lifetime = .keepAlways
         add(sessions)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-brand-sessions"
+            name: "visual-regression-brand-sessions"
         )
     }
 
@@ -483,10 +483,10 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(sheet.exists)
     }
 
-    func testPinnedAndroidMediaVisualFixture() {
+    func testVisualRegressionMediaVisualFixture() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-media",
+            "--nile-fixture-visual-media",
             "--nile-fixture-reduced-motion",
             "-UIPreferredContentSizeCategoryName",
             "UICTContentSizeCategoryL",
@@ -530,19 +530,19 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(app.textFields["niles.composer"].exists)
 
         let media = XCTAttachment(screenshot: app.screenshot())
-        media.name = "android-parity-media"
+        media.name = "visual-regression-media"
         media.lifetime = .keepAlways
         add(media)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-media"
+            name: "visual-regression-media"
         )
     }
 
-    func testPinnedAndroidTranscriptSyntaxVisualFixture() {
+    func testVisualRegressionTranscriptSyntaxVisualFixture() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-transcript-syntax",
+            "--nile-fixture-visual-transcript-syntax",
             "--nile-fixture-reduced-motion",
             "-UIPreferredContentSizeCategoryName",
             "UICTContentSizeCategoryL",
@@ -581,19 +581,19 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.textFields["niles.composer"].exists)
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-transcript-syntax-tail"
+        screenshot.name = "visual-regression-transcript-syntax-tail"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-transcript-syntax-tail"
+            name: "visual-regression-transcript-syntax-tail"
         )
     }
 
-    func testPinnedAndroidAttachmentVisualFixture() {
+    func testVisualRegressionAttachmentVisualFixture() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-attachments",
+            "--nile-fixture-visual-attachments",
             "--nile-fixture-reduced-motion",
             "-UIPreferredContentSizeCategoryName",
             "UICTContentSizeCategoryL",
@@ -647,12 +647,12 @@ final class NileLaunchTests: XCTestCase {
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
         screenshot.name =
-            "android-parity-attachment-composer-and-media-cards"
+            "visual-regression-attachment-composer-and-media-cards"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-attachment-composer-and-media-cards"
+            name: "visual-regression-attachment-composer-and-media-cards"
         )
     }
 
@@ -820,7 +820,7 @@ final class NileLaunchTests: XCTestCase {
         app.launch()
 
         let existingMessage = app.staticTexts[
-            "Polish the chat surface and verify it against the Android app."
+            "Polish the chat surface and verify the complete interaction."
         ]
         XCTAssertTrue(existingMessage.waitForExistence(timeout: 10))
         XCTAssertTrue(existingMessage.isHittable)
@@ -1430,7 +1430,7 @@ final class NileLaunchTests: XCTestCase {
         )
         XCTAssertTrue(
             app.staticTexts[
-                "Polish the chat surface and verify it against the Android app."
+                "Polish the chat surface and verify the complete interaction."
             ].exists
         )
         let copyResponse = app.buttons.matching(
@@ -1681,7 +1681,7 @@ final class NileLaunchTests: XCTestCase {
 
         XCTAssertTrue(
             app.staticTexts[
-                "Polish the chat surface and verify it against the Android app."
+                "Polish the chat surface and verify the complete interaction."
             ].waitForExistence(timeout: 10)
         )
         let strip = app.scrollViews["niles.sessions.strip"]
@@ -1703,7 +1703,7 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(app.buttons["niles.model.controls"].exists)
         XCTAssertFalse(
             app.staticTexts[
-                "Polish the chat surface and verify it against the Android app."
+                "Polish the chat surface and verify the complete interaction."
             ].exists
         )
 
@@ -2314,12 +2314,12 @@ final class NileLaunchTests: XCTestCase {
             )
         }
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-blocking-clarification"
+        screenshot.name = "visual-regression-blocking-clarification"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-blocking-clarification"
+            name: "visual-regression-blocking-clarification"
         )
 
         choice.tap()
@@ -2700,10 +2700,10 @@ final class NileLaunchTests: XCTestCase {
         )
     }
 
-    func testPinnedAndroidModelPickerVisualFixture() {
+    func testVisualRegressionModelPickerVisualFixture() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-model-picker",
+            "--nile-fixture-visual-model-picker",
             "-AppleLanguages", "(en)",
             "-AppleLocale", "en_US",
             "-AppleInterfaceStyle", "Dark",
@@ -2729,19 +2729,19 @@ final class NileLaunchTests: XCTestCase {
         )
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-model-picker-app-popup"
+        screenshot.name = "visual-regression-model-picker-app-popup"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-model-picker-app-popup"
+            name: "visual-regression-model-picker-app-popup"
         )
     }
 
-    func testPinnedAndroidRenameSessionVisualFixture() {
+    func testVisualRegressionRenameSessionVisualFixture() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-visual-rename",
+            "--nile-fixture-visual-rename",
             "-AppleLanguages", "(en)",
             "-AppleLocale", "en_US",
             "-AppleInterfaceStyle", "Dark",
@@ -2770,12 +2770,12 @@ final class NileLaunchTests: XCTestCase {
         )
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-rename-session-dialog"
+        screenshot.name = "visual-regression-rename-session-dialog"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-rename-session-dialog"
+            name: "visual-regression-rename-session-dialog"
         )
     }
 
@@ -2814,12 +2814,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.buttons["niles.goal.start"].isEnabled)
 
         let capture = XCTAttachment(screenshot: app.screenshot())
-        capture.name = "android-parity-goal-quick-start-sheet"
+        capture.name = "visual-regression-goal-quick-start-sheet"
         capture.lifetime = .keepAlways
         add(capture)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-goal-quick-start-sheet"
+            name: "visual-regression-goal-quick-start-sheet"
         )
     }
 
@@ -2878,12 +2878,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.buttons["niles.goal.pause"].exists)
 
         let compact = XCTAttachment(screenshot: app.screenshot())
-        compact.name = "android-parity-goal-active-card"
+        compact.name = "visual-regression-goal-active-card"
         compact.lifetime = .keepAlways
         add(compact)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-goal-active-card"
+            name: "visual-regression-goal-active-card"
         )
 
         let quickStart = app.buttons[
@@ -2906,12 +2906,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(objective.exists)
         XCTAssertEqual(objective.value as? String, "Collapsed")
         let details = XCTAttachment(screenshot: app.screenshot())
-        details.name = "android-parity-goal-active-details-sheet"
+        details.name = "visual-regression-goal-active-details-sheet"
         details.lifetime = .keepAlways
         add(details)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-goal-active-details-sheet"
+            name: "visual-regression-goal-active-details-sheet"
         )
         objective.tap()
         XCTAssertEqual(objective.value as? String, "Expanded")
@@ -2939,12 +2939,12 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["free"].exists)
 
         let capture = XCTAttachment(screenshot: app.screenshot())
-        capture.name = "android-parity-context-breakdown-sheet"
+        capture.name = "visual-regression-context-breakdown-sheet"
         capture.lifetime = .keepAlways
         add(capture)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-context-breakdown-sheet"
+            name: "visual-regression-context-breakdown-sheet"
         )
     }
 
@@ -2972,12 +2972,12 @@ final class NileLaunchTests: XCTestCase {
         )
 
         let capture = XCTAttachment(screenshot: app.screenshot())
-        capture.name = "android-parity-gateway-stats-sheet"
+        capture.name = "visual-regression-gateway-stats-sheet"
         capture.lifetime = .keepAlways
         add(capture)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-gateway-stats-sheet"
+            name: "visual-regression-gateway-stats-sheet"
         )
     }
 
@@ -3037,10 +3037,10 @@ final class NileLaunchTests: XCTestCase {
         add(details)
     }
 
-    func testPinnedAndroidDelegationMixedVisualFixture() {
+    func testVisualRegressionDelegationMixedVisualFixture() {
         let app = XCUIApplication()
         app.launchArguments = [
-            "--nile-fixture-android-delegation-mixed",
+            "--nile-fixture-visual-delegation-mixed",
             "-AppleLanguages", "(en)",
             "-AppleLocale", "en_US",
             "-AppleInterfaceStyle", "Dark",
@@ -3076,12 +3076,12 @@ final class NileLaunchTests: XCTestCase {
         )
 
         let capture = XCTAttachment(screenshot: app.screenshot())
-        capture.name = "android-parity-delegation-mixed"
+        capture.name = "visual-regression-delegation-mixed"
         capture.lifetime = .keepAlways
         add(capture)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-delegation-mixed"
+            name: "visual-regression-delegation-mixed"
         )
     }
 
@@ -3214,13 +3214,13 @@ final class NileLaunchTests: XCTestCase {
             )
         }
 
-        let paritySheet = XCTAttachment(screenshot: app.screenshot())
-        paritySheet.name = "android-parity-hermes-voice-settings"
-        paritySheet.lifetime = .keepAlways
-        add(paritySheet)
+        let visualCapture = XCTAttachment(screenshot: app.screenshot())
+        visualCapture.name = "visual-regression-hermes-voice-settings"
+        visualCapture.lifetime = .keepAlways
+        add(visualCapture)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-hermes-voice-settings"
+            name: "visual-regression-hermes-voice-settings"
         )
 
         app.buttons["Guy · US"].tap()
@@ -3269,7 +3269,7 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(app.textFields["niles.composer"].exists)
         XCTAssertFalse(
             app.staticTexts[
-                "Polish the chat surface and verify it against the Android app."
+                "Polish the chat surface and verify the complete interaction."
             ].exists
         )
         XCTAssertTrue(app.otherElements["niles.talk.orb"].exists)
@@ -3293,12 +3293,12 @@ final class NileLaunchTests: XCTestCase {
         }
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "android-parity-talk-listening"
+        screenshot.name = "visual-regression-talk-listening"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         attachAccessibilityHierarchy(
             app,
-            name: "android-parity-talk-listening"
+            name: "visual-regression-talk-listening"
         )
 
         app.buttons["niles.talk.pause"].tap()
@@ -3345,7 +3345,7 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(toggle.isSelected)
     }
 
-    func testNotificationEducationMatchesAndroidCopyAndDismisses() {
+    func testNotificationEducationUsesApprovedCopyAndDismisses() {
         let app = XCUIApplication()
         app.launchArguments = [
             "--nile-fixture-notification-education",

@@ -5,7 +5,7 @@ final class GatewaySessionCodecTests: XCTestCase {
     private let codec = GatewaySessionCodec()
     private let storedCodec = GatewayStoredSessionCodec()
 
-    func testSessionListUsesAndroidTimestampFallbacksAndStrictIDs() throws {
+    func testSessionListUsesStableTimestampFallbacksAndStrictIDs() throws {
         let sessions = try codec.decodeSessionList([
             "sessions": .array([
                 .object([

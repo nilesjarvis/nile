@@ -4,7 +4,7 @@ import XCTest
 final class DelegationAgentReducerTests: XCTestCase {
     func testMakeNormalizesSparseIdentityAndBoundsToolCount() {
         let data = event(
-            goal: "  Inspect   parity  ",
+            goal: "  Inspect   consistency  ",
             subagentID: "   ",
             parentID: " parent ",
             childSessionID: " ",
@@ -32,7 +32,7 @@ final class DelegationAgentReducerTests: XCTestCase {
         XCTAssertEqual(ui.status, .running)
         XCTAssertEqual(
             DelegationAgentReducer.fallbackKey(data),
-            "fallback: parent :1:inspect parity"
+            "fallback: parent :1:inspect consistency"
         )
     }
 
@@ -95,7 +95,7 @@ final class DelegationAgentReducerTests: XCTestCase {
 
     func testSnapshotProjectionRoundTripsEventPayload() {
         let original = event(
-            goal: "Ship parity",
+            goal: "Ship quality",
             subagentID: "agent",
             parentID: "parent",
             childSessionID: "child",

@@ -26,7 +26,7 @@ extension SessionListModelTests {
         XCTAssertFalse(model.hasDraftWithoutOpenSession)
     }
 
-    func testCreateSessionAvailabilityMatchesAndroidBusyAndConnectionGuards() {
+    func testCreateSessionAvailabilityEnforcesBusyAndConnectionGuards() {
         let model = SessionListModel(fixture: .empty)
 
         XCTAssertTrue(model.canCreateSession)
@@ -43,7 +43,7 @@ extension SessionListModelTests {
         XCTAssertFalse(model.canCreateSession)
     }
 
-    func testCreateSessionExplainsSecondaryAndroidMutationGuards() async {
+    func testCreateSessionExplainsSecondaryMutationGuards() async {
         let model = SessionListModel(fixture: .empty)
 
         model.isUpdatingSessionControls = true

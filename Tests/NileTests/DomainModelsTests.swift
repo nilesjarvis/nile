@@ -42,7 +42,7 @@ final class DomainModelsTests: XCTestCase {
         )
     }
 
-    func testGoalLoopAliveMatchesAndroidPhases() {
+    func testGoalLoopAliveUsesExpectedPolicyPhases() {
         for phase in [GoalPhase.active, .checking, .waiting] {
             XCTAssertTrue(goal(phase).isLoopAlive)
         }

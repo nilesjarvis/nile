@@ -240,7 +240,7 @@ final class GatewayGoalUsageCodecTests: XCTestCase {
         XCTAssertEqual(saturatingUsageAdd(Int.max, 1), .max)
     }
 
-    func testActivityMomentumMatchesAndroidUtcStreakRules() {
+    func testActivityMomentumUsesUTCStreakRules() {
         let stats = GatewayStats(
             periodDays: 30,
             totals: GatewayStatsTotals(

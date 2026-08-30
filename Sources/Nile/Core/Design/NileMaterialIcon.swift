@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Compatibility wrapper that maps the former Android icon vocabulary onto
+/// Compatibility wrapper that maps the stable icon vocabulary onto
 /// platform-native SF Symbols.
 struct NileMaterialIcon: View {
     enum Kind {

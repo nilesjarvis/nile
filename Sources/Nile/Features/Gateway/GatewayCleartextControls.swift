@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GatewayCleartextWarning: View {
     let isSupported: Bool
-    let usesAndroidVisualParityCopy: Bool
+    let usesDeterministicFixtureCopy: Bool
 
     var body: some View {
         NileComposeText(
@@ -28,7 +28,7 @@ struct GatewayCleartextWarning: View {
 
     private var message: String {
         if isSupported {
-            let localRuntime = usesAndroidVisualParityCopy
+            let localRuntime = usesDeterministicFixtureCopy
                 ? "emulator"
                 : "simulator"
             return "Unencrypted connection: anyone on this network may be able "

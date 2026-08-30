@@ -4,14 +4,14 @@ import Foundation
 extension SessionListFixture {
     var transcriptEntries: [TranscriptEntry]? {
         switch self {
-        case .androidVisualBrand:
+        case .visualRegressionBrand:
             return [
                 .message(
                     TranscriptMessage(
                         id: "user-1",
                         role: .user,
                         content:
-                            "Refine the Android experience around the new visual direction."
+                            "Refine the Nile experience around the new visual direction."
                     )
                 ),
                 .message(
@@ -22,7 +22,7 @@ extension SessionListFixture {
                             """
                             ## Shaping the mobile agent experience
 
-                            I mapped the supplied reference into Nile' own interaction system: neutral graphite layers, compact status rows, and a single anchored composer.
+                            I mapped the supplied reference into Nile's own interaction system: neutral graphite layers, compact status rows, and a single anchored composer.
 
                             - Keep the transcript visually quiet and content-first.
                             - Reserve violet and cobalt for selections and primary actions.
@@ -44,7 +44,7 @@ extension SessionListFixture {
                             "./gradlew testDebugUnitTest assembleDebug\nBUILD SUCCESSFUL",
                         outcome: .succeeded,
                         kind: .terminal,
-                        label: "Built and tested the Android app",
+                        label: "Built and tested the iOS app",
                         summary: "Build passed in 18s",
                         durationSeconds: 18.2
                     )
@@ -58,7 +58,7 @@ extension SessionListFixture {
                     )
                 ),
             ]
-        case .androidVisualMedia:
+        case .visualRegressionMedia:
             return [
                 .message(
                     TranscriptMessage(

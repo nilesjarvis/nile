@@ -113,7 +113,7 @@ final class SessionVoiceInputRuntimeTests: XCTestCase {
     func testModelForwarderPublishesNestedRuntimeObservation() async {
         let input = VoiceRuntimeInput()
         let model = SessionListModel(
-            fixture: .androidBrand,
+            fixture: .showcase,
             voiceInput: input
         )
         model.onAppForegroundChanged(true)

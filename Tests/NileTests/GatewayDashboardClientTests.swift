@@ -207,7 +207,7 @@ final class GatewayDashboardClientTests: XCTestCase {
         XCTAssertFalse(GatewayURLOriginPolicy.sameOrigin(https, customPort))
     }
 
-    func testHTTPRetryClassificationMatchesAndroid() async {
+    func testHTTPRetryClassificationUsesExpectedPolicy() async {
         for status in [408, 425, 429, 500, 503] {
             await assertHTTPFailure(status: status, retryable: true)
         }

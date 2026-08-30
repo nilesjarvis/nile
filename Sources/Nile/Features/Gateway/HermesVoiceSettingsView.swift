@@ -38,7 +38,7 @@ struct HermesVoiceSheetView: View {
                         .padding(.horizontal, 12)
                         .frame(minHeight: 48)
                         .contentShape(Rectangle())
-                        // Keep the Android-aligned 40-point layout slot while
+                        // Keep the stable 40-point layout slot while
                         // exposing a full iOS accessibility target.
                         .padding(.vertical, -4)
                         .padding(.top, 4)

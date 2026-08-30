@@ -153,7 +153,7 @@ extension GatewaySetupModelTests {
         )
     }
 
-    func testHermesVoicePresentationMatchesAndroidCatalog() {
+    func testHermesVoicePresentationUsesExpectedPolicyCatalog() {
         XCTAssertEqual(
             [
                 "edge",

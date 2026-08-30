@@ -122,7 +122,7 @@ final class SessionListModel {
             backgroundController: backgroundController
         )
         fixtureAllowsSessionCreation =
-            fixture == .empty || fixture == .androidBrand
+            fixture == .empty || fixture == .showcase
         fixtureStoredMessages = fixture.storedMessages
         fixtureLiveSessions = fixture.liveSessions
         fixtureAttentionSessionIDs = fixture.sessionsNeedingInput
@@ -193,7 +193,7 @@ final class SessionListModel {
                 options: fixtureModelOptions,
                 pins: fixture.modelPins,
                 gatewayID:
-                    fixture == .androidVisualModelPicker ? nil : "fixture"
+                    fixture == .visualRegressionModelPicker ? nil : "fixture"
             )
         }
         runtimes.goalRuntime.installFixture(

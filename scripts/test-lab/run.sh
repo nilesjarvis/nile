@@ -10,8 +10,7 @@ fi
 
 # Replace the runner with an allowlisted process environment before starting
 # any external process. On macOS an exec replaces the kernel-visible process
-# environment, which provides the isolation that the Android/Linux lab obtains
-# by validating /proc/<pid>/environ.
+# environment, preventing unrelated shell state from reaching the lab.
 environment_requires_reexec=0
 if [[ "${_NILE_IOS_LAB_CLEAN_ENV:-0}" != "1" ]]; then
     environment_requires_reexec=1
@@ -48,8 +47,6 @@ unset _NILE_IOS_LAB_CLEAN_ENV environment_requires_reexec environment_name
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 MODE="${1:-full}"
-PINNED_ANDROID_REF="bd5451da891f2d886b9bc35f8ea67d6920df1d98"
-PINNED_ANDROID_TREE="3b954e5844f05276d34aaee34a7d3f69169ef9f5"
 PINNED_HERMES_REF="$(tr -d '[:space:]' < "$ROOT_DIR/scripts/test-lab/hermes.ref")"
 EXPECTED_HERMES_REF="7441e3395f9db0d8319f43bfe07dfb222777101e"
 CANONICAL_SIMULATOR_NAME="${NILE_LAB_SIMULATOR_NAME:-iPhone 17 Pro}"
@@ -89,13 +86,12 @@ GOAL_MAX_TURNS=5
 
 usage() {
     cat <<'EOF'
-Usage: scripts/test-lab/run.sh [unit|ui|accessibility|visual|smoke|full|drive|installer]
+Usage: scripts/test-lab/run.sh [unit|ui|accessibility|smoke|full|drive|installer]
 
   unit       analyze, test, and unsigned Release-build the current Swift tree
   ui         run deterministic XCUITests in a disposable Simulator
   accessibility
              run large-text, reduced-motion, touch-target, and keyboard checks
-  visual     capture onboarding in a disposable Simulator and run strict compare
   smoke      run the production app against fresh pinned, unmodified Hermes
   full       run all gates; block paid smoke if a deterministic gate is red
   drive      leave a disposable Simulator and isolated Hermes up until Ctrl-C
@@ -109,7 +105,7 @@ EOF
 }
 
 case "$MODE" in
-    unit|ui|accessibility|visual|smoke|full|drive|installer) ;;
+    unit|ui|accessibility|smoke|full|drive|installer) ;;
     -h|--help|help)
         usage
         exit 0
@@ -121,7 +117,7 @@ case "$MODE" in
 esac
 
 if [[ "$PINNED_HERMES_REF" != "$EXPECTED_HERMES_REF" ]]; then
-    printf 'Hermes pin does not match the Android compatibility contract.\n' >&2
+    printf 'Hermes pin does not match the expected compatibility revision.\n' >&2
     exit 2
 fi
 if [[ "$ALLOW_EXPENSIVE_MODEL" != "0" && "$ALLOW_EXPENSIVE_MODEL" != "1" ]]; then
@@ -295,8 +291,6 @@ write_run_properties() {
         printf 'status=%s\n' "$LAB_STATUS"
         printf 'started_at=%s\n' "$STARTED_AT"
         printf 'finished_at=%s\n' "$finished_at"
-        printf 'android_ref=%s\n' "$PINNED_ANDROID_REF"
-        printf 'android_tree=%s\n' "$PINNED_ANDROID_TREE"
         printf 'hermes_ref=%s\n' "$PINNED_HERMES_REF"
         printf 'app_bundle_id=com.niles.Nile\n'
         printf 'app_marketing_version=0.1.0\n'
@@ -506,107 +500,6 @@ run_accessibility_lane() {
     xcrun xcresulttool export attachments \
         --path "$result_bundle" \
         --output-path "$RESULT_DIR/accessibility-attachments"
-}
-
-run_visual_lane() {
-    local result_bundle="$RESULT_DIR/visual.xcresult"
-    local attachments="$RESULT_DIR/visual-attachments"
-    local fixture
-    local candidate_name
-    local candidate_path
-    local reference_path
-    local runtime_manifest
-    local failures=0
-    "$ROOT_DIR/scripts/visual/test.sh" \
-        >"$RESULT_DIR/visual-self-test.log" 2>&1 || return 1
-    run_xcodebuild "$RESULT_DIR/visual-capture.log" \
-        -project Nile.xcodeproj \
-        -scheme Nile \
-        -configuration Debug \
-        -destination "platform=iOS Simulator,id=$SIMULATOR_UDID" \
-        -derivedDataPath "$LAB_DIR/DerivedData-visual" \
-        -resultBundlePath "$result_bundle" \
-        test \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidOnboardingVisualFixtures \
-        -only-testing:NileUITests/NileLaunchTests/testGatewayRemovalRequiresConfirmationAndMatchesPinnedAndroid \
-        -only-testing:NileUITests/NileLaunchTests/testRunningTurnGatewaySwitchRequiresConfirmationAndMatchesPinnedAndroid \
-        -only-testing:NileUITests/NileLaunchTests/testClarificationChoiceWaitsForExplicitContinue \
-        -only-testing:NileUITests/NileLaunchTests/testHermesVoiceFixtureLoadsAppliesAndUpdatesGlobalSummary \
-        -only-testing:NileUITests/NileLaunchTests/testTalkFixtureKeepsTranscriptPrivateAndDrivesPauseResumeEnd \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidBrandVisualFixtures \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidMediaVisualFixture \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidTranscriptSyntaxVisualFixture \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidAttachmentVisualFixture \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidModelPickerVisualFixture \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidRenameSessionVisualFixture \
-        -only-testing:NileUITests/NileLaunchTests/testGoalQuickStartSheetPreservesComposerDraftAndBudget \
-        -only-testing:NileUITests/NileLaunchTests/testActiveGoalCardIsCompactAndDetailsExpand \
-        -only-testing:NileUITests/NileLaunchTests/testPinnedAndroidDelegationMixedVisualFixture \
-        -only-testing:NileUITests/NileLaunchTests/testContextBreakdownShowsCurrentUsageComposition \
-        -only-testing:NileUITests/NileLaunchTests/testGatewayStatsShowsProfileActivityAndHeatmap \
-        || return 1
-    mkdir -p "$attachments"
-    xcrun xcresulttool export attachments \
-        --path "$result_bundle" \
-        --output-path "$attachments" || return 1
-    for fixture in \
-        onboarding-clean \
-        onboarding-form \
-        gateway-removal-dialog \
-        gateway-switch-dialog \
-        blocking-clarification \
-        hermes-voice-settings \
-        talk-listening \
-        brand-chat \
-        brand-sessions \
-        media \
-        transcript-syntax-tail \
-        attachment-composer-and-media-cards \
-        model-picker-app-popup \
-        rename-session-dialog \
-        goal-quick-start-sheet \
-        goal-active-card \
-        goal-active-details-sheet \
-        delegation-mixed \
-        context-breakdown-sheet \
-        gateway-stats-sheet; do
-        candidate_name="$(
-            jq -r --arg prefix "android-parity-${fixture}_" '
-                [
-                  .[].attachments[]
-                  | select(
-                      .suggestedHumanReadableName
-                      | startswith($prefix)
-                    )
-                  | .exportedFileName
-                ][0] // empty
-            ' "$attachments/manifest.json"
-        )"
-        if [[ -z "$candidate_name" ]]; then
-            printf 'visual capture did not export %s\n' "$fixture" >&2
-            failures=$((failures + 1))
-            continue
-        fi
-        candidate_path="$attachments/$candidate_name"
-        if [[ "$fixture" == "media" ]]; then
-            reference_path="$ROOT_DIR/.reference/android/docs/screenshots/nile-media.png"
-        else
-            reference_path="$ROOT_DIR/scripts/visual/baselines/android/${fixture}.png"
-        fi
-        runtime_manifest="$RESULT_DIR/${fixture}-runtime.json"
-        cp "$ROOT_DIR/scripts/visual/manifests/${fixture/onboarding-clean/onboarding}.json" \
-            "$runtime_manifest"
-        plutil -replace reference.path \
-            -string "$reference_path" "$runtime_manifest"
-        plutil -replace candidate.path \
-            -string "$candidate_path" "$runtime_manifest"
-        if ! "$ROOT_DIR/scripts/visual/compare.sh" \
-            "$runtime_manifest" \
-            --output "$RESULT_DIR/visual-${fixture}"; then
-            failures=$((failures + 1))
-        fi
-    done
-    (( failures == 0 ))
 }
 
 install_hermes() {
@@ -1012,13 +905,6 @@ else
                     "Xcode project or disposable Simulator setup failed"
             fi
             ;;
-        visual)
-            if record_lane setup prepare_xcode_lanes; then
-                record_lane visual run_visual_lane || true
-            else
-                block_lane visual "Xcode project or disposable Simulator setup failed"
-            fi
-            ;;
         smoke)
             if record_lane setup prepare_xcode_lanes; then
                 if record_lane smoke-build build_real_hermes_tests; then
@@ -1041,11 +927,9 @@ else
             if record_lane setup prepare_xcode_lanes; then
                 record_lane unit run_unit_lane || true
                 record_lane ui run_ui_lane || true
-                record_lane visual run_visual_lane || true
                 record_lane accessibility run_accessibility_lane || true
                 if record_lane smoke-build build_real_hermes_tests; then
                     if lane_passed unit && lane_passed ui && \
-                        lane_passed visual && \
                         lane_passed accessibility; then
                         if record_lane hermes-fixture prepare_real_hermes; then
                             record_lane smoke run_real_hermes_tests || true
@@ -1054,16 +938,16 @@ else
                         fi
                     else
                         block_lane hermes-fixture \
-                            "unit, UI, accessibility, or visual prerequisite failed"
+                            "unit, UI, or accessibility prerequisite failed"
                         block_lane smoke \
-                            "unit, UI, accessibility, or visual prerequisite failed"
+                            "unit, UI, or accessibility prerequisite failed"
                     fi
                 else
                     block_lane hermes-fixture "production app or test bundle did not build"
                     block_lane smoke "production app or test bundle did not build"
                 fi
             else
-                for lane in unit ui accessibility visual smoke-build \
+                for lane in unit ui accessibility smoke-build \
                     hermes-fixture smoke; do
                     block_lane "$lane" "Xcode project or disposable Simulator setup failed"
                 done

@@ -58,15 +58,15 @@ extension SessionListFixture {
                 ),
             ]
         case .empty,
-             .androidBrand,
-             .androidVisualBrand,
-             .androidVisualMedia,
-             .androidVisualAttachments,
-             .androidVisualSyntax,
-             .androidVisualModelPicker,
-             .androidVisualDelegation,
-             .androidVisualContext,
-             .androidVisualStats,
+             .showcase,
+             .visualRegressionBrand,
+             .visualRegressionMedia,
+             .visualRegressionAttachments,
+             .visualRegressionSyntax,
+             .visualRegressionModelPicker,
+             .visualRegressionDelegation,
+             .visualRegressionContext,
+             .visualRegressionStats,
              .transcriptScroll,
              .terminalBusy,
              .attachments,
@@ -83,7 +83,7 @@ extension SessionListFixture {
         }
         return HermesGoal(
             objective:
-                "Finish the iOS standing-goal workflow and verify it against the pinned Android app.",
+                "Finish and verify the iOS standing-goal workflow.",
             phase: .active,
             turnsUsed: 7,
             maxTurns: 20,
@@ -99,7 +99,7 @@ extension SessionListFixture {
         switch self {
         case .goalCreation:
             "keep my draft"
-        case .androidVisualBrand:
+        case .visualRegressionBrand:
             "Review the final interaction details"
         default:
             ""
@@ -107,7 +107,7 @@ extension SessionListFixture {
     }
 
     var usage: SessionUsage? {
-        guard self == .androidVisualBrand else {
+        guard self == .visualRegressionBrand else {
             return nil
         }
         return SessionUsage(
@@ -123,7 +123,7 @@ extension SessionListFixture {
 
     var modelPickerOptions: ModelOptions? {
         switch self {
-        case .androidVisualModelPicker:
+        case .visualRegressionModelPicker:
             return ModelOptions(
                 model: "reasoning-model",
                 provider: "provider",
@@ -236,7 +236,7 @@ extension SessionListFixture {
     }
 
     var pendingAttachments: [PendingAttachment] {
-        guard self == .attachments || self == .androidVisualAttachments else {
+        guard self == .attachments || self == .visualRegressionAttachments else {
             return []
         }
         let blue = Data(
@@ -257,7 +257,7 @@ extension SessionListFixture {
                 id: "fixture-photo-two",
                 filename: "reference.jpg",
                 data:
-                    self == .androidVisualAttachments
+                    self == .visualRegressionAttachments
                         ? blue
                         : orange
             ),

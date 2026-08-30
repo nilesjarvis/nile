@@ -2,7 +2,7 @@ import XCTest
 @testable import Nile
 
 extension GatewaySetupModelTests {
-    func testUsesIOSLoopbackOutsideAndroidVisualParityFixture() {
+    func testUsesIOSLoopbackOutsideVisualRegressionFixture() {
         let model = GatewaySetupModel(
             arguments: [],
             automaticallyRestore: false
@@ -11,9 +11,9 @@ extension GatewaySetupModelTests {
         XCTAssertEqual(model.dashboardURL, "http://127.0.0.1:9119")
     }
 
-    func testAndroidVisualParityFixtureUsesPinnedGatewayEndpoint() {
+    func testVisualRegressionFixtureUsesPinnedGatewayEndpoint() {
         let model = GatewaySetupModel(
-            arguments: ["--nile-fixture-android-visual-parity"],
+            arguments: ["--nile-fixture-visual-regression"],
             automaticallyRestore: false
         )
 

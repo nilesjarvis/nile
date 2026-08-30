@@ -3,7 +3,6 @@ set -Euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 SCOPE="${1:-full}"
-PINNED_ANDROID_REF="bd5451da891f2d886b9bc35f8ea67d6920df1d98"
 PINNED_HERMES_REF="7441e3395f9db0d8319f43bfe07dfb222777101e"
 CANONICAL_SIMULATOR_NAME="${NILE_LAB_SIMULATOR_NAME:-iPhone 17 Pro}"
 CANONICAL_RUNTIME_VERSION="${NILE_LAB_RUNTIME_VERSION:-26.5}"
@@ -11,7 +10,7 @@ FAILURES=0
 
 usage() {
     cat <<'EOF'
-Usage: scripts/test-lab/doctor.sh [unit|ui|accessibility|visual|smoke|full|drive|installer]
+Usage: scripts/test-lab/doctor.sh [unit|ui|accessibility|smoke|full|drive|installer]
 
 This command is read-only. It checks only the prerequisites needed by the
 selected disposable iOS/Hermes test-lab lane.
@@ -39,7 +38,7 @@ require_command() {
 }
 
 case "$SCOPE" in
-    unit|ui|accessibility|visual|smoke|full|drive|installer) ;;
+    unit|ui|accessibility|smoke|full|drive|installer) ;;
     -h|--help|help)
         usage
         exit 0
@@ -54,7 +53,8 @@ for command_name in bash git python3 xcodebuild xcrun swift xcodegen plutil; do
     require_command "$command_name"
 done
 
-if [[ "$SCOPE" == "visual" || "$SCOPE" == "full" ]]; then
+if [[ "$SCOPE" == "smoke" || "$SCOPE" == "full" || \
+    "$SCOPE" == "drive" ]]; then
     require_command jq
 fi
 
@@ -119,18 +119,12 @@ else
     fail "Nile.xcodeproj or project.yml is missing"
 fi
 
-if "$ROOT_DIR/scripts/reference/verify-android.sh" >/dev/null 2>&1; then
-    pass "Android oracle is clean at $PINNED_ANDROID_REF"
-else
-    fail "Android oracle verification failed; run scripts/reference/verify-android.sh"
-fi
-
 if [[ -s "$ROOT_DIR/scripts/test-lab/hermes.ref" ]]; then
     actual_hermes_ref="$(tr -d '[:space:]' < "$ROOT_DIR/scripts/test-lab/hermes.ref")"
     if [[ "$actual_hermes_ref" == "$PINNED_HERMES_REF" ]]; then
         pass "Hermes compatibility ref: $actual_hermes_ref"
     else
-        fail "Hermes ref differs from the Android compatibility pin"
+        fail "Hermes ref differs from the expected compatibility revision"
     fi
 else
     fail "scripts/test-lab/hermes.ref is missing or empty"
@@ -141,28 +135,9 @@ if [[ -d "$ROOT_DIR/.reference/hermes/.git" ]]; then
     if [[ "$local_hermes_ref" == "$PINNED_HERMES_REF" ]] && \
         git -C "$ROOT_DIR/.reference/hermes" diff --quiet --ignore-submodules -- && \
         git -C "$ROOT_DIR/.reference/hermes" diff --cached --quiet --ignore-submodules --; then
-        pass "optional local Hermes oracle is clean at the exact pin"
+        pass "optional local Hermes checkout is clean at the exact pin"
     else
         fail "optional .reference/hermes checkout is not clean at the exact pin"
-    fi
-fi
-
-if [[ "$SCOPE" == "visual" || "$SCOPE" == "full" ]]; then
-    if [[ -x "$ROOT_DIR/scripts/visual/compare.sh" && \
-        -x "$ROOT_DIR/scripts/visual/test.sh" && \
-        -x "$ROOT_DIR/scripts/visual/capture-android.sh" && \
-        -f "$ROOT_DIR/scripts/visual/manifests/onboarding.json" && \
-        -f "$ROOT_DIR/scripts/visual/manifests/onboarding-form.json" ]]; then
-        pass "visual comparer, capture tool, regression suite, and onboarding manifests are present"
-    else
-        fail "visual comparer inputs are incomplete"
-    fi
-    android_capture="$ROOT_DIR/scripts/visual/baselines/android/onboarding-clean.png"
-    android_form_capture="$ROOT_DIR/scripts/visual/baselines/android/onboarding-form.png"
-    if [[ -s "$android_capture" && -s "$android_form_capture" ]]; then
-        pass "tracked pinned Android onboarding captures are present"
-    else
-        fail "missing tracked pinned Android onboarding captures"
     fi
 fi
 

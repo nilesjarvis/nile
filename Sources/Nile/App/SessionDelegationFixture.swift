@@ -13,7 +13,7 @@ struct SessionDelegationEventFixture {
     static func make(settled: Bool) -> Self {
         let primary = SubagentEventData(
             goal:
-                "Compare every delegated-agent state with the Android reference",
+                "Verify every delegated-agent state in the product flow",
             taskCount: settled ? 1 : 2,
             taskIndex: 0,
             subagentID: "fixture-agent-one",
@@ -35,7 +35,7 @@ struct SessionDelegationEventFixture {
             reasoningTokens: 900,
             apiCalls: 8,
             filesRead: ["DelegationUi.kt", "DelegationView.swift"],
-            filesWritten: settled ? ["PARITY_REPORT.md"] : [],
+            filesWritten: settled ? ["QUALITY_REPORT.md"] : [],
             outputTail: [
                 SubagentOutput(
                     tool: "terminal",
@@ -96,7 +96,7 @@ struct SessionDelegationPresentationFixture {
     let pinnedTurnID: String?
     let transcript: [TranscriptEntry]
 
-    static let androidVisual: Self = {
+    static let visualRegression: Self = {
         let agents = [
             DelegatedAgentUI(
                 rowID: "analysis-row",

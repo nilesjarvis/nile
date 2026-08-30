@@ -48,9 +48,10 @@
 		118FA2827EA8E8482D7C32D1 /* ArchitectureBoundaryGatewayClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B7BB33B4B77E37917623D9 /* ArchitectureBoundaryGatewayClientTests.swift */; };
 		11D0C44D25504362BCEEC6C9 /* GatewaySetupModelTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F73629463B7A29842D6FF /* GatewaySetupModelTestSupport.swift */; };
 		11F1E23E09117E60666D3975 /* GatewaySetupModelProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8961FFDF1DE1C6964314F0C /* GatewaySetupModelProfiles.swift */; };
-		12E980EC73C2DC56BB78D898 /* NileAndroidTextMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B71B383541F27F562BAF7E /* NileAndroidTextMeasurement.swift */; };
+		12D80968C04807D76C47FFFB /* NileTextMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2FEC12166D1987A12FCFFF /* NileTextMeasurement.swift */; };
 		12F414278AE7B634C6F2E04E /* ModelControlPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AC7C77367A7CE505520C6 /* ModelControlPolicyTests.swift */; };
 		1312C89E6B569B166A371448 /* TranscriptHostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D1EB9E3A2D4F6A27BE61E /* TranscriptHostingCell.swift */; };
+		14F0A0C0ACEE72AB934F8725 /* NileTextRendererVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72621BF33FFDDFF7A5F5BA99 /* NileTextRendererVerification.swift */; };
 		1516E2093127BAB9183A7D64 /* SessionTurnRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE034719DA7F675E5AF9138 /* SessionTurnRuntime.swift */; };
 		15DA6CEA894F0EB8E19150FB /* SessionAttachmentPersistenceTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA17C85CF66978F6C1C46C /* SessionAttachmentPersistenceTransactions.swift */; };
 		16103DEF0FBE9C50E8D43B44 /* GoalSheetCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B857F9003EBEB6D6C4B703 /* GoalSheetCreation.swift */; };
@@ -115,6 +116,7 @@
 		3AFFCCD68FEB278855D80CD0 /* GatewayBlockingPromptService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F5FA1493BAA6CABC8DB1CB /* GatewayBlockingPromptService.swift */; };
 		3B6317CAD237F83BEAA2544F /* GatewayStatsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58FB834016DBD6094AB3C7A /* GatewayStatsSheet.swift */; };
 		3B850AD29173685C4F440076 /* NileAppGraphFixturePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838A3B17389661D3E88EE48 /* NileAppGraphFixturePlan.swift */; };
+		3C1BA8145397D44D3DD511FA /* NileTextRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B4B2C85E041A34916997 /* NileTextRendererTests.swift */; };
 		3C61C30EBC05F4F39D1B5354 /* GatewayGoalCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31614138F81A4ABE9D3F4949 /* GatewayGoalCodec.swift */; };
 		3CDCEAB6CD711FFD5D8A935C /* TranscriptViewportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D7B359A1609652EEE8D45 /* TranscriptViewportController.swift */; };
 		3D760465766B2A57A6F253BD /* DelegatedAgentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47469FFD031FEDC43AC01094 /* DelegatedAgentDetail.swift */; };
@@ -244,7 +246,6 @@
 		845DF98003ECB382EB877640 /* SessionEventRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC1D5E7D1FA4C3CF9BCE03E /* SessionEventRuntime.swift */; };
 		85AFB2521900A555B18113BA /* TranscriptScrollCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD605C4ED8C2F3B284376EDC /* TranscriptScrollCoordinator.swift */; };
 		866C7391796CA6663A3085F9 /* GatewayProfileStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607F02E5DB217876DCB6ABA /* GatewayProfileStoreTests.swift */; };
-		86C2D4BD9F5E18766FFE7CA6 /* NileAndroidTextRendererVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BFDCC08C6F53A35A1F61BF /* NileAndroidTextRendererVerification.swift */; };
 		874CCAEECDAE8F8E30462396 /* AVAudioEnginePcmSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4FC2ED5ABC2423CA422A9 /* AVAudioEnginePcmSource.swift */; };
 		877D6CEFDD8BEFC6868349CF /* SessionClaimRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228500B56960ABB642A3864 /* SessionClaimRuntimeTests.swift */; };
 		87DB3B6151D335BE1AB3685D /* SessionGatewayContextRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE6F190E3E5C0D68627B7B /* SessionGatewayContextRuntimeTests.swift */; };
@@ -377,6 +378,7 @@
 		CAEB4AF81CEC74C07CC963AB /* NileMarkdownContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0DD516B28EDEA26B7E18E4 /* NileMarkdownContracts.swift */; };
 		CBA287B2127EB8FBEF79E1C0 /* LocalBiometricAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173D13BEB01CD2F1A805DEA /* LocalBiometricAuthenticator.swift */; };
 		CC11AD29D90FB35170CD4E1F /* SessionAttachmentRecoveryComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93990D082F13A7A1C8CF7EF /* SessionAttachmentRecoveryComposer.swift */; };
+		CC7343811378B8C6A9B5C8B5 /* NileTextRenderer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A4AD713457403D2EDF404F /* NileTextRenderer.xcframework */; };
 		CCBA6592B6EE3C59AD497C2A /* SessionCommandRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B2CD43F1303E3F76CAD2F7 /* SessionCommandRuntime.swift */; };
 		CD50EB8F0377696A436D45D1 /* GatewayCookieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8AF5A1023C1D9C1D76D9D5 /* GatewayCookieStore.swift */; };
 		CDF6EA4163848D261295D36D /* SessionDraftPersistenceRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAEFD9001F400A7C60CCD88 /* SessionDraftPersistenceRuntimeTests.swift */; };
@@ -432,7 +434,6 @@
 		E4F28F675364EBA696CB4036 /* SessionListModelBlockingPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DDDFAC367536984D89EDA /* SessionListModelBlockingPromptTests.swift */; };
 		E5004CF811A4F2F3EFFB81EE /* GatewayModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B621242868AFD76DF88BA /* GatewayModelService.swift */; };
 		E550C4696FA07D5D7816AA41 /* SessionAttachmentDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2CB3192D6F9FD91934CE6 /* SessionAttachmentDelivery.swift */; };
-		E6A9E3517252FB2554D3D06B /* NileAndroidTextRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E4189ACE9ADC8558994513 /* NileAndroidTextRendererTests.swift */; };
 		E6D1A48A58510D43AF387EE6 /* PrivateAttachmentCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85666053D75A67176A1DF6 /* PrivateAttachmentCacheTests.swift */; };
 		E862A80727A2501EB1A6B426 /* GatewaySwitchConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296455AC7C0674822940D267 /* GatewaySwitchConfirmationDialog.swift */; };
 		E8D0F215DD8D1AF347C508AB /* SessionListModelVoiceUsageDelegationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF31AD147125FCAC4149CC /* SessionListModelVoiceUsageDelegationTests.swift */; };
@@ -474,7 +475,6 @@
 		FBFA3782CD5DA29F280DB9D7 /* GoalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E661E0021E15E4B8C17B94 /* GoalModels.swift */; };
 		FCDADE07E86D1833E0126E1E /* TranscriptViewportPositionPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E69FBA2D2B721771A32FE1 /* TranscriptViewportPositionPolicyTests.swift */; };
 		FD313D32C249C14A5243EA67 /* ContextBreakdownSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE10D486C5BF709E78043D /* ContextBreakdownSheet.swift */; };
-		FD491124EF5C79ADAD6FE2ED /* NileAndroidTextRenderer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E541AB333E46A57443EB75 /* NileAndroidTextRenderer.xcframework */; };
 		FDD5A77E77C70B345182A4E1 /* TranscriptModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C77D44A9109457B73F9CB /* TranscriptModels.swift */; };
 		FEAAF9831DB259217B444EB2 /* TalkModeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08287A2CD2C7DC6F326D5C /* TalkModeContracts.swift */; };
 		FF5CCADCCB99937BBC05FC1E /* NileMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1432EDA6E58B54A2A146F /* NileMarkdown.swift */; };
@@ -691,7 +691,6 @@
 		6139A6D572445A8B3925137C /* GatewayContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayContracts.swift; sourceTree = "<group>"; };
 		6168196431806690FBAE2B0A /* TranscriptParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptParsing.swift; sourceTree = "<group>"; };
 		61A39279607067DD35F81A0A /* BlockingPromptSubmissionLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingPromptSubmissionLifecycle.swift; sourceTree = "<group>"; };
-		61E541AB333E46A57443EB75 /* NileAndroidTextRenderer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NileAndroidTextRenderer.xcframework; path = Vendor/AndroidTextRenderer/NileAndroidTextRenderer.xcframework; sourceTree = "<group>"; };
 		621E5E289E8026A84CE111A9 /* GatewayCookiePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayCookiePolicy.swift; sourceTree = "<group>"; };
 		62760EED10691EF3E8D5B6CE /* GatewayLoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayLoginWebView.swift; sourceTree = "<group>"; };
 		63A9D9A2C4CFE57D6F88B59A /* TranscriptPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptPresentation.swift; sourceTree = "<group>"; };
@@ -726,6 +725,7 @@
 		71C35476118F366BE7AFB177 /* GatewaySetupModelConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelConnection.swift; sourceTree = "<group>"; };
 		7225F11B91134F2098C6D888 /* TranscriptImagePayloadCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptImagePayloadCacheTests.swift; sourceTree = "<group>"; };
 		723943830BEF5319CD36CCA9 /* GatewayDelegationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDelegationService.swift; sourceTree = "<group>"; };
+		72621BF33FFDDFF7A5F5BA99 /* NileTextRendererVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTextRendererVerification.swift; sourceTree = "<group>"; };
 		729165557CF820063213DE17 /* ArchitectureBoundaryCapabilityRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureBoundaryCapabilityRuntimeTests.swift; sourceTree = "<group>"; };
 		72C5FF7CAEB204303E331EE9 /* GatewayDashboardContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDashboardContracts.swift; sourceTree = "<group>"; };
 		7325E4093D7D30C17AE1D5F0 /* TranscriptViewportRowHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewportRowHost.swift; sourceTree = "<group>"; };
@@ -736,7 +736,6 @@
 		758B0623DCFCE99DBDD337DE /* GatewayConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayConnectionState.swift; sourceTree = "<group>"; };
 		75D5B0BF08FC08555328AD60 /* NileMarkdownBlockCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileMarkdownBlockCache.swift; sourceTree = "<group>"; };
 		784D4D85D48F3E11A392F733 /* GatewayStatsProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsProjection.swift; sourceTree = "<group>"; };
-		78E4189ACE9ADC8558994513 /* NileAndroidTextRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAndroidTextRendererTests.swift; sourceTree = "<group>"; };
 		797FDE7D6B2C4E081E51A73D /* SessionListModelTurn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelTurn.swift; sourceTree = "<group>"; };
 		7AAE10D486C5BF709E78043D /* ContextBreakdownSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextBreakdownSheet.swift; sourceTree = "<group>"; };
 		7AC995767955787D563763E4 /* SessionNavigationRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionNavigationRuntimeTests.swift; sourceTree = "<group>"; };
@@ -759,6 +758,7 @@
 		84341EB024327FE356C7E70A /* SessionListModelVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelVoice.swift; sourceTree = "<group>"; };
 		84647926CD27BE01AE137DD8 /* SlashCommandPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashCommandPalette.swift; sourceTree = "<group>"; };
 		849D27286C1FB6B03551D2C3 /* TalkPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkPresentationTests.swift; sourceTree = "<group>"; };
+		84A4AD713457403D2EDF404F /* NileTextRenderer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NileTextRenderer.xcframework; path = Vendor/TextRenderer/NileTextRenderer.xcframework; sourceTree = "<group>"; };
 		8500C33DDEC3168BB0201E15 /* ArchitectureBoundaryCommandRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureBoundaryCommandRuntimeTests.swift; sourceTree = "<group>"; };
 		86543BA249FCE0525E8EFCA7 /* ModelPickerCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPickerCatalogView.swift; sourceTree = "<group>"; };
 		86B7BB33B4B77E37917623D9 /* ArchitectureBoundaryGatewayClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureBoundaryGatewayClientTests.swift; sourceTree = "<group>"; };
@@ -846,7 +846,9 @@
 		B723615A033927828B04E3CE /* GatewayDashboardDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDashboardDownload.swift; sourceTree = "<group>"; };
 		B80AFC4FD8A48A153B2E41AA /* NileAccessibilityIDComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAccessibilityIDComposer.swift; sourceTree = "<group>"; };
 		B91BFF71686B0DC2720A002D /* GatewayConnectionFailurePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayConnectionFailurePolicy.swift; sourceTree = "<group>"; };
+		B9B0B4B2C85E041A34916997 /* NileTextRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTextRendererTests.swift; sourceTree = "<group>"; };
 		BA00AFA2A7924E9318DC3443 /* SessionListModelSessionOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelSessionOpening.swift; sourceTree = "<group>"; };
+		BA2FEC12166D1987A12FCFFF /* NileTextMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTextMeasurement.swift; sourceTree = "<group>"; };
 		BA795D7D6BACEBE1076B27A3 /* NileCodeHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileCodeHighlighter.swift; sourceTree = "<group>"; };
 		BA8BB9045DCA45C1C4C6B410 /* GatewayStatsRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsRuntime.swift; sourceTree = "<group>"; };
 		BBD153EAB794EA1C006878F6 /* SessionAttachmentRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAttachmentRuntime.swift; sourceTree = "<group>"; };
@@ -869,7 +871,6 @@
 		C629C1662A2AE260BFE9573C /* SessionMediaPreviewRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMediaPreviewRuntime.swift; sourceTree = "<group>"; };
 		C6CC4F2A562C69DCF04CD7BE /* GoalRuntimePolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRuntimePolicyTests.swift; sourceTree = "<group>"; };
 		C6F5FA1493BAA6CABC8DB1CB /* GatewayBlockingPromptService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayBlockingPromptService.swift; sourceTree = "<group>"; };
-		C7BFDCC08C6F53A35A1F61BF /* NileAndroidTextRendererVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAndroidTextRendererVerification.swift; sourceTree = "<group>"; };
 		C882F41391CEE7B75F54DB99 /* SessionListModelAttachmentDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelAttachmentDeliveryTests.swift; sourceTree = "<group>"; };
 		C8E661E0021E15E4B8C17B94 /* GoalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModels.swift; sourceTree = "<group>"; };
 		C92E34FDE91396BD9E0D08B5 /* SessionListModelRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelRefresh.swift; sourceTree = "<group>"; };
@@ -953,7 +954,6 @@
 		F1C9C6B4D9DA1914346324E4 /* GatewayAsyncPrimitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAsyncPrimitives.swift; sourceTree = "<group>"; };
 		F218942ABBC47376C46B3327 /* GatewayAuthenticationHTTPPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAuthenticationHTTPPolicy.swift; sourceTree = "<group>"; };
 		F2834932716C1CA767EAF447 /* TalkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModeView.swift; sourceTree = "<group>"; };
-		F3B71B383541F27F562BAF7E /* NileAndroidTextMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAndroidTextMeasurement.swift; sourceTree = "<group>"; };
 		F3F1F11EE26E9234D9DFF0D1 /* ModelOptionsRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOptionsRuntimeTests.swift; sourceTree = "<group>"; };
 		F45AF107C517BBC903A1F792 /* GatewayStatsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsContent.swift; sourceTree = "<group>"; };
 		F4A1A1B2D9F4582C842F1168 /* SessionSpeechRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSpeechRuntime.swift; sourceTree = "<group>"; };
@@ -984,7 +984,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD491124EF5C79ADAD6FE2ED /* NileAndroidTextRenderer.xcframework in Frameworks */,
+				CC7343811378B8C6A9B5C8B5 /* NileTextRenderer.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,13 +1432,13 @@
 				15ED444D86F9EC7459C0C1AF /* ModelPinRuntimeTests.swift */,
 				6E48487B0B855BA5D8CC9C6A /* ModelPinStoreTests.swift */,
 				2C4F94F457D391E879652027 /* NileAccessibilityIDTests.swift */,
-				78E4189ACE9ADC8558994513 /* NileAndroidTextRendererTests.swift */,
 				D3B1D60FFB45C3DB264DC6D1 /* NileAppGraphFixturePlanTests.swift */,
 				55CB8A5940DFA5894E031780 /* NileImageEncoderTests.swift */,
 				C4BC8AE5BF9D66FD28D4F6F2 /* NileMarkdownTests.swift */,
 				AD604B0D96602B452245972C /* NileSlashCatalogPolicyTests.swift */,
 				74D12692E341F3BA5A9835C8 /* NileSlashPolicyTests.swift */,
 				4D65C5132AEB02382BADC031 /* NileTactilePressFeedbackTests.swift */,
+				B9B0B4B2C85E041A34916997 /* NileTextRendererTests.swift */,
 				EB64319D725F7DB06CE73794 /* NileTypographyTests.swift */,
 				5A85666053D75A67176A1DF6 /* PrivateAttachmentCacheTests.swift */,
 				E69A0B2E2B9224AC9EA60BB2 /* RepositorySourceOfTruthTests.swift */,
@@ -1561,7 +1561,7 @@
 		80769D364D0AB139AC218D72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				61E541AB333E46A57443EB75 /* NileAndroidTextRenderer.xcframework */,
+				84A4AD713457403D2EDF404F /* NileTextRenderer.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1621,8 +1621,6 @@
 		D35B0A25D510B03FD4C8BE5D /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				F3B71B383541F27F562BAF7E /* NileAndroidTextMeasurement.swift */,
-				C7BFDCC08C6F53A35A1F61BF /* NileAndroidTextRendererVerification.swift */,
 				BA795D7D6BACEBE1076B27A3 /* NileCodeHighlighter.swift */,
 				C2C5761D9DCFE5E2DBA3BFFF /* NileComposeText.swift */,
 				5DAE241E600266330619E13B /* NileDesignModifiers.swift */,
@@ -1635,6 +1633,8 @@
 				5CEC3C1C2AD2E9D9F8E7279C /* NileMarkdownParser.swift */,
 				5A843B6A8FDC99700C6A24FA /* NileMarkdownTable.swift */,
 				2A7EC6A7A9FDB52B50D12AF5 /* NileMaterialIcon.swift */,
+				BA2FEC12166D1987A12FCFFF /* NileTextMeasurement.swift */,
+				72621BF33FFDDFF7A5F5BA99 /* NileTextRendererVerification.swift */,
 				F055C1111C60ACB22780EACF /* NileTypography.swift */,
 				B3B19B00A11CFA9598FE637C /* NileTypographyMetrics.swift */,
 			);
@@ -1852,13 +1852,13 @@
 				DE5A48E2F85DC4AB3833594C /* ModelPinRuntimeTests.swift in Sources */,
 				D65FB629DC897C941E41F0E0 /* ModelPinStoreTests.swift in Sources */,
 				A37B2E128496CF773FB830E1 /* NileAccessibilityIDTests.swift in Sources */,
-				E6A9E3517252FB2554D3D06B /* NileAndroidTextRendererTests.swift in Sources */,
 				1AA602AAE0D583F32286A9F0 /* NileAppGraphFixturePlanTests.swift in Sources */,
 				4B140B9841D2288B15372124 /* NileImageEncoderTests.swift in Sources */,
 				B492ECD189F07344322AE375 /* NileMarkdownTests.swift in Sources */,
 				2044F04FD283B90CDE266A9C /* NileSlashCatalogPolicyTests.swift in Sources */,
 				B5EDB05E84D4E5F326F6C350 /* NileSlashPolicyTests.swift in Sources */,
 				024E838A7BC1DB55797DDAB7 /* NileTactilePressFeedbackTests.swift in Sources */,
+				3C1BA8145397D44D3DD511FA /* NileTextRendererTests.swift in Sources */,
 				053A858F0E4347C3A85FE563 /* NileTypographyTests.swift in Sources */,
 				E6D1A48A58510D43AF387EE6 /* PrivateAttachmentCacheTests.swift in Sources */,
 				4E27B9FF93493D1B26DBCA53 /* RepositorySourceOfTruthTests.swift in Sources */,
@@ -2086,8 +2086,6 @@
 				B0B614194A32E4D34901B81C /* NileAccessibilityIDModel.swift in Sources */,
 				B258B2113EDA5BF0A1F7D9AA /* NileAccessibilityIDSession.swift in Sources */,
 				0EF581217376C1A404F0D0C5 /* NileAccessibilityIDTranscript.swift in Sources */,
-				12E980EC73C2DC56BB78D898 /* NileAndroidTextMeasurement.swift in Sources */,
-				86C2D4BD9F5E18766FFE7CA6 /* NileAndroidTextRendererVerification.swift in Sources */,
 				B43CED044550D05DFDAED4DD /* NileApp.swift in Sources */,
 				2B13D511993DB6803D00E560 /* NileAppDelegate.swift in Sources */,
 				6153A5761A9694F52DF2DA0B /* NileAppGraph.swift in Sources */,
@@ -2112,6 +2110,8 @@
 				8ABE202FBBEF93BED26575A8 /* NileSessionFixturePolicy.swift in Sources */,
 				E406F2ECB5B7595DD240B734 /* NileSlashCatalogPolicy.swift in Sources */,
 				FF8E384CE9F9BB8316BC80B2 /* NileSlashPolicy.swift in Sources */,
+				12D80968C04807D76C47FFFB /* NileTextMeasurement.swift in Sources */,
+				14F0A0C0ACEE72AB934F8725 /* NileTextRendererVerification.swift in Sources */,
 				5DAA8A7374D629EE91CDA7D0 /* NileTypography.swift in Sources */,
 				0EB2926126BCADBFD3EFB24D /* NileTypographyMetrics.swift in Sources */,
 				9E5ABA55E73218D75E606F4F /* NotificationEducation.swift in Sources */,
@@ -2328,7 +2328,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"Vendor/AndroidTextRenderer\"",
+					"\"Vendor/TextRenderer\"",
 				);
 				INFOPLIST_FILE = "Config/Info-LocalRelease.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2465,7 +2465,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"Vendor/AndroidTextRenderer\"",
+					"\"Vendor/TextRenderer\"",
 				);
 				INFOPLIST_FILE = "Config/Info-Release.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2638,7 +2638,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"Vendor/AndroidTextRenderer\"",
+					"\"Vendor/TextRenderer\"",
 				);
 				INFOPLIST_FILE = "Config/Info-Debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

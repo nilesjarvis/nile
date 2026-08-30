@@ -34,7 +34,7 @@ extension ArchitectureBoundaryTests {
         XCTAssertFalse(modelSource.contains("iVBORw0KGgoAAA"))
         XCTAssertTrue(modelSource.contains("#if DEBUG || NILE_LOCAL_RELEASE\n    init(\n        fixture: SessionListFixture"))
         XCTAssertTrue(catalogSource.contains("enum SessionListFixture"))
-        XCTAssertTrue(catalogSource.contains("case androidVisualBrand"))
+        XCTAssertTrue(catalogSource.contains("case visualRegressionBrand"))
         XCTAssertFalse(catalogSource.contains("var blockingEvents"))
         XCTAssertFalse(catalogSource.contains("var transcriptEntries"))
         XCTAssertFalse(catalogSource.contains("var modelPickerOptions"))
@@ -87,7 +87,7 @@ extension ArchitectureBoundaryTests {
             ("SessionListModelNavigationTests.swift",
              ["testTerminalSelectionNeverResumesOrClaimsWritableRuntime", "testConnectionLossFencesInFlightSourceLookup"], 450),
             ("SessionListModelEventTimelineTests.swift",
-             ["testOrderedEventsDriveAttentionBusyAndConnectionState", "testFixtureProjectsAndroidTranscriptAndStableToolGroup"], 450),
+             ["testOrderedEventsDriveAttentionBusyAndConnectionState", "testFixtureProjectsShowcaseTranscriptAndStableToolGroup"], 450),
             ("SessionListModelTurnDraftTests.swift",
              ["testPromptSendOptimisticallyClearsDraftAndStreamsToCompletion", "testNewDraftTypedDuringSendSurvivesOldDraftRetirement"], 500),
             ("SessionListModelBlockingPromptTests.swift",
@@ -431,7 +431,7 @@ extension ArchitectureBoundaryTests {
         for source in runtimeSources { XCTAssertFalse(source.contains("HermesStreamEvent") || source.contains("SessionDelegationEventFixture") || source.contains("func installFixture(")) }
         for (source, markers) in [
             (runtimeFixtureSource, ["#if DEBUG", "extension SessionDelegationRuntime", "func installFixture(", "func installPresentationFixture(", "handleEvent(", "markParentCompleted("]),
-            (delegationFixtureSource, ["#if DEBUG", "extension SessionListModel", "func installDelegationFixture(", "func installAndroidVisualDelegationFixture()", "runtimes.delegationRuntime.installFixture("]),
+            (delegationFixtureSource, ["#if DEBUG", "extension SessionListModel", "func installDelegationFixture(", "func installVisualRegressionDelegationFixture()", "runtimes.delegationRuntime.installFixture("]),
         ] {
             markers.forEach { XCTAssertTrue(source.contains($0)) }
         }
@@ -444,7 +444,7 @@ extension ArchitectureBoundaryTests {
         XCTAssertLessThan(fixtureTestSource.components(separatedBy: .newlines).count, 50)
         XCTAssertFalse(runtimeSources.contains { $0.contains("fixture-agent-one") })
         XCTAssertTrue(fixtureSource.contains("fixture-agent-one"))
-        XCTAssertTrue(fixtureSource.contains("androidVisual"))
+        XCTAssertTrue(fixtureSource.contains("visualRegression"))
         XCTAssertEqual(
             try sessionEventApplicationSource().components(
                 separatedBy:

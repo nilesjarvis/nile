@@ -5,7 +5,7 @@ import UIKit
 /// Visual role declarations remain in `NileTypography`.
 extension NileTypography {
     struct TextStyle {
-        enum AndroidLetterSpacing {
+        enum RendererLetterSpacing {
             case none
             case em(Float)
             case points(Float)
@@ -16,11 +16,11 @@ extension NileTypography {
         let fontResourceName: String
         let uiTextStyle: UIFont.TextStyle
         let fontSize: CGFloat
-        let androidWeight: Float
+        let rendererWeight: Float
         let targetLineHeight: CGFloat?
         let minimumSingleLineHeight: CGFloat?
         let tracking: CGFloat
-        let androidLetterSpacing: AndroidLetterSpacing
+        let rendererLetterSpacing: RendererLetterSpacing
         let rendererTrackingCorrection: CGFloat
 
         init(
@@ -29,11 +29,11 @@ extension NileTypography {
             fontResourceName: String = "Roboto-Regular",
             uiTextStyle: UIFont.TextStyle,
             fontSize: CGFloat,
-            androidWeight: Float,
+            rendererWeight: Float,
             targetLineHeight: CGFloat? = nil,
             minimumSingleLineHeight: CGFloat? = nil,
             tracking: CGFloat = 0,
-            androidLetterSpacing: AndroidLetterSpacing = .none,
+            rendererLetterSpacing: RendererLetterSpacing = .none,
             rendererTrackingCorrection: CGFloat = 0
         ) {
             self.font = font
@@ -41,11 +41,11 @@ extension NileTypography {
             self.fontResourceName = fontResourceName
             self.uiTextStyle = uiTextStyle
             self.fontSize = fontSize
-            self.androidWeight = androidWeight
+            self.rendererWeight = rendererWeight
             self.targetLineHeight = targetLineHeight
             self.minimumSingleLineHeight = minimumSingleLineHeight
             self.tracking = tracking
-            self.androidLetterSpacing = androidLetterSpacing
+            self.rendererLetterSpacing = rendererLetterSpacing
             self.rendererTrackingCorrection =
                 rendererTrackingCorrection
         }
@@ -78,7 +78,7 @@ extension NileTypography {
 
 private extension NileTypography.TextStyle {
     var uiFontWeight: UIFont.Weight {
-        switch androidWeight {
+        switch rendererWeight {
         case 700...:
             .bold
         case 600...:

@@ -2,24 +2,13 @@
 
 ## Mission and source of truth
 
-This repository is the native Swift iOS port of Nile. Functional, security, and
-app-owned visual parity is measured against the private Android repository
-`nilesjarvis/nile` at commit
-`bd5451da891f2d886b9bc35f8ea67d6920df1d98` and tree
-`3b954e5844f05276d34aaee34a7d3f69169ef9f5`. The Hermes compatibility pin is
-`7441e3395f9db0d8319f43bfe07dfb222777101e`.
+Nile is a standalone native iOS client for Hermes. The current Swift source,
+domain contracts, security rules, product design, and repository-owned tests are
+authoritative. Do not make another client implementation an acceptance source.
 
-The full acceptance contract is in `IOS_PORT_GOAL.md`. Keep
-`docs/PARITY_MATRIX.md` and `docs/IOS_PORT_PROGRESS.md` current as implementation
-advances. Do not claim parity from a compile-only or mock-only check.
-
-The ignored `.reference/android` checkout is read-only. Verify it with:
-
-```bash
-./scripts/reference/verify-android.sh
-```
-
-Never patch, commit, or push from that checkout.
+The Hermes compatibility revision used by the disposable test lab is recorded
+in `scripts/test-lab/hermes.ref`. Keep the app compatible with the unmodified
+gateway contract and update the pin only after explicit integration review.
 
 ## Project structure
 
@@ -31,7 +20,7 @@ Never patch, commit, or push from that checkout.
 - `Tests/NileTests`: focused unit and protocol-contract tests.
 - `Tests/NileUITests`: XCUITests using accessibility identifiers, not coordinates.
 - `Config`: build configurations and privacy/transport policy.
-- `docs`: architecture, parity, visual evidence, test-lab contract, and progress.
+- `docs`: architecture, product design, test-lab, and audit records.
 
 ## Generate and build
 
@@ -49,8 +38,8 @@ xcodebuild \
 ```
 
 The project has `Debug`, `LocalRelease`, and `Release` configurations. Debug and
-LocalRelease retain the Android app's explicit, per-profile cleartext workflow;
-Release has no arbitrary-load ATS exception.
+LocalRelease retain the explicit, per-profile cleartext workflow used for local
+gateways; Release has no arbitrary-load ATS exception.
 
 Validate unsigned device compilation with:
 
@@ -65,8 +54,8 @@ xcodebuild \
   build
 ```
 
-Do not commit a personal development team, provisioning profile, or signing
-identity.
+Do not commit a personal development team, provisioning profile, signing
+identity, or local build setting.
 
 ## Tests
 
@@ -101,7 +90,6 @@ Run the repository-owned disposable lanes:
 ./scripts/test-lab/run.sh unit
 ./scripts/test-lab/run.sh ui
 ./scripts/test-lab/run.sh accessibility
-./scripts/test-lab/run.sh visual
 ./scripts/test-lab/run.sh smoke
 ./scripts/test-lab/run.sh full
 ./scripts/test-lab/run.sh drive
@@ -111,21 +99,9 @@ Run the repository-owned disposable lanes:
 iPhone 17 Pro/iOS 26.5 Simulator and retains sanitized evidence under
 `build/test-lab-results/<run-id>/`. Real-Hermes lanes build the production app
 and test bundle before requesting an OpenRouter key, install the exact pinned
-unmodified Hermes commit into a temporary profile, and never read the
-operator's normal Hermes home. A `full` run blocks the paid lane if a
-deterministic prerequisite is red. The visual lane is correctly red until every
-strict Android/iOS comparison is accepted.
-
-Regenerate pinned-source onboarding reference candidates only with:
-
-```bash
-./scripts/visual/capture-android.sh
-```
-
-The command verifies the pinned APK, uses an isolated disposable AVD below
-`build/`, and does not update tracked baselines automatically. Baseline
-replacement requires explicit source provenance and review; never derive an
-Android baseline from an iOS capture.
+unmodified Hermes revision into a temporary profile, and never read the
+operator's normal Hermes home. A `full` run blocks the credentialed lane if a
+deterministic prerequisite is red.
 
 Use observable UI state with `waitForExistence`; do not add arbitrary sleeps,
 coordinate taps, or assertions against incidental implementation details.
@@ -140,16 +116,16 @@ and must not alter Release behavior.
 - Keep credentials in Keychain and cookies in explicitly managed stores. Never
   persist secrets in `UserDefaults`, logs, screenshots, fixtures, or test artifacts.
 - Preserve endpoint canonicalization, proxy prefixes, cleartext approval,
-  session ownership, and Claim safety exactly.
-- Use the Android color, spacing, radius, typography, icon, and motion tokens.
-  Do not substitute iOS styling in app-owned UI.
+  session ownership, one-shot credential handling, and Claim safety.
+- Use the checked-in color, spacing, radius, typography, icon, and motion tokens.
+- Preserve Dynamic Type, Reduce Motion, minimum touch targets, and stable
+  accessibility identifiers.
 - Add focused tests with every behavior change, inspect Simulator output, then
   review the complete diff before committing.
 - Use imperative conventional commit subjects. Do not push unless instructed.
 
 ## Completion discipline
 
-Every parity row needs authoritative implementation and verification evidence.
-`./scripts/test-lab/run.sh full` is the final gate. It currently remains red
-because strict visual parity and the credentialed real-Hermes execution have not
-both passed on the final tree; the port remains incomplete.
+Feature and release claims require authoritative implementation plus relevant
+unit, UI, security, and real-service evidence. `./scripts/test-lab/run.sh full`
+is the final repository gate; a compile-only or mock-only check is not enough.

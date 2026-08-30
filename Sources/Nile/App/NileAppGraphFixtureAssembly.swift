@@ -82,7 +82,7 @@ extension NileAppGraphFixturePlan {
         }
         return SessionListModel(
             fixture: sessionFixture
-                ?? (showsTerminalBusyFixture ? .terminalBusy : .androidBrand),
+                ?? (showsTerminalBusyFixture ? .terminalBusy : .showcase),
             voiceInput: showsTalkFixture
                 ? NileAppGraphFixtures.TalkFixtureVoiceInput()
                 : UnavailableVoiceInput(),

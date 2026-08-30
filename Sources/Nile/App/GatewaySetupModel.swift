@@ -37,7 +37,7 @@ final class GatewaySetupModel {
     var isLoadingHermesVoice = false
     var isUpdatingHermesVoice = false
     var hermesVoiceError: String?
-    var usesAndroidVisualParityCopy = false
+    var usesDeterministicFixtureCopy = false
     var operationError: String?
     let profileStore: any GatewayProfileStoring
     let composerDraftStore: (any ComposerDraftStoring)?

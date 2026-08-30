@@ -35,8 +35,8 @@ struct AddGatewayView: View {
             if formEndpointIsCleartext {
                 GatewayCleartextWarning(
                     isSupported: model.cleartextGatewaysSupported,
-                    usesAndroidVisualParityCopy:
-                        model.usesAndroidVisualParityCopy
+                    usesDeterministicFixtureCopy:
+                        model.usesDeterministicFixtureCopy
                 )
                 .padding(.top, 1)
                 if model.cleartextGatewaysSupported {

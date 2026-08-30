@@ -30,7 +30,7 @@ final class SessionDelegationRuntimeFixtureTests: XCTestCase {
     func testPresentationFixtureInstallsExactProjection() {
         let runtime = SessionDelegationRuntime(repository: nil)
 
-        let transcript = runtime.installPresentationFixture(.androidVisual)
+        let transcript = runtime.installPresentationFixture(.visualRegression)
 
         XCTAssertEqual(runtime.turns.count, 1)
         XCTAssertEqual(runtime.turns.first?.agents.count, 3)

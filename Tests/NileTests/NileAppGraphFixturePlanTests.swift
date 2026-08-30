@@ -59,7 +59,7 @@ final class NileAppGraphFixturePlanTests: XCTestCase {
             "--nile-fixture-streaming-partial",
             "--nile-fixture-offline",
             "--nile-fixture-restoring",
-            "--nile-fixture-android-visual-brand",
+            "--nile-fixture-visual-brand",
         ]
 
         guard case .empty? = NileSessionFixturePolicy.streamingTranscript(
@@ -109,24 +109,24 @@ final class NileAppGraphFixturePlanTests: XCTestCase {
     func testSessionFixturePolicyMapsDedicatedCatalogArgumentsAndFailsClosed() {
         let mappings: [(String, SessionListFixture)] = [
             ("--nile-fixture-session-empty", .empty),
-            ("--nile-fixture-session-switching", .androidBrand),
-            ("--nile-fixture-session-switching-empty", .androidVisualBrand),
-            ("--nile-fixture-android-visual-brand", .androidVisualBrand),
-            ("--nile-fixture-android-visual-media", .androidVisualMedia),
-            ("--nile-fixture-android-visual-attachments", .androidVisualAttachments),
-            ("--nile-fixture-android-visual-transcript-syntax", .androidVisualSyntax),
+            ("--nile-fixture-session-switching", .showcase),
+            ("--nile-fixture-session-switching-empty", .visualRegressionBrand),
+            ("--nile-fixture-visual-brand", .visualRegressionBrand),
+            ("--nile-fixture-visual-media", .visualRegressionMedia),
+            ("--nile-fixture-visual-attachments", .visualRegressionAttachments),
+            ("--nile-fixture-visual-transcript-syntax", .visualRegressionSyntax),
             ("--nile-fixture-transcript-scroll", .transcriptScroll),
-            ("--nile-fixture-android-delegation-mixed", .androidVisualDelegation),
-            ("--nile-fixture-usage-context", .androidVisualContext),
-            ("--nile-fixture-stats", .androidVisualStats),
-            ("--nile-fixture-android-visual-rename", .androidVisualContext),
+            ("--nile-fixture-visual-delegation-mixed", .visualRegressionDelegation),
+            ("--nile-fixture-usage-context", .visualRegressionContext),
+            ("--nile-fixture-stats", .visualRegressionStats),
+            ("--nile-fixture-visual-rename", .visualRegressionContext),
             ("--nile-fixture-blocking-clarification", .blockingClarification),
             ("--nile-fixture-blocking-approvals", .blockingApprovals),
             ("--nile-fixture-blocking-sudo", .blockingSudo),
             ("--nile-fixture-blocking-secret", .blockingSecret),
             ("--nile-fixture-blocking-invalid", .blockingInvalid),
             ("--nile-fixture-attachments", .attachments),
-            ("--nile-fixture-android-visual-model-picker", .androidVisualModelPicker),
+            ("--nile-fixture-visual-model-picker", .visualRegressionModelPicker),
             ("--nile-fixture-model-picker", .modelPicker),
             ("--nile-fixture-goal-create", .goalCreation),
             ("--nile-fixture-goal-active", .goalActive),
@@ -154,8 +154,8 @@ final class NileAppGraphFixturePlanTests: XCTestCase {
         let plan = NileAppGraphFixturePlan(
             arguments: [
                 "Nile",
-                "--nile-fixture-android-visual-gateway-switch",
-                "--nile-fixture-android-visual-gateway-removal",
+                "--nile-fixture-visual-gateway-switch",
+                "--nile-fixture-visual-gateway-removal",
             ]
         )
 
@@ -175,7 +175,7 @@ final class NileAppGraphFixturePlanTests: XCTestCase {
         let plan = NileAppGraphFixturePlan(
             arguments: [
                 "Nile",
-                "--nile-fixture-android-visual-gateway-removal",
+                "--nile-fixture-visual-gateway-removal",
             ]
         )
 

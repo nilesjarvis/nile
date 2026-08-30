@@ -3,7 +3,7 @@ import XCTest
 @testable import Nile
 
 final class NileTypographyTests: XCTestCase {
-    func testAndroidRobotoVariableFontRegistersAllUsedWeights() {
+    func testRobotoVariableFontRegistersAllUsedWeights() {
         for postScriptName in [
             "Roboto-Regular",
             "Roboto-Medium",
@@ -13,7 +13,7 @@ final class NileTypographyTests: XCTestCase {
             let font = UIFont(name: postScriptName, size: 14)
             XCTAssertNotNil(
                 font,
-                "Missing embedded Android font instance \(postScriptName)"
+                "Missing embedded font instance \(postScriptName)"
             )
             XCTAssertEqual(font?.familyName, "Roboto")
         }

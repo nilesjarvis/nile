@@ -1,0 +1,4 @@
+framework module NileTextRenderer {
+    umbrella header "NileTextRenderer.h"
+    export *
+}

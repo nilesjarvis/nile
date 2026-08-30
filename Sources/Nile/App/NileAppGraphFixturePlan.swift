@@ -23,8 +23,8 @@ struct NileAppGraphFixturePlan {
     let showsStatsFixture: Bool
     let showsDelegationActiveFixture: Bool
     let showsDelegationSettledFixture: Bool
-    let showsAndroidVisualDelegationFixture: Bool
-    let showsAndroidVisualRenameFixture: Bool
+    let showsVisualRegressionDelegationFixture: Bool
+    let showsVisualRegressionRenameFixture: Bool
     let streamingTranscriptFixture:
         NileAppGraphFixtures.StreamingTranscriptFixture?
     let showsStreamingStressFixture: Bool
@@ -48,10 +48,10 @@ struct NileAppGraphFixturePlan {
             NileDebugFixturePolicy.arguments(from: arguments)
         )
         let showsGatewayRemovalFixture = arguments.contains(
-            "--nile-fixture-android-visual-gateway-removal"
+            "--nile-fixture-visual-gateway-removal"
         )
         let showsGatewaySwitchFixture = arguments.contains(
-            "--nile-fixture-android-visual-gateway-switch"
+            "--nile-fixture-visual-gateway-switch"
         )
         gatewayVisualFixture =
             if showsGatewaySwitchFixture {
@@ -89,11 +89,11 @@ struct NileAppGraphFixturePlan {
         showsDelegationSettledFixture = arguments.contains(
             "--nile-fixture-delegation-settled"
         )
-        showsAndroidVisualDelegationFixture = arguments.contains(
-            "--nile-fixture-android-delegation-mixed"
+        showsVisualRegressionDelegationFixture = arguments.contains(
+            "--nile-fixture-visual-delegation-mixed"
         )
-        showsAndroidVisualRenameFixture = arguments.contains(
-            "--nile-fixture-android-visual-rename"
+        showsVisualRegressionRenameFixture = arguments.contains(
+            "--nile-fixture-visual-rename"
         )
         showsNotificationEducationFixture = arguments.contains(
             "--nile-fixture-notification-education"
@@ -115,8 +115,8 @@ struct NileAppGraphFixturePlan {
         showsEmptySessionSwitchFixture = arguments.contains(
             "--nile-fixture-session-switching-empty"
         )
-        let showsAndroidVisualSyntaxFixture = arguments.contains(
-            "--nile-fixture-android-visual-transcript-syntax"
+        let showsVisualRegressionSyntaxFixture = arguments.contains(
+            "--nile-fixture-visual-transcript-syntax"
         )
         streamingTranscriptFixture = NileSessionFixturePolicy.streamingTranscript(
             arguments: arguments
@@ -145,7 +145,7 @@ struct NileAppGraphFixturePlan {
             || showsActivePlanFixture
             || showsSessionSwitchFixture
             || showsEmptySessionSwitchFixture
-            || showsAndroidVisualSyntaxFixture
+            || showsVisualRegressionSyntaxFixture
             || streamingTranscriptFixture != nil
             || showsEmptySessionFixture
             || recoveryFixturePhase != nil

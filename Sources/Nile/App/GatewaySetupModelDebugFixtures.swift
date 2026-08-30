@@ -7,10 +7,10 @@ extension GatewaySetupModel {
     func installDebugFixtures(arguments: [String]) -> Bool {
         let fixtureArguments = NileDebugFixturePolicy.arguments(from: arguments)
         if fixtureArguments.contains(
-            "--nile-fixture-android-visual-parity"
+            "--nile-fixture-visual-regression"
         ) {
             dashboardURL = "http://10.0.2.2:9119"
-            usesAndroidVisualParityCopy = true
+            usesDeterministicFixtureCopy = true
         }
         if fixtureArguments.contains("--nile-fixture-invalid-gateway") {
             dashboardURL = "gateway.local:9119"

@@ -19,12 +19,12 @@ extension SessionListModel {
         syncDelegationUI()
     }
 
-    func installAndroidVisualDelegationFixture() {
+    func installVisualRegressionDelegationFixture() {
         guard !hasSessionRepository, liveSession != nil else {
             return
         }
         transcriptEntries = runtimes.delegationRuntime
-            .installPresentationFixture(.androidVisual)
+            .installPresentationFixture(.visualRegression)
         isSending = true
     }
 }

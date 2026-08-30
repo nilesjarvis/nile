@@ -27,11 +27,11 @@ enum NileAppGraphFixtureInstaller {
                 settled: plan.showsDelegationSettledFixture
             )
         }
-        if plan.showsAndroidVisualDelegationFixture {
-            sessionList.installAndroidVisualDelegationFixture()
+        if plan.showsVisualRegressionDelegationFixture {
+            sessionList.installVisualRegressionDelegationFixture()
         }
 #endif
-        if plan.showsAndroidVisualRenameFixture {
+        if plan.showsVisualRegressionRenameFixture {
             sessionList.setRenameDialogVisible(true)
         }
         if let transcript = plan.streamingTranscriptFixture {

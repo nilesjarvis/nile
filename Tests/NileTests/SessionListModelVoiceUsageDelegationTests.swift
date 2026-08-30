@@ -7,7 +7,7 @@ extension SessionListModelTests {
     func testVoiceInputPreservesExistingDraftAndPublishesCapturePhases() async {
         let voice = SessionVoiceInputStub()
         let model = SessionListModel(
-            fixture: .androidBrand,
+            fixture: .showcase,
             voiceInput: voice
         )
         model.onAppForegroundChanged(true)
@@ -355,7 +355,7 @@ extension SessionListModelTests {
     func testTalkBackgroundPauseRequiresExplicitForegroundResume() async {
         let voice = SessionVoiceInputStub()
         let model = SessionListModel(
-            fixture: .androidBrand,
+            fixture: .showcase,
             voiceInput: voice
         )
         model.onAppForegroundChanged(true)

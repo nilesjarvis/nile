@@ -167,7 +167,7 @@ final class TranscriptProjectionTests: XCTestCase {
         XCTAssertEqual(answered.content, "Decision answered")
     }
 
-    func testToolPresentationAndMCPRulesMatchAndroid() {
+    func testToolPresentationAndMCPRulesPreserveProductContract() {
         XCTAssertEqual(toolKind("terminal"), .terminal)
         XCTAssertEqual(toolKind("execute_code"), .terminal)
         XCTAssertEqual(toolKind("memory"), .memory)

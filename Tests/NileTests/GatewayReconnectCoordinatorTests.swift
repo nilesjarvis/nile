@@ -121,7 +121,7 @@ final class GatewayReconnectCoordinatorTests: XCTestCase {
         )
     }
 
-    func testDefaultJitterStaysWithinAndroidQuarterSpread() {
+    func testDefaultJitterStaysWithinExpectedQuarterSpread() {
         for delay in [2, 4, 1_000, 20_000] {
             let value = defaultGatewayReconnectJitter(Int64(delay))
             let spread = max(1, Int64(delay) / 4)

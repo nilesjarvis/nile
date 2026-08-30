@@ -22,7 +22,7 @@ final class DelegationCoordinatorTests: XCTestCase {
                 owner: owner,
                 data: event(
                     id: "agent-1",
-                    goal: "Inspect parity",
+                    goal: "Inspect consistency",
                     toolCount: 1,
                     text: "Starting"
                 ),
@@ -34,7 +34,7 @@ final class DelegationCoordinatorTests: XCTestCase {
                 owner: owner,
                 data: event(
                     id: "agent-1",
-                    goal: "Inspect parity",
+                    goal: "Inspect consistency",
                     toolCount: 3,
                     text: nil,
                     toolPreview: "Running tests"
@@ -61,7 +61,7 @@ final class DelegationCoordinatorTests: XCTestCase {
                 owner: owner,
                 data: event(
                     id: "agent-1",
-                    goal: "Inspect parity",
+                    goal: "Inspect consistency",
                     toolCount: 2,
                     terminal: .completed,
                     summary: "Matched"

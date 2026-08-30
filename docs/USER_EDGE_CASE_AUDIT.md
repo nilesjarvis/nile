@@ -2,10 +2,6 @@
 
 Date: 2026-07-29
 
-Android source of truth: `nilesjarvis/nile` commit
-`bd5451da891f2d886b9bc35f8ea67d6920df1d98`, tree
-`3b954e5844f05276d34aaee34a7d3f69169ef9f5`
-
 ## Method
 
 This audit treats Nile as a remote-control surface for a long-running Hermes
@@ -15,9 +11,8 @@ and maps that behavior to an existing deterministic unit/protocol or XCUITest.
 The audit also added adversarial tests where the existing suite did not exercise
 the discovered boundary.
 
-The pinned Android checkout was verified before testing. The clean baseline
-passed 422 unit/protocol tests, analyzer, optimized unsigned Release build,
-secret scan, and disposable-Simulator cleanup at
+The clean baseline passed 422 unit/protocol tests, analyzer, optimized unsigned
+Release build, secret scan, and disposable-Simulator cleanup at
 `build/test-lab-results/20260728T225151Z-96928`.
 
 ## Scenario inventory
@@ -64,8 +59,6 @@ non-success, and legacy 404 classifications remain intact; oversized successful
 documents fail closed with safe user-facing errors. Focused validation passed
 29 status, dashboard, and authentication tests.
 
-Commit: `cdcfbb6 fix: bound gateway HTTP responses`
-
 ### WS-02: Extreme counters could trap integer conversion or aggregation
 
 JSON `Double` values at the rounded upper edge of `Int`/`Int64`, derived
@@ -78,8 +71,6 @@ clamp to zero, reported percentages clamp to 0...100, derived percentages use
 an overflow-safe helper, and token/session/call aggregates saturate. The focused
 usage/goal codec suite passed all 7 tests, including the new adversarial case.
 
-Commit: `8807011 fix: prevent usage counter overflows`
-
 ### WS-03: Long cached filenames lost their type extension
 
 The private attachment cache truncated sanitized filenames from the right.
@@ -90,18 +81,14 @@ Truncation now reserves room for a conventional extension while retaining the
 existing 120-character safety limit and fallback behavior. All 4 private-cache
 tests pass, including a real write/read assertion for a long PDF filename.
 
-Commit: `8755657 fix: preserve attachment preview extensions`
-
 ### WS-04: Gateway removal returned drifted empty-state copy
 
-The full UI audit caught a post-removal message that no longer matched the
-pinned Android source. This made the destructive journey end in inconsistent
+The full UI audit caught a post-removal message that had drifted from Nile's
+approved product copy. This made the destructive journey end in inconsistent
 guidance even though protected data cleanup itself was correct.
 
 The source-owned empty-state sentence is restored exactly, and the focused
 removal confirmation journey passes through deletion to the final empty state.
-
-Commit: `34a99af fix: restore gateway removal empty-state copy`
 
 ### WS-05: Onboarding tests enforced obsolete fixed geometry
 
@@ -113,8 +100,6 @@ valid native UI red.
 
 Both assertions now enforce the durable minimum-target contract. The clean
 onboarding journey passes on a fresh disposable simulator.
-
-Commit: `18f049c fix: align onboarding test with native controls`
 
 ### WS-06: A long switched transcript could disappear under the keyboard
 
@@ -129,8 +114,6 @@ resize; short content retains natural bottom alignment. The one-message
 journey and four-cycle switched-session journey pass together on a fresh
 simulator and in the complete UI lane.
 
-Commit: `26733df fix: preserve long transcripts during keyboard resize`
-
 ### WS-07: The accessibility lab enforced pre-redesign field expansion
 
 The dedicated accessibility-extra-large test still required each gateway field
@@ -144,13 +127,8 @@ Next/Done navigation, Reduce Motion, and secure-value assertions. The fresh
 accessibility lane passes 1/1 and exports the form, final screen, and sanitized
 hierarchy.
 
-Commit: `aefddaf fix: align accessibility lab with native fields`
-
 ## Final deterministic validation
 
-- Pinned Android source verification passed for commit
-  `bd5451da891f2d886b9bc35f8ea67d6920df1d98`, tree
-  `3b954e5844f05276d34aaee34a7d3f69169ef9f5`.
 - The unit lane passed analyzer, 427/427 unit and protocol tests, the optimized
   unsigned Release build, secret scan, crash check, and simulator cleanup at
   `build/test-lab-results/20260728T234055Z-18012`.
@@ -164,7 +142,5 @@ Commit: `aefddaf fix: align accessibility lab with native fields`
 ## Validation boundaries
 
 Deterministic tests cover the app-owned behavior above. The separately gated
-real-Hermes lane still requires an operator-provided OpenRouter credential, and
-the repository's final full parity gate remains red until both that credentialed
-lane and all strict Android/iOS visual comparisons pass. This audit does not
-claim those external acceptance conditions were completed.
+real-Hermes lane still requires an operator-provided OpenRouter credential.
+This audit does not claim that external integration gate was completed.

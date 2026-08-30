@@ -378,8 +378,8 @@ extension SessionListModelTests {
         )
     }
 
-    func testFixtureProjectsAndroidTranscriptAndStableToolGroup() {
-        let model = SessionListModel(fixture: .androidBrand)
+    func testFixtureProjectsShowcaseTranscriptAndStableToolGroup() {
+        let model = SessionListModel(fixture: .showcase)
 
         XCTAssertEqual(model.transcriptEntries.count, 5)
         let rows = model.transcriptEntries.displayRows()
@@ -390,8 +390,8 @@ extension SessionListModelTests {
         XCTAssertEqual(tools.map(\.name), ["terminal", "skill_view"])
     }
 
-    func testAndroidVisualBrandFixtureRetainsProjectionPayload() {
-        let entries = SessionListModel(fixture: .androidVisualBrand)
+    func testVisualRegressionBrandFixtureRetainsProjectionPayload() {
+        let entries = SessionListModel(fixture: .visualRegressionBrand)
             .transcriptEntries
 
         XCTAssertEqual(
@@ -404,8 +404,8 @@ extension SessionListModelTests {
         XCTAssertEqual(tool.summary, "Build passed in 18s")
     }
 
-    func testAndroidVisualMediaFixtureRetainsEmbeddedPreview() {
-        let entries = SessionListModel(fixture: .androidVisualMedia)
+    func testVisualRegressionMediaFixtureRetainsEmbeddedPreview() {
+        let entries = SessionListModel(fixture: .visualRegressionMedia)
             .transcriptEntries
 
         XCTAssertEqual(entries.map(\.id), ["media-user", "media-assistant"])

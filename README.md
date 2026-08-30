@@ -6,10 +6,10 @@ transcripts, approvals, attachments, voice interaction, goals, and delegated
 work to iPhone in a SwiftUI/UIKit application.
 
 > [!IMPORTANT]
-> Nile is under active development. The native port has substantial tested
-> functionality, but final Android parity, strict visual acceptance, and the
-> credentialed real-Hermes release gate are not complete. Treat the current
-> build as pre-release software.
+> Nile is under active development. Its deterministic test suites cover the
+> core product extensively, but the credentialed real-Hermes release gate and
+> App Store privacy work are not complete. Treat the current build as
+> pre-release software.
 
 ## App preview
 
@@ -48,7 +48,7 @@ before the production app can connect.
 
 Repository-owned test lanes currently target an iPhone 17 Pro Simulator running
 iOS 26.5. Other supported iOS 17+ devices can build and run the app, but they do
-not reproduce the pinned visual-test environment.
+not reproduce the canonical test environment.
 
 ## Quick start
 
@@ -118,8 +118,7 @@ Before App Store distribution, the project still needs a bundled
 `PrivacyInfo.xcprivacy`, a public privacy policy, and completion of the remaining
 cache and website-data cleanup work. See
 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the implemented security
-boundaries and [`docs/IOS_PORT_PROGRESS.md`](docs/IOS_PORT_PROGRESS.md) for open
-work.
+boundaries.
 
 ## Testing
 
@@ -145,14 +144,13 @@ The disposable test lab provides the repository's broader verification lanes:
 ./scripts/test-lab/run.sh unit
 ./scripts/test-lab/run.sh ui
 ./scripts/test-lab/run.sh accessibility
-./scripts/test-lab/run.sh visual
 ./scripts/test-lab/run.sh smoke
 ./scripts/test-lab/run.sh full
 ```
 
 Each runner creates and deletes a fresh Simulator and retains sanitized evidence
 under `build/test-lab-results/`. The `full` lane is the final acceptance gate and
-is not yet green on the current port. Some real-Hermes phases require a provider
+is not yet green on the current tree. Some real-Hermes phases require a provider
 credential through the test lab's secure, one-use handoff; never export or commit
 that credential.
 
@@ -167,30 +165,16 @@ Sources/Nile/Features     SwiftUI and UIKit feature surfaces
 Tests/NileTests           Unit, architecture, and protocol-contract tests
 Tests/NileUITests         Accessibility-ID-driven UI contracts
 Config                    Build configurations and transport policy
-docs                      Architecture, parity, evidence, and progress records
-scripts                   Project generation, visual, reference, and test tools
+docs                      Architecture, product design, and verification records
+scripts                   Project generation, vendor, asset, and test tools
 ```
-
-## Android parity
-
-The iOS port targets functional, security, and app-owned visual parity with a
-pinned Android revision. The reference checkout is not included in this
-repository and is always treated as read-only. A successful compile or fixture
-test alone is not evidence of parity.
-
-The detailed acceptance contract lives in
-[`IOS_PORT_GOAL.md`](IOS_PORT_GOAL.md), with row-by-row status in
-[`docs/PARITY_MATRIX.md`](docs/PARITY_MATRIX.md).
 
 ## Documentation
 
-- [`IOS_PORT_GOAL.md`](IOS_PORT_GOAL.md): completion and acceptance contract
-- [`docs/IOS_PORT_PROGRESS.md`](docs/IOS_PORT_PROGRESS.md): current implementation
-  and verification record
-- [`docs/PARITY_MATRIX.md`](docs/PARITY_MATRIX.md): Android-to-iOS parity status
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): architecture and security model
+- [`docs/PRODUCT_DESIGN.md`](docs/PRODUCT_DESIGN.md): visual system and interaction
+  principles
 - [`docs/TEST_LAB.md`](docs/TEST_LAB.md): disposable test-lab contract
-- [`docs/VISUAL_PARITY.md`](docs/VISUAL_PARITY.md): visual comparison workflow
 - [`docs/USER_EDGE_CASE_AUDIT.md`](docs/USER_EDGE_CASE_AUDIT.md): user-facing edge
   cases and hardening evidence
 
@@ -208,11 +192,12 @@ In particular:
   UI tests;
 - never commit credentials, cookies, real speech, personal screenshots, signing
   configuration, or generated test artifacts;
-- do not claim parity from compile-only or mock-only evidence.
+- do not claim a feature or release gate passed from compile-only or mock-only
+  evidence.
 
 ## Third-party software
 
-Bundled fonts and the Android text renderer include their applicable licenses
+Bundled fonts and the custom text renderer include their applicable licenses
 and notices. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ## License

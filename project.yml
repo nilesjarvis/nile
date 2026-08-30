@@ -33,7 +33,7 @@ targets:
       - path: Sources/Nile
       - path: Resources
     dependencies:
-      - framework: Vendor/AndroidTextRenderer/NileAndroidTextRenderer.xcframework
+      - framework: Vendor/TextRenderer/NileTextRenderer.xcframework
         embed: false
     configFiles:
       Debug: Config/Debug.xcconfig

@@ -8,7 +8,7 @@ xcuserdata/
 .build/
 .swiftpm/
 
-# Local Android and Hermes reference checkouts
+# Local service reference checkouts
 .reference/
 
 # Local credentials and environment overrides

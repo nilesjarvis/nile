@@ -2,9 +2,8 @@
 
 ## Roboto
 
-Nile includes `Resources/Fonts/Roboto-Regular.ttf`, the Android variant of
-Roboto Classic 3.005 used as Android's default Latin, Greek, and Cyrillic
-font. The file is pinned from AOSP commit
+Nile includes `Resources/Fonts/Roboto-Regular.ttf`, Roboto Classic 3.005 for
+Latin, Greek, and Cyrillic text. The file is pinned from upstream commit
 `5d982bb4526f3e8a438a776619c060e1daf2f18f`.
 
 - Source:
@@ -16,11 +15,9 @@ font. The file is pinned from AOSP commit
 
 ## Droid Sans Mono
 
-Nile includes `Resources/Fonts/DroidSansMono.ttf` to reproduce Android's
-`FontFamily.Monospace` glyphs in source-paired visual states. The checked-in
-file was exported from the isolated Android 15 oracle emulator
-`google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys`
-and matches AOSP blob `b7bf5b4aa8ad5a8c8036653734d83006c6a376ee`.
+Nile includes `Resources/Fonts/DroidSansMono.ttf` for monospaced source and
+terminal content. The checked-in file matches upstream blob
+`b7bf5b4aa8ad5a8c8036653734d83006c6a376ee`.
 
 - Source:
   <https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-security-15.0.0_r12/data/fonts/DroidSansMono.ttf>

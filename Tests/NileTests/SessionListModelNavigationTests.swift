@@ -286,7 +286,7 @@ extension SessionListModelTests {
     }
 
     func testFilteringMatchesRenderedSourceAndPriorityIsStable() {
-        let model = SessionListModel(fixture: .androidBrand)
+        let model = SessionListModel(fixture: .showcase)
 
         XCTAssertEqual(
             model.displayedSessions.map(\.id),

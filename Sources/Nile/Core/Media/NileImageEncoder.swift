@@ -50,7 +50,7 @@ enum NileImageEncoder {
     static let maximumEdge = 1_568
     static let jpegQuality = 0.85
 
-    /// Matches Android's upload preparation: orient, downscale, and encode JPEG.
+    /// Prepares uploads consistently: orient, downscale, and encode JPEG.
     static func encode(_ sourceData: Data) -> PendingAttachment? {
         guard let source = CGImageSourceCreateWithData(
             sourceData as CFData,

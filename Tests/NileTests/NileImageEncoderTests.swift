@@ -24,7 +24,7 @@ final class NileImageEncoderTests: XCTestCase {
         XCTAssertEqual(cache.decodeCount, 1)
     }
 
-    func testLargeImageBecomesBoundedJPEGWithAndroidFilenameContract() throws {
+    func testLargeImageBecomesBoundedJPEGWithStableFilenameContract() throws {
         let source = try imageData(
             width: 3_200,
             height: 1_600,

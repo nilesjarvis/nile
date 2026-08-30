@@ -78,7 +78,7 @@ struct SessionComposerView: View {
         let visibleText = model.composer.isEmpty
             ? model.composerPlaceholder
             : model.composer
-        let lineCount = NileAndroidTextMeasurement.lineCount(
+        let lineCount = NileTextMeasurement.lineCount(
             text: visibleText,
             style: style,
             font: font,

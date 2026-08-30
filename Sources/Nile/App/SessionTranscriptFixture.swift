@@ -9,7 +9,7 @@ extension SessionListFixture {
         if self == .terminalBusy {
             return [:]
         }
-        if self == .androidVisualMedia {
+        if self == .visualRegressionMedia {
             return [:]
         }
         if self == .blockingClarification {
@@ -30,12 +30,12 @@ extension SessionListFixture {
                 ),
             ]
         }
-        if self == .androidVisualModelPicker
-            || self == .androidVisualAttachments
-            || self == .androidVisualSyntax
-            || self == .androidVisualDelegation
-            || self == .androidVisualContext
-            || self == .androidVisualStats
+        if self == .visualRegressionModelPicker
+            || self == .visualRegressionAttachments
+            || self == .visualRegressionSyntax
+            || self == .visualRegressionDelegation
+            || self == .visualRegressionContext
+            || self == .visualRegressionStats
             || self == .goalCreation
             || self == .goalActive
         {
@@ -45,20 +45,20 @@ extension SessionListFixture {
                     storedID: "session",
                     info: SessionInfo(
                         model:
-                            self == .androidVisualModelPicker
+                            self == .visualRegressionModelPicker
                                 ? "reasoning-model"
                                 : nil,
                         provider:
-                            self == .androidVisualModelPicker
+                            self == .visualRegressionModelPicker
                                 ? "provider"
                                 : nil,
                         reasoningEffort: nil,
                         reasoningEffortSessionScopeSupported: false
                     ),
                     messages:
-                        self == .androidVisualSyntax
-                            ? androidVisualSyntaxMessages()
-                            : self == .androidVisualAttachments
+                        self == .visualRegressionSyntax
+                            ? visualRegressionSyntaxMessages()
+                            : self == .visualRegressionAttachments
                                 ? attachmentMessages()
                                 : [],
                     running: false,
@@ -82,7 +82,7 @@ extension SessionListFixture {
             ]
         }
         let blocking = !blockingEvents.isEmpty
-        let messages: [HermesMessage] = if self == .androidVisualBrand {
+        let messages: [HermesMessage] = if self == .visualRegressionBrand {
             []
         } else if self == .attachments {
             attachmentMessages()
@@ -90,7 +90,7 @@ extension SessionListFixture {
             [
                 HermesMessage(
                     role: "user",
-                    text: "Polish the chat surface and verify it against the Android app."
+                    text: "Polish the chat surface and verify the complete interaction."
                 ),
                 HermesMessage(
                     role: "assistant",
@@ -112,7 +112,7 @@ extension SessionListFixture {
                 ),
                 HermesMessage(
                     role: "assistant",
-                    text: "The transcript now preserves **chronological assistant segments**, compact tool activity, and the same neutral graphite hierarchy as Android."
+                    text: "The transcript now preserves **chronological assistant segments**, compact tool activity, and Nile's neutral graphite hierarchy."
                 ),
             ]
         }
@@ -214,7 +214,7 @@ extension SessionListFixture {
         )
     }
 
-    private func androidVisualSyntaxMessages() -> [HermesMessage] {
+    private func visualRegressionSyntaxMessages() -> [HermesMessage] {
         var messages = (1...38).map { index in
             HermesMessage(
                 role: "assistant",

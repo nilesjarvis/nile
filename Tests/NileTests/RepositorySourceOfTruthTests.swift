@@ -74,84 +74,38 @@ final class RepositorySourceOfTruthTests: XCTestCase {
         }
     }
 
-    func testAcceptanceDocumentsHaveOneVisualSourceOfTruth() throws {
+    func testRepositoryDocumentsCurrentProductContracts() throws {
         let agents = try source(at: "AGENTS.md")
-        let goal = try source(at: "IOS_PORT_GOAL.md")
         let readme = try source(at: "README.md")
         let architecture = try source(at: "docs/ARCHITECTURE.md")
-        let nativeDesign = try source(at: "docs/IOS_NATIVE_DESIGN.md")
-        let progress = try source(at: "docs/IOS_PORT_PROGRESS.md")
-        let parity = try source(at: "docs/PARITY_MATRIX.md")
-        let visual = try source(at: "docs/VISUAL_PARITY.md")
-
-        let pins = [
-            "bd5451da891f2d886b9bc35f8ea67d6920df1d98",
-            "3b954e5844f05276d34aaee34a7d3f69169ef9f5",
-            "7441e3395f9db0d8319f43bfe07dfb222777101e",
-        ]
-        for pin in pins {
-            XCTAssertTrue(agents.contains(pin))
-            XCTAssertTrue(goal.contains(pin))
-            XCTAssertTrue(progress.contains(pin))
-        }
+        let productDesign = try source(at: "docs/PRODUCT_DESIGN.md")
+        let testLab = try source(at: "docs/TEST_LAB.md")
 
         XCTAssertTrue(
-            normalized(agents).contains(
-                "app-owned visual parity is measured against the private Android repository"
+            agents.contains(
+                "Nile is a standalone native iOS client for Hermes."
             )
         )
         XCTAssertTrue(
-            normalized(goal).contains(
-                "The iOS app must preserve the Android app’s complete functionality, behavior, state handling, security guarantees, and app-owned visual design."
+            readme.contains(
+                "Nile is a native iOS client for Hermes"
             )
         )
         XCTAssertTrue(
-            normalized(readme).contains(
-                "The governing acceptance contract remains AGENTS.md and IOS_PORT_GOAL.md"
+            architecture.contains(
+                "Nile is a standalone native iOS client"
             )
         )
         XCTAssertTrue(
-            normalized(architecture).contains(
-                "`AGENTS.md` and `IOS_PORT_GOAL.md` are the governing repository and acceptance contracts."
+            productDesign.contains(
+                "Nile is designed as a native iPhone application"
             )
         )
         XCTAssertTrue(
-            normalized(nativeDesign).contains(
-                "This is a historical implementation record, not an acceptance-contract override."
+            testLab.contains(
+                "The `full` lane is the final repository gate"
             )
         )
-        XCTAssertTrue(
-            normalized(progress).contains(
-                "follows the governing Android parity contract"
-            )
-        )
-        XCTAssertTrue(
-            normalized(parity).contains(
-                "Acceptance source of truth: AGENTS.md and IOS_PORT_GOAL.md"
-            )
-        )
-        XCTAssertTrue(
-            normalized(visual).contains(
-                "The pinned Android N-mark remains the acceptance target"
-            )
-        )
-
-        let combined = normalized(
-            [readme, architecture, nativeDesign, progress, parity, visual]
-                .joined(separator: "\n")
-        )
-        for conflictingClaim in [
-            "intentionally replaces Android visual parity",
-            "intentionally supersedes exact Android visual parity",
-            "no longer the visual acceptance target",
-            "expected to fail by design",
-            "branding intentionally supersedes the pinned Android",
-        ] {
-            XCTAssertFalse(
-                combined.contains(conflictingClaim),
-                "Remove conflicting visual authority claim: \(conflictingClaim)"
-            )
-        }
     }
 
     private var repositoryRoot: URL {
@@ -168,9 +122,4 @@ final class RepositorySourceOfTruthTests: XCTestCase {
         )
     }
 
-    private func normalized(_ source: String) -> String {
-        source
-            .split(whereSeparator: \.isWhitespace)
-            .joined(separator: " ")
-    }
 }

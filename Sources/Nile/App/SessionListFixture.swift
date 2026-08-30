@@ -3,15 +3,15 @@ import Foundation
 
 enum SessionListFixture: Equatable {
     case empty
-    case androidBrand
-    case androidVisualBrand
-    case androidVisualMedia
-    case androidVisualAttachments
-    case androidVisualSyntax
-    case androidVisualModelPicker
-    case androidVisualDelegation
-    case androidVisualContext
-    case androidVisualStats
+    case showcase
+    case visualRegressionBrand
+    case visualRegressionMedia
+    case visualRegressionAttachments
+    case visualRegressionSyntax
+    case visualRegressionModelPicker
+    case visualRegressionDelegation
+    case visualRegressionContext
+    case visualRegressionStats
     case transcriptScroll
     case terminalBusy
     case attachments
@@ -29,7 +29,7 @@ enum SessionListFixture: Equatable {
         if self == .empty {
             return []
         }
-        if self == .androidVisualMedia {
+        if self == .visualRegressionMedia {
             return [
                 HermesSession(
                     id: "20260716_222504_892479",
@@ -55,12 +55,12 @@ enum SessionListFixture: Equatable {
                 ),
             ]
         }
-        if self == .androidVisualModelPicker
-            || self == .androidVisualAttachments
-            || self == .androidVisualSyntax
-            || self == .androidVisualDelegation
-            || self == .androidVisualContext
-            || self == .androidVisualStats
+        if self == .visualRegressionModelPicker
+            || self == .visualRegressionAttachments
+            || self == .visualRegressionSyntax
+            || self == .visualRegressionDelegation
+            || self == .visualRegressionContext
+            || self == .visualRegressionStats
             || self == .goalCreation
             || self == .goalActive
         {
@@ -142,27 +142,27 @@ enum SessionListFixture: Equatable {
         switch self {
         case .empty:
             [:]
-        case .androidVisualBrand:
+        case .visualRegressionBrand:
             ["gateway": "working"]
-        case .androidVisualMedia:
+        case .visualRegressionMedia:
             [:]
-        case .androidVisualAttachments:
+        case .visualRegressionAttachments:
             [:]
-        case .androidVisualSyntax:
+        case .visualRegressionSyntax:
             [:]
-        case .androidVisualModelPicker:
+        case .visualRegressionModelPicker:
             [:]
-        case .androidVisualDelegation:
+        case .visualRegressionDelegation:
             ["session": "working"]
-        case .androidVisualContext:
+        case .visualRegressionContext:
             [:]
-        case .androidVisualStats:
+        case .visualRegressionStats:
             [:]
         case .blockingClarification:
             [:]
         case .goalCreation, .goalActive:
             [:]
-        case .androidBrand,
+        case .showcase,
              .attachments,
              .modelPicker,
              .blockingApprovals,
@@ -185,17 +185,17 @@ enum SessionListFixture: Equatable {
         switch self {
         case .empty:
             nil
-        case .androidVisualModelPicker,
-             .androidVisualAttachments,
-             .androidVisualSyntax,
-             .androidVisualDelegation,
-             .androidVisualContext,
-             .androidVisualStats,
+        case .visualRegressionModelPicker,
+             .visualRegressionAttachments,
+             .visualRegressionSyntax,
+             .visualRegressionDelegation,
+             .visualRegressionContext,
+             .visualRegressionStats,
              .goalCreation,
              .goalActive:
             "session"
-        case .androidBrand,
-             .androidVisualBrand,
+        case .showcase,
+             .visualRegressionBrand,
              .attachments,
              .modelPicker,
              .blockingClarification,
@@ -204,7 +204,7 @@ enum SessionListFixture: Equatable {
              .blockingSecret,
              .blockingInvalid:
             "brand"
-        case .androidVisualMedia:
+        case .visualRegressionMedia:
             "20260716_222504_892479"
         case .transcriptScroll:
             "scroll-alpha"
@@ -217,22 +217,22 @@ enum SessionListFixture: Equatable {
         switch self {
         case .empty:
             []
-        case .androidVisualModelPicker,
-             .androidVisualAttachments,
-             .androidVisualSyntax,
-             .androidVisualDelegation,
-             .androidVisualContext,
-             .androidVisualStats,
+        case .visualRegressionModelPicker,
+             .visualRegressionAttachments,
+             .visualRegressionSyntax,
+             .visualRegressionDelegation,
+             .visualRegressionContext,
+             .visualRegressionStats,
              .goalCreation,
              .goalActive:
             []
-        case .androidBrand,
-             .androidVisualBrand,
+        case .showcase,
+             .visualRegressionBrand,
              .terminalBusy,
              .attachments,
              .modelPicker:
             ["release"]
-        case .androidVisualMedia:
+        case .visualRegressionMedia:
             []
         case .transcriptScroll:
             []
