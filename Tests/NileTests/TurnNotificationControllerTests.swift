@@ -369,6 +369,32 @@ final class BiometricAppLockModelTests: XCTestCase {
         XCTAssertTrue(authenticator.reasons[0].contains("Face ID"))
     }
 
+    func testEnablingRevealsBeforeSceneReactivates() async {
+        let store = MemoryBiometricAppLockStore(isEnabled: false)
+        let authenticator = SuspendingBiometricAuthenticator()
+        let model = BiometricAppLockModel(
+            store: store,
+            authenticator: authenticator
+        )
+
+        await model.appDidBecomeActive()
+        let enabling = Task {
+            await model.setEnabled(true)
+        }
+        while !authenticator.isWaiting {
+            await Task.yield()
+        }
+
+        model.appDidBecomeInactive()
+        authenticator.complete(with: true)
+        await enabling.value
+
+        XCTAssertTrue(store.isEnabled())
+        XCTAssertTrue(model.isEnabled)
+        XCTAssertFalse(model.isLocked)
+        XCTAssertFalse(model.showsPrivacyShield)
+    }
+
     func testFailedOrUnavailableBiometricsCannotEnableLock() async {
         let failureStore = MemoryBiometricAppLockStore(isEnabled: false)
         let failureAuthenticator = RecordingBiometricAuthenticator(
@@ -521,7 +547,7 @@ final class BiometricAppLockModelTests: XCTestCase {
         XCTAssertTrue(model.showsPrivacyShield)
     }
 
-    func testTransientInactivityDuringAuthenticationDoesNotReprompt() async {
+    func testSuccessfulAuthenticationRevealsBeforeSceneReactivates() async {
         let authenticator = SuspendingBiometricAuthenticator()
         let model = BiometricAppLockModel(
             store: MemoryBiometricAppLockStore(isEnabled: true),
@@ -540,13 +566,18 @@ final class BiometricAppLockModelTests: XCTestCase {
         await authentication.value
 
         XCTAssertFalse(model.isLocked)
-        XCTAssertTrue(model.showsPrivacyShield)
+        XCTAssertFalse(model.showsPrivacyShield)
 
         await model.appDidBecomeActive()
 
         XCTAssertFalse(model.isLocked)
         XCTAssertFalse(model.showsPrivacyShield)
         XCTAssertFalse(authenticator.isWaiting)
+        XCTAssertEqual(authenticator.requestCount, 1)
+
+        model.appDidBecomeInactive()
+
+        XCTAssertTrue(model.showsPrivacyShield)
     }
 }
 
@@ -669,6 +700,7 @@ private final class SuspendingBiometricAuthenticator:
     BiometricAuthenticating
 {
     private var continuation: CheckedContinuation<Bool, Never>?
+    private(set) var requestCount = 0
 
     var isWaiting: Bool {
         continuation != nil
@@ -679,7 +711,8 @@ private final class SuspendingBiometricAuthenticator:
     }
 
     func authenticate(reason: String) async -> Bool {
-        await withCheckedContinuation { continuation in
+        requestCount += 1
+        return await withCheckedContinuation { continuation in
             self.continuation = continuation
         }
     }

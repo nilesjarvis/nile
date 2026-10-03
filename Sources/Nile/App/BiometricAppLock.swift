@@ -13,7 +13,6 @@ final class BiometricAppLockModel {
 
     private let store: any BiometricAppLockStoring
     private let authenticator: any BiometricAuthenticating
-    @ObservationIgnored private var sceneIsActive = false
     @ObservationIgnored private var backgroundGeneration = 0
 
     init(
@@ -79,7 +78,7 @@ final class BiometricAppLockModel {
                 showsPrivacyShield = true
             } else {
                 isLocked = false
-                showsPrivacyShield = !sceneIsActive
+                showsPrivacyShield = false
             }
         } catch {
             errorMessage = Self.authenticationMessage(
@@ -90,7 +89,6 @@ final class BiometricAppLockModel {
     }
 
     func appDidBecomeInactive() {
-        sceneIsActive = false
         guard isEnabled else {
             return
         }
@@ -98,7 +96,6 @@ final class BiometricAppLockModel {
     }
 
     func appDidEnterBackground() {
-        sceneIsActive = false
         backgroundGeneration &+= 1
         guard isEnabled else {
             return
@@ -109,7 +106,6 @@ final class BiometricAppLockModel {
     }
 
     func appDidBecomeActive() async {
-        sceneIsActive = true
         guard isEnabled else {
             showsPrivacyShield = false
             return
@@ -152,7 +148,12 @@ final class BiometricAppLockModel {
                 return
             }
             isLocked = false
-            showsPrivacyShield = !sceneIsActive
+            // Local Authentication temporarily makes the scene inactive while
+            // its system UI is presented. Waiting for scene activation here
+            // leaves the privacy shield visible after Face ID has succeeded.
+            // A real trip to the background changes the generation above and
+            // remains fail-closed, so reveal immediately after verified auth.
+            showsPrivacyShield = false
         } catch {
             errorMessage = Self.authenticationMessage(
                 for: error,
