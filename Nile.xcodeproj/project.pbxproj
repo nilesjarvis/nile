@@ -10,11 +10,15 @@
 		0021921E21A4F97B6649E636 /* GatewayFrameCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAC73F9B744B50FDE4A7144 /* GatewayFrameCodec.swift */; };
 		00848B192498A0A43FA9567F /* VoiceInputCaptureOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE483D1DEA889030D070C91 /* VoiceInputCaptureOperation.swift */; };
 		00CF7D905E7D9B3AA0A9BDB2 /* SessionDelegationFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EF3BBEFFB10FC2E56E627 /* SessionDelegationFixture.swift */; };
+		00EC8D0B75E5D3EF4D709B3F /* PrivacyCleanupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33BC034ACEFABBB6EA28B64 /* PrivacyCleanupModel.swift */; };
 		0169D8EEC4CD31422BACF693 /* BlockingPromptOverlays.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C5D285FD172EB18D940A6 /* BlockingPromptOverlays.swift */; };
+		01A02B843A739ECCB4AD4905 /* GatewaySetupModelSharingConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E2D9B8E70E2269690A94E /* GatewaySetupModelSharingConsent.swift */; };
 		01FD3B2D00F77B51BD6AED6E /* HermesUsageContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE48E4A613A3AD6BD6B6E2 /* HermesUsageContracts.swift */; };
 		02185EAEAF9069278E9B470E /* SessionControlFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCF214D5094E539323FE87 /* SessionControlFixture.swift */; };
 		0218A09905A95AA077F3F4FE /* GatewayEventProjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90822E3B947E7CCA13E3B8 /* GatewayEventProjector.swift */; };
 		024E838A7BC1DB55797DDAB7 /* NileTactilePressFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65C5132AEB02382BADC031 /* NileTactilePressFeedbackTests.swift */; };
+		030426ADC4B2E6B77581FCCA /* GatewaySetupModelConnectionErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1B547D0DF9CFF4C02AA83D /* GatewaySetupModelConnectionErrors.swift */; };
+		0383981A746385CF7901C838 /* Nile-Attributions.txt in Resources */ = {isa = PBXBuildFile; fileRef = B28118B706F667C30666C266 /* Nile-Attributions.txt */; };
 		039BD3E7593AE5F915641B9D /* SessionListModelBlockingPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55498E6E0D75DCAC6707B54E /* SessionListModelBlockingPrompt.swift */; };
 		03AD1E3C145B184F114A8648 /* GatewaySetupModelVoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6080F3D88B86B016F4C1A /* GatewaySetupModelVoiceTests.swift */; };
 		03D50752A93681322865358C /* BlockingPromptPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC860D75AFD98EEB02B211 /* BlockingPromptPolicy.swift */; };
@@ -22,10 +26,12 @@
 		0429C42B71C0DE992B50A157 /* HermesEventContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54180FEEFEA6546CF2B4DD95 /* HermesEventContracts.swift */; };
 		0496DC8D1E1A443A7A835CA5 /* GatewayAuthenticationRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB6AE2EDF53F978783C4AA4 /* GatewayAuthenticationRequestFactoryTests.swift */; };
 		049CB939610D242968F1F347 /* SessionTimelineRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D520F185B865CE18706660C /* SessionTimelineRuntime.swift */; };
+		04B5AEAFC4C156BEFB204324 /* GatewaySharingConsentTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830129D2FA91E30CED22C4B /* GatewaySharingConsentTestSupport.swift */; };
 		053A858F0E4347C3A85FE563 /* NileTypographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64319D725F7DB06CE73794 /* NileTypographyTests.swift */; };
 		057CC9F1153CE71C6CED5B09 /* TranscriptTodoRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D7920340E648AAC5B37F9 /* TranscriptTodoRows.swift */; };
 		059E8B1AAEE2AB95A4695ECD /* BackgroundTurnCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E973D626942FB072A46BF17 /* BackgroundTurnCoordinatorTests.swift */; };
 		05D980874B79428BCE03910C /* SessionSpeechRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0AE6C88C0090F4D8011186 /* SessionSpeechRuntimeTests.swift */; };
+		06B9C0EF1FD94DA121E02F9E /* PrivacyCleanupModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7175473FE6529E9A45AA5F79 /* PrivacyCleanupModelTests.swift */; };
 		07E8143C34E3F05F650BDF9D /* GatewayProfileContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110F0E7C200849CD296B4F7 /* GatewayProfileContracts.swift */; };
 		0939927BB7DAD8EB29150644 /* SessionListModelTurnSettlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8FB390EDAC56C53C432FF /* SessionListModelTurnSettlement.swift */; };
 		097897E28543538AA9265DB1 /* SessionListModelMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0707EC7DE07C154EB749BD /* SessionListModelMedia.swift */; };
@@ -59,10 +65,12 @@
 		1906D52FAA1B30985EA032C6 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7FA9596827E56F45F4ECA9 /* JSONValue.swift */; };
 		1951CC9179095C5F805C7120 /* GatewaySetupModelConnectionTestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A881BFF3240A608E986A0273 /* GatewaySetupModelConnectionTestDoubles.swift */; };
 		1956CE1EE3644BE328E1F47A /* GatewayFrameCodecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B013C56BD6AF3130E09E5 /* GatewayFrameCodecTests.swift */; };
+		19C0E647DDAFAE430B79A0DD /* NileTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF7E661790A7192ABFA5489 /* NileTextInput.swift */; };
 		1A44EED77D4D19A1F5FC4A7A /* GatewaySetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2ECC5900089093D4A1C78B /* GatewaySetupModel.swift */; };
 		1AA602AAE0D583F32286A9F0 /* NileAppGraphFixturePlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B1D60FFB45C3DB264DC6D1 /* NileAppGraphFixturePlanTests.swift */; };
 		1BF704CF20543EB1294A6898 /* BiometricAppLockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B2C49D6A82EDB4C660EE2 /* BiometricAppLockStore.swift */; };
 		1C84EBB8FD49452E02DE08A5 /* GatewayStatsSummaryCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C843699CDC0C7A9B360A8 /* GatewayStatsSummaryCards.swift */; };
+		1CBCF322C64EB30B7E6440A4 /* HarfBuzz-COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2E357BAF4D21D2D6F43ECE1 /* HarfBuzz-COPYING.txt */; };
 		1EC9C24E02A461C8271CB090 /* SessionModelControlMutationLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F0969D5F57FE56B225427 /* SessionModelControlMutationLifecycle.swift */; };
 		1F55D0ED8705BE449D6A2AAD /* GatewayModelCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B181212C7D102912B42FD8 /* GatewayModelCodec.swift */; };
 		20332C6A7D7FD49C52A499B6 /* SessionComposerRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391229B190B3D08F842B90D /* SessionComposerRuntime.swift */; };
@@ -80,6 +88,7 @@
 		27DFEE1D651123A7DFE9ECFC /* TranscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5877C8D44C65CC95AB92333D /* TranscriptView.swift */; };
 		2864DF2B10AE335FCFD19690 /* HermesSessionContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42963570E0876692538CCE57 /* HermesSessionContracts.swift */; };
 		289E7574720FC929AD480ACA /* SessionListModelCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8483E17DA05CF13B8B0051 /* SessionListModelCommands.swift */; };
+		29327ADCB412252ABCE769ED /* GatewaySharingConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193A837272BCFF3CAA7F599 /* GatewaySharingConsentView.swift */; };
 		293F1ACB064276CF174E8A8B /* SessionGoalContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB368E9A3A8BBDB22B999B64 /* SessionGoalContracts.swift */; };
 		2A5DA816F213A351F6185984 /* TranscriptMessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061CE736C53B951687418188 /* TranscriptMessageParser.swift */; };
 		2B13D511993DB6803D00E560 /* NileAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4BD6C853363BB91AEEC2E /* NileAppDelegate.swift */; };
@@ -98,6 +107,7 @@
 		2FECAFA83A6D4CFF9AAF3EDF /* GatewaySetupDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3941268C9597F19E542A323 /* GatewaySetupDependencies.swift */; };
 		30CE04E144AB7FA75BA494D2 /* GatewayGoalUsageCodecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAC5E99EC44526BF7D335B /* GatewayGoalUsageCodecTests.swift */; };
 		31A7CCCD29F8411619D5EFF1 /* GatewayDashboardClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A22F76BD3E8F96E931DB0 /* GatewayDashboardClient.swift */; };
+		3273B07D9BCC30E90AAF78EB /* GatewayWebsiteDataCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F63624D548838350E89C86 /* GatewayWebsiteDataCleaner.swift */; };
 		33A57E6225585A936B9439E1 /* SessionBlockingPromptResponseLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB47B7D4DDE6D06BF78D24 /* SessionBlockingPromptResponseLifecycle.swift */; };
 		34A1F3DCBDBB0D6A89F11C1C /* SessionRenameRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D482A635BC1EB8EE18D3BF /* SessionRenameRuntimeTests.swift */; };
 		3563E62DFF93CF2EA0EC0643 /* SessionListModelTurnDraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B32E911DDB1E90A634B53 /* SessionListModelTurnDraftTests.swift */; };
@@ -147,6 +157,7 @@
 		4B140B9841D2288B15372124 /* NileImageEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB8A5940DFA5894E031780 /* NileImageEncoderTests.swift */; };
 		4B5BEB705799B84BA3BCFA95 /* GatewaySubagentEventProjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA701439BB9179CC47B058D3 /* GatewaySubagentEventProjector.swift */; };
 		4B5ED3276B30DD1C066BCB69 /* TranscriptMessageRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193E124016B81FC770F835D2 /* TranscriptMessageRows.swift */; };
+		4B80749AD0A752329A483C76 /* GatewayRemovalCleanupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB33BF689B7DDEAC2DAB44 /* GatewayRemovalCleanupTests.swift */; };
 		4BA514F653DEF98E518EF057 /* SessionListModelCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF446D7A9F389DA6AAAC7A /* SessionListModelCreationTests.swift */; };
 		4C0B5B5FA756C0F0F4A8C8B3 /* GatewayURLOriginPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5DB5BFA62D9B2E107F58F /* GatewayURLOriginPolicy.swift */; };
 		4C87606E70BD094234B95066 /* GatewayStatsProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784D4D85D48F3E11A392F733 /* GatewayStatsProjection.swift */; };
@@ -164,6 +175,7 @@
 		53A282F570C878243A3B1065 /* SessionTalkRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFBEB33DB1DA4FE31FA43C /* SessionTalkRuntimeTests.swift */; };
 		53CD8C0192C23C2EFED4AE34 /* VoiceCoordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112B10DE369B63F6FA02B2 /* VoiceCoordinators.swift */; };
 		5461100E8D4805C874B2DDFF /* GatewayJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B18E801CF67B644786EB85 /* GatewayJSON.swift */; };
+		55CD0613AEEDCD11B6377990 /* GatewayProtectedDataCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297ED0549798764A96C9453 /* GatewayProtectedDataCleanup.swift */; };
 		55CF5F056669E6431BD8C431 /* SessionPinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E890A118D1452677BD42D09 /* SessionPinStore.swift */; };
 		564D186AA06BBA618BC676DF /* SessionListModelEventSettlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3526F2493885D0644D2199 /* SessionListModelEventSettlement.swift */; };
 		56B388323A3B7112E3DD492F /* BlockingPromptCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9CD80301CBE1560FB4A999 /* BlockingPromptCoordinatorTests.swift */; };
@@ -177,6 +189,7 @@
 		5C6EA5D81E9FF50F4AEB9640 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A5BAF9FC6A8B64ED54EB09 /* SettingsView.swift */; };
 		5C7BEC3AB8C85A47C5383293 /* TranscriptProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A8DE9F1099AD61C90769E /* TranscriptProjection.swift */; };
 		5D1103A6975C608C7CBEED50 /* SessionListModelRename.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69BEB8165C340600932A01 /* SessionListModelRename.swift */; };
+		5D7D8EED67A916C32371872F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1A29DE19580BB3F6E4652A77 /* PrivacyInfo.xcprivacy */; };
 		5D85A7A906908FEFC9723176 /* SpeechOutputContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFADDD47A219635B6DBBF0 /* SpeechOutputContracts.swift */; };
 		5DAA8A7374D629EE91CDA7D0 /* NileTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055C1111C60ACB22780EACF /* NileTypography.swift */; };
 		5DC48DE3BD7CE0FED68520F4 /* PcmSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7196A4A2025238A5560F28F /* PcmSpeech.swift */; };
@@ -218,6 +231,7 @@
 		76DF3E87141DEDEEBBE444D2 /* SessionListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E40737835D9913606D6381 /* SessionListModelTests.swift */; };
 		76F22F91F03C74C5F356D202 /* HermesModelContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216D464FE6FE21CDCFCD2623 /* HermesModelContracts.swift */; };
 		773C056818C28CB66962DD2A /* ModelPickerCatalogRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811AF8B5E601CF7D732D528 /* ModelPickerCatalogRows.swift */; };
+		77553D967F257D4E936E460D /* GatewaySetupModelFormConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3576BF8CB5BCB24F91422F /* GatewaySetupModelFormConnection.swift */; };
 		7772227135D44A5BF10BF292 /* GoalRuntimePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71860AC84971597DEB71E1BA /* GoalRuntimePolicy.swift */; };
 		779BAE219601CC7BE6EE0ACB /* HermesVoiceEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB6EBB4E80186492196348 /* HermesVoiceEditorView.swift */; };
 		78AB4702B4A53EA6285DACE6 /* SessionVoiceInputRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC2A4FB1AB13F00E04051D8 /* SessionVoiceInputRuntime.swift */; };
@@ -235,8 +249,10 @@
 		7EF9DF5DEB1347707F828B87 /* TurnNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CA404330BF31A2F133A1 /* TurnNotificationController.swift */; };
 		7F2028248C29F1DFBB657E38 /* ModelSwitchConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB90831FCF23513BB8D116 /* ModelSwitchConfirmationView.swift */; };
 		7F2885E7896DFC1981E3E15B /* HermesVoiceEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8900B9687A539BE0ECBEB /* HermesVoiceEntryView.swift */; };
+		7F7863FC750ECA5E06E36AD4 /* SessionMediaPrivacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E9E75A455337F6A8F21D2 /* SessionMediaPrivacyTests.swift */; };
 		7F7DF2995E2E12D5A3652FE8 /* DelegationAgentReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4BBDEDC5B1BC0E40EDCA7E /* DelegationAgentReducer.swift */; };
 		809FA8038D1E5B48E85DF82C /* SessionModelControlRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF59C443D4C4908E81F191 /* SessionModelControlRuntime.swift */; };
+		8132ACB24D4C2C9515C09C9A /* GatewaySharingConsentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C540B1A13337BF6472603 /* GatewaySharingConsentStore.swift */; };
 		8173F669F681D0C425B3161A /* SessionListModelAttachmentRecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F59800BECBB90EFFEFD147 /* SessionListModelAttachmentRecoveryTests.swift */; };
 		81757BE978F2FC768B368F65 /* HermesVoiceEditorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B215D4F0BDF863048B7377 /* HermesVoiceEditorSupport.swift */; };
 		8276DA29962CC157435C8924 /* TranscriptViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BAD39DCBD77129751161D2 /* TranscriptViewport.swift */; };
@@ -248,6 +264,7 @@
 		866C7391796CA6663A3085F9 /* GatewayProfileStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607F02E5DB217876DCB6ABA /* GatewayProfileStoreTests.swift */; };
 		874CCAEECDAE8F8E30462396 /* AVAudioEnginePcmSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4FC2ED5ABC2423CA422A9 /* AVAudioEnginePcmSource.swift */; };
 		877D6CEFDD8BEFC6868349CF /* SessionClaimRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228500B56960ABB642A3864 /* SessionClaimRuntimeTests.swift */; };
+		87C48EFBE46F51DBD5C3165D /* SoftwareNoticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB345E63156A31E3AC414587 /* SoftwareNoticesView.swift */; };
 		87DB3B6151D335BE1AB3685D /* SessionGatewayContextRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE6F190E3E5C0D68627B7B /* SessionGatewayContextRuntimeTests.swift */; };
 		87EC7EBAFC3E02A8E5ADCAD1 /* TuiGatewayRepositoryTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CD07BA02F3230A10EF4B7 /* TuiGatewayRepositoryTestSupport.swift */; };
 		88E6BAEDF2D7DC6A9C55B1E0 /* SessionListModelGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDC58957D6D900A13A1B51 /* SessionListModelGoal.swift */; };
@@ -269,6 +286,7 @@
 		904A461F84532086B85C4D45 /* TranscriptDiffToolRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE308A2B980E6EEF8C2F948 /* TranscriptDiffToolRow.swift */; };
 		90FEED047EF00DE97EE2AE6E /* SessionTalkContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16301060D653E037D54C0DA /* SessionTalkContracts.swift */; };
 		9144E0AB3111C705E29498D9 /* ModelPinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B6CC430454ABEACE83BA2 /* ModelPinStore.swift */; };
+		918EEEEE0ED5BD9AD182923A /* AppStoreBundleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727B1D741209D458CC244436 /* AppStoreBundleTests.swift */; };
 		91B07ACB032C7F79FB6FC4FD /* GatewayTurnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD563826DE68222B467DEC0F /* GatewayTurnService.swift */; };
 		91B1F29DF8972CFD2DF40A89 /* GatewaySpeechCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BDF956B23B04C38AC2D461 /* GatewaySpeechCodec.swift */; };
 		923E37CEEE0D40C97D3FF28E /* GatewayCommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2212874725C9C62AC48EBA3 /* GatewayCommandService.swift */; };
@@ -287,6 +305,7 @@
 		96FF32A588E528DAF65B3544 /* SessionVoiceInputRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75FA7900F4F47DA1B7B852 /* SessionVoiceInputRuntimeTests.swift */; };
 		9765D029EB3FB66F8A5F1B31 /* GatewayCookiePolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E89387FF30C246DF9F5AA32 /* GatewayCookiePolicyTests.swift */; };
 		9768381A5B16A36ED96AF111 /* BlockingPromptContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FF71FFF195590B04AC26A /* BlockingPromptContracts.swift */; };
+		9774018C300246CCD17636F2 /* SessionListModelPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE33A3EA6B2B697B7D78389B /* SessionListModelPrivacy.swift */; };
 		980B686E9776FAE975E8604F /* GoalRuntimePolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC4F2A562C69DCF04CD7BE /* GoalRuntimePolicyTests.swift */; };
 		9948EA54E0EDBA09877A3B33 /* SessionListModelNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068AED4589BD7A7B5426304 /* SessionListModelNavigation.swift */; };
 		99785640DE7F4C96F3C5E8E2 /* GatewayStatsRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BB9045DCA45C1C4C6B410 /* GatewayStatsRuntime.swift */; };
@@ -314,6 +333,7 @@
 		A9081C6BD59E58CCBD363095 /* GatewaySetupModelConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55D2536B86CF1E874E5221 /* GatewaySetupModelConnectionTests.swift */; };
 		A978518327CEB77F48C2E006 /* TranscriptScrollCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279E0E7B85C702DC4A3AA4F /* TranscriptScrollCoordinatorTests.swift */; };
 		AA496FD83D1BC846AB94D30F /* SessionTalkRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF27A1C28E47BB0842784E0 /* SessionTalkRuntime.swift */; };
+		AB5E6C1675429426E4B4435E /* NileAccessibilityIDPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C662CE441A2548AD8D6495 /* NileAccessibilityIDPrivacy.swift */; };
 		AE6F1C1F25E2EF5314DCB9A6 /* SessionListModelAttachmentCacheTestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050B2E1DD4BEA9E9A03ACA45 /* SessionListModelAttachmentCacheTestDoubles.swift */; };
 		B0A7B8C25F94064138E11B04 /* ArchitectureBoundaryPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7603A96974F3CEF7FB248 /* ArchitectureBoundaryPersistenceTests.swift */; };
 		B0B614194A32E4D34901B81C /* NileAccessibilityIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65358EEC41627E93DFC02C9A /* NileAccessibilityIDModel.swift */; };
@@ -324,6 +344,7 @@
 		B258B2113EDA5BF0A1F7D9AA /* NileAccessibilityIDSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC22C0404D9C5A5DB6619CB /* NileAccessibilityIDSession.swift */; };
 		B2F12BF7F39ED66CE7D4A692 /* SessionListModelTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A65762B2A681EBE580223 /* SessionListModelTimeline.swift */; };
 		B38CAA48EA15FC99EAEBE396 /* GatewayDelegationSnapshotDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061903ED7C7295CA5D714AA /* GatewayDelegationSnapshotDecoding.swift */; };
+		B3E7B5669F6F3CA1A59368A5 /* SharingConsentSessionTeardownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091E82AE1B21FFBC2009211D /* SharingConsentSessionTeardownTests.swift */; };
 		B3E9F5CC1D76B573E7EB75C9 /* SessionListModelProtectedStoreTestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F618ACC74E72D9922C8024 /* SessionListModelProtectedStoreTestDoubles.swift */; };
 		B415CBAD3103C93B2DA72E4C /* AttachmentDeliveryContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26DD3CC3CC87511AB0838B /* AttachmentDeliveryContracts.swift */; };
 		B4186A622DFC7A99FA3B9BA9 /* ProtectedFileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A988ED36B86E87AC7BEDC3 /* ProtectedFileStorage.swift */; };
@@ -346,7 +367,9 @@
 		BA348513FEC1645E1A0C3F61 /* SessionAttachmentRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD153EAB794EA1C006878F6 /* SessionAttachmentRuntime.swift */; };
 		BB06CDB1329DD23D80D19E4A /* BiometricAppLockOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D70FE3024948F4C22F0F89 /* BiometricAppLockOverlay.swift */; };
 		BC1220187C90BB137CD01728 /* GatewayDelegationSnapshotEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AC89E92785A460B9399D65 /* GatewayDelegationSnapshotEncoding.swift */; };
+		BC6A6759882AD5D38D14D3F0 /* FreeType-FTL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54FCF45479B54815CFFB0CE1 /* FreeType-FTL.txt */; };
 		BCC76B7D21275313A64DFA22 /* SessionBlockingPromptRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979820FD93852A107A7BD25 /* SessionBlockingPromptRuntime.swift */; };
+		BDD3A9073A2FF1390EA02FCF /* NilePrivacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE831A0249F9CD8C3441114 /* NilePrivacyTests.swift */; };
 		BDE1EA7D071323D553EB5828 /* TranscriptToolRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D7C8528342A2B96DCA45B /* TranscriptToolRows.swift */; };
 		BEA304C635E2F46ACAF56BFE /* GatewayConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FF93DD3E3997565DBFBFE /* GatewayConnection.swift */; };
 		BEA42C3CC24382856747FCE2 /* SessionListFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39822E4D6A1ED4A517A7957D /* SessionListFixture.swift */; };
@@ -374,6 +397,7 @@
 		C8C5AC4666F445D8581F7E98 /* VoiceCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316CE111D2C81A0D2A90E28 /* VoiceCoordinatorTests.swift */; };
 		C93D0F25AFB90092DCFA1331 /* GatewayProfileStoreCodecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C47B05838B69A6001C8B04 /* GatewayProfileStoreCodecTests.swift */; };
 		C9A0D5D128E432B6FD304116 /* SessionDraftPersistenceRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBFD353DE7035057E263CE /* SessionDraftPersistenceRuntime.swift */; };
+		CA90F58AB50C6DD4F88187CC /* PrivacyLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2A0B11C7A110A2659AA79 /* PrivacyLinks.swift */; };
 		CAEB01B4069850ED2CAA6989 /* SessionListModelEventProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2353BBA59774D35C8A331AC1 /* SessionListModelEventProjection.swift */; };
 		CAEB4AF81CEC74C07CC963AB /* NileMarkdownContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0DD516B28EDEA26B7E18E4 /* NileMarkdownContracts.swift */; };
 		CBA287B2127EB8FBEF79E1C0 /* LocalBiometricAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2173D13BEB01CD2F1A805DEA /* LocalBiometricAuthenticator.swift */; };
@@ -383,6 +407,7 @@
 		CD50EB8F0377696A436D45D1 /* GatewayCookieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8AF5A1023C1D9C1D76D9D5 /* GatewayCookieStore.swift */; };
 		CDF6EA4163848D261295D36D /* SessionDraftPersistenceRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAEFD9001F400A7C60CCD88 /* SessionDraftPersistenceRuntimeTests.swift */; };
 		CE6AF6A88B95AAC90204CF20 /* SessionListModelTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FDE7D6B2C4E081E51A73D /* SessionListModelTurn.swift */; };
+		CEBB08E16BD0C6083FEFD33A /* PrivateAttachmentCacheCleanupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1200E4E81E8E9D2A213BAF5 /* PrivateAttachmentCacheCleanupTests.swift */; };
 		CECE805BD0FF7AB6855C965D /* GoalStatusRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295FED09E4998F449C4ED51 /* GoalStatusRuntimeTests.swift */; };
 		CF124AC3992B2B3DB04541DF /* AddGatewayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB6B77AECAC2569673E813 /* AddGatewayView.swift */; };
 		CFC9EFE70391D82074ED46DB /* NileAppGraphFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CF5B30E779FE5D185C90E /* NileAppGraphFixtures.swift */; };
@@ -409,6 +434,7 @@
 		DA34845A80439F64866EC433 /* GatewayStatusClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6262695CAC12595E10FF7A /* GatewayStatusClientTests.swift */; };
 		DA5E0C22F75AA40AF6B7E4A6 /* SessionListModelTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC4BF695CD1020165055F5 /* SessionListModelTalk.swift */; };
 		DB24D90CDB0D197B62CFF1E4 /* HermesCommandContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC07FAA56AAC906DA5A175A4 /* HermesCommandContracts.swift */; };
+		DB3C2690D7D7EEE5912FD4BD /* GatewayNetworkPrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB8D20065DC3E9018A0BDA2 /* GatewayNetworkPrivacyPolicy.swift */; };
 		DBE8B0C4DC06D9A27FB137D1 /* SessionLifecycleRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88BB8ED8710BB955D647731 /* SessionLifecycleRuntimeTests.swift */; };
 		DC2A9909A1CE13928BE1E561 /* ArchitectureBoundaryGatewayServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2017B1DD81FFE78323DFD /* ArchitectureBoundaryGatewayServiceTests.swift */; };
 		DCD7D32343CD4B4527FB5EF6 /* NileAppGraphFixtureAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1294C8FAED3CDF0CC93FA88E /* NileAppGraphFixtureAssembly.swift */; };
@@ -427,6 +453,7 @@
 		E2D694877C016D255CAE2BE2 /* GatewayEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA4191F3C31987476EAEEB2 /* GatewayEndpointTests.swift */; };
 		E30AB937DC8C6426AA52BA58 /* ModelPickerCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86543BA249FCE0525E8EFCA7 /* ModelPickerCatalogView.swift */; };
 		E34F17ECEE18726A28CAF3FB /* SessionListModelBackgroundLifecycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFB1607E9B3DFD0B4E7E0C /* SessionListModelBackgroundLifecycleTests.swift */; };
+		E3637DC4B1FBA631202C54C2 /* GatewaySharingConsentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E6FC9F78F4B4AECEA2606B /* GatewaySharingConsentTests.swift */; };
 		E388B29EC89B6C89329FB890 /* SessionListModelSessionOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA00AFA2A7924E9318DC3443 /* SessionListModelSessionOpening.swift */; };
 		E3B75F2EF5D0D9B936F8ADD7 /* SessionNavigationRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535BDD81878EAE48248CD40D /* SessionNavigationRuntime.swift */; };
 		E406F2ECB5B7595DD240B734 /* NileSlashCatalogPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA7DD8743E235D1ACD2218 /* NileSlashCatalogPolicy.swift */; };
@@ -435,6 +462,7 @@
 		E5004CF811A4F2F3EFFB81EE /* GatewayModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B621242868AFD76DF88BA /* GatewayModelService.swift */; };
 		E550C4696FA07D5D7816AA41 /* SessionAttachmentDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2CB3192D6F9FD91934CE6 /* SessionAttachmentDelivery.swift */; };
 		E6D1A48A58510D43AF387EE6 /* PrivateAttachmentCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85666053D75A67176A1DF6 /* PrivateAttachmentCacheTests.swift */; };
+		E80211AA3F3DB747882C90FB /* SharingConsentSessionRaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B333D56D7370487AA29E94 /* SharingConsentSessionRaceTests.swift */; };
 		E862A80727A2501EB1A6B426 /* GatewaySwitchConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296455AC7C0674822940D267 /* GatewaySwitchConfirmationDialog.swift */; };
 		E8D0F215DD8D1AF347C508AB /* SessionListModelVoiceUsageDelegationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF31AD147125FCAC4149CC /* SessionListModelVoiceUsageDelegationTests.swift */; };
 		EA2077BB382EDE9211375736 /* GatewayWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2C3913C6017E3EB1264E5 /* GatewayWebSocket.swift */; };
@@ -454,6 +482,7 @@
 		EF9D412ACB359BECFB881277 /* TuiGatewayRepositoryGoalUsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E9132F6E7978C98FD5A96 /* TuiGatewayRepositoryGoalUsageTests.swift */; };
 		F032160887F113411CA61999 /* SessionModelControlContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625557456AFA217A276FE5C /* SessionModelControlContracts.swift */; };
 		F0514B8391B84B97A3D29FD6 /* TranscriptViewportRowHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7325E4093D7D30C17AE1D5F0 /* TranscriptViewportRowHost.swift */; };
+		F0E704881E06A0ED3FFCCFB2 /* GatewayNetworkPrivacyPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D3FE50432E70D0778FBC45 /* GatewayNetworkPrivacyPolicyTests.swift */; };
 		F261D5F80422A9D30AF87A00 /* BlockingPromptActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27E9970336302BA2865287 /* BlockingPromptActions.swift */; };
 		F2D8337901A79E34DA1B00F9 /* TranscriptCommandRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0875D0847E9512CCAB5C7030 /* TranscriptCommandRows.swift */; };
 		F30F386998E85EBD26145C57 /* GatewayDashboardClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DE18CC91293FAE124CC45 /* GatewayDashboardClientTests.swift */; };
@@ -468,11 +497,13 @@
 		F777023B00D2BC2C3CCC9C59 /* NileDesignModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE241E600266330619E13B /* NileDesignModifiers.swift */; };
 		F8BED44BC82CD26A9AAD1B6E /* SessionAttachmentRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64FC32D57C189476F819EA /* SessionAttachmentRuntimeTests.swift */; };
 		F8CAA63983ED32CC5E6C7239 /* TuiGatewayRepositoryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139657F98E43253F7534B8F /* TuiGatewayRepositoryModelTests.swift */; };
+		F8EC95F0DB16ACE9D2BCCA23 /* PrivacyLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E005D3551E7A8189A069A8 /* PrivacyLinksTests.swift */; };
 		F962CB5C76A116B4887CC91F /* ModelOptionsRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043F057F8657410C7CAFD28 /* ModelOptionsRuntime.swift */; };
 		F9D0C92A623086B7724878CC /* SessionEventRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B878C433E78A24A828B65 /* SessionEventRuntimeTests.swift */; };
 		FA235D379E2698E1ECD60653 /* SessionListModelGatewayContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CF6092DABE3057E96F12 /* SessionListModelGatewayContext.swift */; };
 		FA4510EA9F6E3ADD43C577A6 /* TranscriptParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6168196431806690FBAE2B0A /* TranscriptParsing.swift */; };
 		FBFA3782CD5DA29F280DB9D7 /* GoalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E661E0021E15E4B8C17B94 /* GoalModels.swift */; };
+		FC2DC4682BCA4C03C00E5070 /* PrivacyInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE23742FFC50D53F85374CAF /* PrivacyInformationView.swift */; };
 		FCDADE07E86D1833E0126E1E /* TranscriptViewportPositionPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E69FBA2D2B721771A32FE1 /* TranscriptViewportPositionPolicyTests.swift */; };
 		FD313D32C249C14A5243EA67 /* ContextBreakdownSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE10D486C5BF709E78043D /* ContextBreakdownSheet.swift */; };
 		FDD5A77E77C70B345182A4E1 /* TranscriptModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C77D44A9109457B73F9CB /* TranscriptModels.swift */; };
@@ -516,6 +547,7 @@
 		0875D0847E9512CCAB5C7030 /* TranscriptCommandRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptCommandRows.swift; sourceTree = "<group>"; };
 		087C5629C7A90B82B48C12E6 /* GatewaySetupModelReconnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelReconnectTests.swift; sourceTree = "<group>"; };
 		09112B10DE369B63F6FA02B2 /* VoiceCoordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCoordinators.swift; sourceTree = "<group>"; };
+		091E82AE1B21FFBC2009211D /* SharingConsentSessionTeardownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingConsentSessionTeardownTests.swift; sourceTree = "<group>"; };
 		09BFBEB33DB1DA4FE31FA43C /* SessionTalkRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTalkRuntimeTests.swift; sourceTree = "<group>"; };
 		0A57A94E669778F029DA1863 /* NileMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileMark.swift; sourceTree = "<group>"; };
 		0AC8E2D931F6E8298655AF20 /* GatewayAttachmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAttachmentService.swift; sourceTree = "<group>"; };
@@ -536,11 +568,13 @@
 		145FA7E26E0894809141D7A4 /* GatewayAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAuthentication.swift; sourceTree = "<group>"; };
 		14893A4B698E1DCF6AC6F371 /* GatewayModelArgumentPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayModelArgumentPolicyTests.swift; sourceTree = "<group>"; };
 		14A89B6B2ABF9B8ABE8DF60B /* GatewayDelegationCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDelegationCodec.swift; sourceTree = "<group>"; };
+		14D3FE50432E70D0778FBC45 /* GatewayNetworkPrivacyPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayNetworkPrivacyPolicyTests.swift; sourceTree = "<group>"; };
 		15A0AB497DB1FC4336E158CD /* SessionTalkResponseLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTalkResponseLifecycle.swift; sourceTree = "<group>"; };
 		15B181212C7D102912B42FD8 /* GatewayModelCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayModelCodec.swift; sourceTree = "<group>"; };
 		15ED444D86F9EC7459C0C1AF /* ModelPinRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPinRuntimeTests.swift; sourceTree = "<group>"; };
 		15FB6EBB4E80186492196348 /* HermesVoiceEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HermesVoiceEditorView.swift; sourceTree = "<group>"; };
 		16D7D9AB572F054C7E72B474 /* SessionBlockingPromptRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBlockingPromptRuntimeTests.swift; sourceTree = "<group>"; };
+		16F63624D548838350E89C86 /* GatewayWebsiteDataCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayWebsiteDataCleaner.swift; sourceTree = "<group>"; };
 		184B013C56BD6AF3130E09E5 /* GatewayFrameCodecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayFrameCodecTests.swift; sourceTree = "<group>"; };
 		193E124016B81FC770F835D2 /* TranscriptMessageRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptMessageRows.swift; sourceTree = "<group>"; };
 		194B6CC430454ABEACE83BA2 /* ModelPinStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPinStore.swift; sourceTree = "<group>"; };
@@ -548,11 +582,14 @@
 		198C0719AF5831B8FC620604 /* TalkSubmissionRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkSubmissionRuntime.swift; sourceTree = "<group>"; };
 		19A5BAF9FC6A8B64ED54EB09 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		19CE5B9581B4C908B9D31F7D /* SessionGoalMutationLifecycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionGoalMutationLifecycleTests.swift; sourceTree = "<group>"; };
+		19E005D3551E7A8189A069A8 /* PrivacyLinksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLinksTests.swift; sourceTree = "<group>"; };
 		19E40737835D9913606D6381 /* SessionListModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelTests.swift; sourceTree = "<group>"; };
+		1A29DE19580BB3F6E4652A77 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		1ACE7D11A7299F00AD65EE0A /* GatewaySessionMessagePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySessionMessagePolicy.swift; sourceTree = "<group>"; };
 		1B8B32E911DDB1E90A634B53 /* SessionListModelTurnDraftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelTurnDraftTests.swift; sourceTree = "<group>"; };
 		1C090BC0FF7F3CBEE546F726 /* NileAccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAccessibilityTests.swift; sourceTree = "<group>"; };
 		1CC4CB41DE606A592590312A /* GatewayStatsHeatmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsHeatmap.swift; sourceTree = "<group>"; };
+		1CCB33BF689B7DDEAC2DAB44 /* GatewayRemovalCleanupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayRemovalCleanupTests.swift; sourceTree = "<group>"; };
 		1CFA956991DBD7A4442F6992 /* TuiGatewayRepositoryEventDelegationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuiGatewayRepositoryEventDelegationTests.swift; sourceTree = "<group>"; };
 		1D2D92BD4F78167267BCC82E /* GatewaySetupModelPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelPresentation.swift; sourceTree = "<group>"; };
 		1F30F88863E25D29316DABA0 /* SessionListModelComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelComposer.swift; sourceTree = "<group>"; };
@@ -573,6 +610,7 @@
 		278FFA3436BC8B2669A9742D /* NileDesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileDesignTokens.swift; sourceTree = "<group>"; };
 		27E197E7F008753C7DE445B3 /* AttachmentDeliveryQuarantineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentDeliveryQuarantineState.swift; sourceTree = "<group>"; };
 		280AC7C77367A7CE505520C6 /* ModelControlPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControlPolicyTests.swift; sourceTree = "<group>"; };
+		282E9E75A455337F6A8F21D2 /* SessionMediaPrivacyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMediaPrivacyTests.swift; sourceTree = "<group>"; };
 		28BF0CD8029D4E543B9AEC36 /* GatewayProfileSecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProfileSecureStorage.swift; sourceTree = "<group>"; };
 		28CDBE3D495D44E1888ED463 /* SessionTimelineProjectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimelineProjectionState.swift; sourceTree = "<group>"; };
 		296455AC7C0674822940D267 /* GatewaySwitchConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySwitchConfirmationDialog.swift; sourceTree = "<group>"; };
@@ -584,6 +622,7 @@
 		2C751FFF35D02AC60EA2D979 /* NileAccessibilityIDDelegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAccessibilityIDDelegation.swift; sourceTree = "<group>"; };
 		2E7DFC0C66C0846A29E16EF6 /* SessionListModelAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelAttachments.swift; sourceTree = "<group>"; };
 		2E921A8774AF1DC713E7654A /* TuiGatewayClientContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuiGatewayClientContracts.swift; sourceTree = "<group>"; };
+		2EE831A0249F9CD8C3441114 /* NilePrivacyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilePrivacyTests.swift; sourceTree = "<group>"; };
 		2F08287A2CD2C7DC6F326D5C /* TalkModeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModeContracts.swift; sourceTree = "<group>"; };
 		2F100EDEAEED03C1901394EE /* SessionCommandRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCommandRuntimeTests.swift; sourceTree = "<group>"; };
 		2F4BBDEDC5B1BC0E40EDCA7E /* DelegationAgentReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationAgentReducer.swift; sourceTree = "<group>"; };
@@ -629,6 +668,7 @@
 		435DE18CC91293FAE124CC45 /* GatewayDashboardClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDashboardClientTests.swift; sourceTree = "<group>"; };
 		44CCD8F2A563894070662F06 /* GatewaySessionCodecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySessionCodecTests.swift; sourceTree = "<group>"; };
 		44E4FC2ED5ABC2423CA422A9 /* AVAudioEnginePcmSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioEnginePcmSource.swift; sourceTree = "<group>"; };
+		45C662CE441A2548AD8D6495 /* NileAccessibilityIDPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAccessibilityIDPrivacy.swift; sourceTree = "<group>"; };
 		45E69FBA2D2B721771A32FE1 /* TranscriptViewportPositionPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewportPositionPolicyTests.swift; sourceTree = "<group>"; };
 		45FB47B7D4DDE6D06BF78D24 /* SessionBlockingPromptResponseLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBlockingPromptResponseLifecycle.swift; sourceTree = "<group>"; };
 		467D7920340E648AAC5B37F9 /* TranscriptTodoRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTodoRows.swift; sourceTree = "<group>"; };
@@ -641,6 +681,7 @@
 		4B9C5C0050C9D2FC98ABF9AD /* SessionComposerRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionComposerRuntimeTests.swift; sourceTree = "<group>"; };
 		4BBDF59609B199F8389B583B /* AttachmentDeliveryCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentDeliveryCoordinatorTests.swift; sourceTree = "<group>"; };
 		4BC4CF6092DABE3057E96F12 /* SessionListModelGatewayContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelGatewayContext.swift; sourceTree = "<group>"; };
+		4CD2A0B11C7A110A2659AA79 /* PrivacyLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLinks.swift; sourceTree = "<group>"; };
 		4CE7603A96974F3CEF7FB248 /* ArchitectureBoundaryPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureBoundaryPersistenceTests.swift; sourceTree = "<group>"; };
 		4D65C5132AEB02382BADC031 /* NileTactilePressFeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTactilePressFeedbackTests.swift; sourceTree = "<group>"; };
 		4D7FA9596827E56F45F4ECA9 /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
@@ -656,6 +697,7 @@
 		535BDD81878EAE48248CD40D /* SessionNavigationRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionNavigationRuntime.swift; sourceTree = "<group>"; };
 		54180FEEFEA6546CF2B4DD95 /* HermesEventContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HermesEventContracts.swift; sourceTree = "<group>"; };
 		54CA3E0D1A721DE126101ACF /* SessionTimelineRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimelineRuntimeTests.swift; sourceTree = "<group>"; };
+		54FCF45479B54815CFFB0CE1 /* FreeType-FTL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "FreeType-FTL.txt"; sourceTree = "<group>"; };
 		5523BA31C1B86EAB87E3BB01 /* TuiGatewayRepositoryTurnBlockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuiGatewayRepositoryTurnBlockingTests.swift; sourceTree = "<group>"; };
 		55498E6E0D75DCAC6707B54E /* SessionListModelBlockingPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelBlockingPrompt.swift; sourceTree = "<group>"; };
 		55CB8A5940DFA5894E031780 /* NileImageEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileImageEncoderTests.swift; sourceTree = "<group>"; };
@@ -690,6 +732,7 @@
 		612599A9A25B566AB39F14D1 /* BiometricAppLockContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAppLockContracts.swift; sourceTree = "<group>"; };
 		6139A6D572445A8B3925137C /* GatewayContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayContracts.swift; sourceTree = "<group>"; };
 		6168196431806690FBAE2B0A /* TranscriptParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptParsing.swift; sourceTree = "<group>"; };
+		6193A837272BCFF3CAA7F599 /* GatewaySharingConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySharingConsentView.swift; sourceTree = "<group>"; };
 		61A39279607067DD35F81A0A /* BlockingPromptSubmissionLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingPromptSubmissionLifecycle.swift; sourceTree = "<group>"; };
 		621E5E289E8026A84CE111A9 /* GatewayCookiePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayCookiePolicy.swift; sourceTree = "<group>"; };
 		62760EED10691EF3E8D5B6CE /* GatewayLoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayLoginWebView.swift; sourceTree = "<group>"; };
@@ -714,18 +757,22 @@
 		6CD7F2E64850D67ED2EDF32D /* SessionListModelGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelGateway.swift; sourceTree = "<group>"; };
 		6D39639CE60EED0A909DA357 /* NileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileApp.swift; sourceTree = "<group>"; };
 		6D9E0E187346A7196DFA5A59 /* DelegationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationCoordinatorTests.swift; sourceTree = "<group>"; };
+		6E3576BF8CB5BCB24F91422F /* GatewaySetupModelFormConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelFormConnection.swift; sourceTree = "<group>"; };
 		6E48487B0B855BA5D8CC9C6A /* ModelPinStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPinStoreTests.swift; sourceTree = "<group>"; };
+		6E8E2D9B8E70E2269690A94E /* GatewaySetupModelSharingConsent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelSharingConsent.swift; sourceTree = "<group>"; };
 		6EFF31AD147125FCAC4149CC /* SessionListModelVoiceUsageDelegationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelVoiceUsageDelegationTests.swift; sourceTree = "<group>"; };
 		6FC1D5E7D1FA4C3CF9BCE03E /* SessionEventRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEventRuntime.swift; sourceTree = "<group>"; };
 		6FF478809F2F17F1C53F9ACA /* SessionMediaRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMediaRuntime.swift; sourceTree = "<group>"; };
 		706F2B2F3B957339B6A398F4 /* SessionPinStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPinStoreTests.swift; sourceTree = "<group>"; };
 		70BDF956B23B04C38AC2D461 /* GatewaySpeechCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySpeechCodec.swift; sourceTree = "<group>"; };
 		70E477ECBF08718A01412BB8 /* LiveTranscriptToolProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTranscriptToolProjection.swift; sourceTree = "<group>"; };
+		7175473FE6529E9A45AA5F79 /* PrivacyCleanupModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyCleanupModelTests.swift; sourceTree = "<group>"; };
 		71860AC84971597DEB71E1BA /* GoalRuntimePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRuntimePolicy.swift; sourceTree = "<group>"; };
 		71C35476118F366BE7AFB177 /* GatewaySetupModelConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelConnection.swift; sourceTree = "<group>"; };
 		7225F11B91134F2098C6D888 /* TranscriptImagePayloadCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptImagePayloadCacheTests.swift; sourceTree = "<group>"; };
 		723943830BEF5319CD36CCA9 /* GatewayDelegationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDelegationService.swift; sourceTree = "<group>"; };
 		72621BF33FFDDFF7A5F5BA99 /* NileTextRendererVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTextRendererVerification.swift; sourceTree = "<group>"; };
+		727B1D741209D458CC244436 /* AppStoreBundleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreBundleTests.swift; sourceTree = "<group>"; };
 		729165557CF820063213DE17 /* ArchitectureBoundaryCapabilityRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureBoundaryCapabilityRuntimeTests.swift; sourceTree = "<group>"; };
 		72C5FF7CAEB204303E331EE9 /* GatewayDashboardContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDashboardContracts.swift; sourceTree = "<group>"; };
 		7325E4093D7D30C17AE1D5F0 /* TranscriptViewportRowHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewportRowHost.swift; sourceTree = "<group>"; };
@@ -740,6 +787,7 @@
 		7AAE10D486C5BF709E78043D /* ContextBreakdownSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextBreakdownSheet.swift; sourceTree = "<group>"; };
 		7AC995767955787D563763E4 /* SessionNavigationRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionNavigationRuntimeTests.swift; sourceTree = "<group>"; };
 		7B86116BE309A0C5D7C36FB4 /* GatewayEndpointParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayEndpointParser.swift; sourceTree = "<group>"; };
+		7D1B547D0DF9CFF4C02AA83D /* GatewaySetupModelConnectionErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelConnectionErrors.swift; sourceTree = "<group>"; };
 		7D6262695CAC12595E10FF7A /* GatewayStatusClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatusClientTests.swift; sourceTree = "<group>"; };
 		7E26DD3CC3CC87511AB0838B /* AttachmentDeliveryContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentDeliveryContracts.swift; sourceTree = "<group>"; };
 		7E694D6299A979A306185003 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -803,6 +851,7 @@
 		A223A8E9B0A7DC483ED55175 /* TranscriptViewportCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewportCollectionView.swift; sourceTree = "<group>"; };
 		A29E0CE80E249B6BC191490B /* SessionListModelVisibleEventProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelVisibleEventProjection.swift; sourceTree = "<group>"; };
 		A2CB90831FCF23513BB8D116 /* ModelSwitchConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSwitchConfirmationView.swift; sourceTree = "<group>"; };
+		A2E357BAF4D21D2D6F43ECE1 /* HarfBuzz-COPYING.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HarfBuzz-COPYING.txt"; sourceTree = "<group>"; };
 		A4B1C8D35342770EE856140B /* GatewayGoalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayGoalService.swift; sourceTree = "<group>"; };
 		A4F59800BECBB90EFFEFD147 /* SessionListModelAttachmentRecoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelAttachmentRecoveryTests.swift; sourceTree = "<group>"; };
 		A60F8EDCB7D773CC91D8B2BA /* SessionDraftLifecycleRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDraftLifecycleRuntime.swift; sourceTree = "<group>"; };
@@ -821,18 +870,24 @@
 		AD604B0D96602B452245972C /* NileSlashCatalogPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileSlashCatalogPolicyTests.swift; sourceTree = "<group>"; };
 		ADC447831D3399CDCE2EB76C /* NileAppGraphFixtureInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAppGraphFixtureInstaller.swift; sourceTree = "<group>"; };
 		AE0DD516B28EDEA26B7E18E4 /* NileMarkdownContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileMarkdownContracts.swift; sourceTree = "<group>"; };
+		AE33A3EA6B2B697B7D78389B /* SessionListModelPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelPrivacy.swift; sourceTree = "<group>"; };
+		AE5C540B1A13337BF6472603 /* GatewaySharingConsentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySharingConsentStore.swift; sourceTree = "<group>"; };
+		AEB8D20065DC3E9018A0BDA2 /* GatewayNetworkPrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayNetworkPrivacyPolicy.swift; sourceTree = "<group>"; };
 		AEC2A4FB1AB13F00E04051D8 /* SessionVoiceInputRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVoiceInputRuntime.swift; sourceTree = "<group>"; };
 		AF3526F2493885D0644D2199 /* SessionListModelEventSettlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelEventSettlement.swift; sourceTree = "<group>"; };
 		AFFBE88FED2505336EFACA92 /* SessionShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionShellView.swift; sourceTree = "<group>"; };
 		B0345BBB2904F1ED6A3B6DF3 /* SessionAttachmentRecoveredEditRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAttachmentRecoveredEditRuntime.swift; sourceTree = "<group>"; };
 		B04742E4AD96F23A6979F954 /* NileMarkdownInline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileMarkdownInline.swift; sourceTree = "<group>"; };
 		B110F0E7C200849CD296B4F7 /* GatewayProfileContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProfileContracts.swift; sourceTree = "<group>"; };
+		B1200E4E81E8E9D2A213BAF5 /* PrivateAttachmentCacheCleanupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateAttachmentCacheCleanupTests.swift; sourceTree = "<group>"; };
 		B1B790C40EEC18C303B7A16B /* SessionListModelManagementPinGoalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelManagementPinGoalTests.swift; sourceTree = "<group>"; };
 		B1C88EF15C3CF7FB8BF283CE /* GatewayStatsRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsRows.swift; sourceTree = "<group>"; };
 		B1EDDF20AFD74DB2B86D21DC /* GatewaySetupModelVoiceTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelVoiceTestDouble.swift; sourceTree = "<group>"; };
 		B2212874725C9C62AC48EBA3 /* GatewayCommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayCommandService.swift; sourceTree = "<group>"; };
+		B28118B706F667C30666C266 /* Nile-Attributions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nile-Attributions.txt"; sourceTree = "<group>"; };
 		B28ADF521A76E416BF35D6E4 /* TurnNotificationRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnNotificationRouting.swift; sourceTree = "<group>"; };
 		B2E811548AE52B947CF3F4D3 /* DroidSansMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidSansMono.ttf; sourceTree = "<group>"; };
+		B33BC034ACEFABBB6EA28B64 /* PrivacyCleanupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyCleanupModel.swift; sourceTree = "<group>"; };
 		B391229B190B3D08F842B90D /* SessionComposerRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionComposerRuntime.swift; sourceTree = "<group>"; };
 		B3B19B00A11CFA9598FE637C /* NileTypographyMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTypographyMetrics.swift; sourceTree = "<group>"; };
 		B40035848FC746CE562897CA /* SessionListModelDelegationFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelDelegationFixtures.swift; sourceTree = "<group>"; };
@@ -845,6 +900,7 @@
 		B63AF1527110AF4676EDB766 /* GatewayModelArgumentPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayModelArgumentPolicy.swift; sourceTree = "<group>"; };
 		B723615A033927828B04E3CE /* GatewayDashboardDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayDashboardDownload.swift; sourceTree = "<group>"; };
 		B80AFC4FD8A48A153B2E41AA /* NileAccessibilityIDComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileAccessibilityIDComposer.swift; sourceTree = "<group>"; };
+		B8E6FC9F78F4B4AECEA2606B /* GatewaySharingConsentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySharingConsentTests.swift; sourceTree = "<group>"; };
 		B91BFF71686B0DC2720A002D /* GatewayConnectionFailurePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayConnectionFailurePolicy.swift; sourceTree = "<group>"; };
 		B9B0B4B2C85E041A34916997 /* NileTextRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTextRendererTests.swift; sourceTree = "<group>"; };
 		BA00AFA2A7924E9318DC3443 /* SessionListModelSessionOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelSessionOpening.swift; sourceTree = "<group>"; };
@@ -854,6 +910,7 @@
 		BBD153EAB794EA1C006878F6 /* SessionAttachmentRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAttachmentRuntime.swift; sourceTree = "<group>"; };
 		BBF1DE207D07A656F35C0D01 /* Nile.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Nile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB8FB390EDAC56C53C432FF /* SessionListModelTurnSettlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelTurnSettlement.swift; sourceTree = "<group>"; };
+		BE23742FFC50D53F85374CAF /* PrivacyInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyInformationView.swift; sourceTree = "<group>"; };
 		BE5E518376FB1B7B1E1447C5 /* GatewayUsageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayUsageService.swift; sourceTree = "<group>"; };
 		BF08935204BFF1BCA0EAC9B0 /* SessionDelegationRuntimeFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegationRuntimeFixtures.swift; sourceTree = "<group>"; };
 		BF27E9970336302BA2865287 /* BlockingPromptActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingPromptActions.swift; sourceTree = "<group>"; };
@@ -929,10 +986,12 @@
 		E2EF9C8BD30579BA38B65728 /* TranscriptProjectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptProjectionTests.swift; sourceTree = "<group>"; };
 		E30D0C1FDD1A15CACA7455FE /* NileImageEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileImageEncoder.swift; sourceTree = "<group>"; };
 		E316CE111D2C81A0D2A90E28 /* VoiceCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCoordinatorTests.swift; sourceTree = "<group>"; };
+		E3B333D56D7370487AA29E94 /* SharingConsentSessionRaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingConsentSessionRaceTests.swift; sourceTree = "<group>"; };
 		E530F6EE37E9B2C8476FDFD4 /* DelegationAgentReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationAgentReducerTests.swift; sourceTree = "<group>"; };
 		E58FB834016DBD6094AB3C7A /* GatewayStatsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsSheet.swift; sourceTree = "<group>"; };
 		E69A0B2E2B9224AC9EA60BB2 /* RepositorySourceOfTruthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySourceOfTruthTests.swift; sourceTree = "<group>"; };
 		E77876ED3140D56FC0F32F8E /* ArchitectureBoundaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureBoundaryTests.swift; sourceTree = "<group>"; };
+		E830129D2FA91E30CED22C4B /* GatewaySharingConsentTestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySharingConsentTestSupport.swift; sourceTree = "<group>"; };
 		E91A54330431A6E3BEA408A4 /* GatewaySetupModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewaySetupModelTests.swift; sourceTree = "<group>"; };
 		E93990D082F13A7A1C8CF7EF /* SessionAttachmentRecoveryComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAttachmentRecoveryComposer.swift; sourceTree = "<group>"; };
 		E9DC860D75AFD98EEB02B211 /* BlockingPromptPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingPromptPolicy.swift; sourceTree = "<group>"; };
@@ -942,6 +1001,7 @@
 		EC07FAA56AAC906DA5A175A4 /* HermesCommandContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HermesCommandContracts.swift; sourceTree = "<group>"; };
 		EC22FD04366CCB662A4F3753 /* TuiGatewayRepositorySpeechVoiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuiGatewayRepositorySpeechVoiceTests.swift; sourceTree = "<group>"; };
 		EC614B5DA9190C26C9968ACF /* ModelPickerCatalogPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPickerCatalogPolicyTests.swift; sourceTree = "<group>"; };
+		ECF7E661790A7192ABFA5489 /* NileTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTextInput.swift; sourceTree = "<group>"; };
 		EE7B9D3AF416CCD885CD5B2E /* SessionListModelRepositoryTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelRepositoryTestDouble.swift; sourceTree = "<group>"; };
 		F043F057F8657410C7CAFD28 /* ModelOptionsRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOptionsRuntime.swift; sourceTree = "<group>"; };
 		F055C1111C60ACB22780EACF /* NileTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NileTypography.swift; sourceTree = "<group>"; };
@@ -954,6 +1014,7 @@
 		F1C9C6B4D9DA1914346324E4 /* GatewayAsyncPrimitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAsyncPrimitives.swift; sourceTree = "<group>"; };
 		F218942ABBC47376C46B3327 /* GatewayAuthenticationHTTPPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAuthenticationHTTPPolicy.swift; sourceTree = "<group>"; };
 		F2834932716C1CA767EAF447 /* TalkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModeView.swift; sourceTree = "<group>"; };
+		F297ED0549798764A96C9453 /* GatewayProtectedDataCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayProtectedDataCleanup.swift; sourceTree = "<group>"; };
 		F3F1F11EE26E9234D9DFF0D1 /* ModelOptionsRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOptionsRuntimeTests.swift; sourceTree = "<group>"; };
 		F45AF107C517BBC903A1F792 /* GatewayStatsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayStatsContent.swift; sourceTree = "<group>"; };
 		F4A1A1B2D9F4582C842F1168 /* SessionSpeechRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSpeechRuntime.swift; sourceTree = "<group>"; };
@@ -966,6 +1027,7 @@
 		F8FC6999D092988D68D43F7E /* SessionListModelPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListModelPresentation.swift; sourceTree = "<group>"; };
 		F91B878C433E78A24A828B65 /* SessionEventRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEventRuntimeTests.swift; sourceTree = "<group>"; };
 		FAD8AA8B18DD021C23888D5B /* SessionRenameRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRenameRuntime.swift; sourceTree = "<group>"; };
+		FB345E63156A31E3AC414587 /* SoftwareNoticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareNoticesView.swift; sourceTree = "<group>"; };
 		FB368E9A3A8BBDB22B999B64 /* SessionGoalContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionGoalContracts.swift; sourceTree = "<group>"; };
 		FB380B37BB53624A19B9AC02 /* LocalRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LocalRelease.xcconfig; sourceTree = "<group>"; };
 		FBBFC16CB9F7C2B79F8A0C81 /* DelegationInterruptLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationInterruptLifecycle.swift; sourceTree = "<group>"; };
@@ -1055,7 +1117,9 @@
 			isa = PBXGroup;
 			children = (
 				4F23A24096988785A3DD79BE /* Fonts */,
+				6EF73577B6218AF1CDD5CD5B /* ThirdPartyNotices */,
 				5E49D132E9B217E0949ABAC4 /* Assets.xcassets */,
+				1A29DE19580BB3F6E4652A77 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1114,13 +1178,17 @@
 				FBBFC16CB9F7C2B79F8A0C81 /* DelegationInterruptLifecycle.swift */,
 				97F9D3D625B7BAB1C3B35D9A /* DelegationPresentation.swift */,
 				D62F08226B519FBFD56F2298 /* DelegationSnapshotLifecycle.swift */,
+				F297ED0549798764A96C9453 /* GatewayProtectedDataCleanup.swift */,
 				5809BF83AA9003074653FC14 /* GatewayReconnectCoordinator.swift */,
 				D3941268C9597F19E542A323 /* GatewaySetupDependencies.swift */,
 				FC2ECC5900089093D4A1C78B /* GatewaySetupModel.swift */,
 				71C35476118F366BE7AFB177 /* GatewaySetupModelConnection.swift */,
+				7D1B547D0DF9CFF4C02AA83D /* GatewaySetupModelConnectionErrors.swift */,
 				A66C222C1EE44E7D33E08E43 /* GatewaySetupModelDebugFixtures.swift */,
+				6E3576BF8CB5BCB24F91422F /* GatewaySetupModelFormConnection.swift */,
 				1D2D92BD4F78167267BCC82E /* GatewaySetupModelPresentation.swift */,
 				D8961FFDF1DE1C6964314F0C /* GatewaySetupModelProfiles.swift */,
+				6E8E2D9B8E70E2269690A94E /* GatewaySetupModelSharingConsent.swift */,
 				CF04A203218D2DDF88F38F64 /* GatewaySetupModelVoice.swift */,
 				BA8BB9045DCA45C1C4C6B410 /* GatewayStatsRuntime.swift */,
 				71860AC84971597DEB71E1BA /* GoalRuntimePolicy.swift */,
@@ -1137,6 +1205,7 @@
 				2C751FFF35D02AC60EA2D979 /* NileAccessibilityIDDelegation.swift */,
 				060F60FA3EA81A00B2D2C342 /* NileAccessibilityIDGoalPrompt.swift */,
 				65358EEC41627E93DFC02C9A /* NileAccessibilityIDModel.swift */,
+				45C662CE441A2548AD8D6495 /* NileAccessibilityIDPrivacy.swift */,
 				6BC22C0404D9C5A5DB6619CB /* NileAccessibilityIDSession.swift */,
 				103E84CC56DCEACC09A52002 /* NileAccessibilityIDTranscript.swift */,
 				6D39639CE60EED0A909DA357 /* NileApp.swift */,
@@ -1148,6 +1217,7 @@
 				F61CF5B30E779FE5D185C90E /* NileAppGraphFixtures.swift */,
 				C23A94B71D70CC4068D5E7A7 /* NileSessionFixturePolicy.swift */,
 				9A748E0609A0345BFC7B8C2C /* NotificationEducationView.swift */,
+				B33BC034ACEFABBB6EA28B64 /* PrivacyCleanupModel.swift */,
 				80A2CB3192D6F9FD91934CE6 /* SessionAttachmentDelivery.swift */,
 				91B3B7541D7FC05F94A8D592 /* SessionAttachmentPersistenceRecoveryLifecycle.swift */,
 				4258795C9EB273457A68214E /* SessionAttachmentPersistenceRuntime.swift */,
@@ -1202,6 +1272,7 @@
 				2087AD30A74716EDC82571C5 /* SessionListModelModelControl.swift */,
 				8068AED4589BD7A7B5426304 /* SessionListModelNavigation.swift */,
 				F8FC6999D092988D68D43F7E /* SessionListModelPresentation.swift */,
+				AE33A3EA6B2B697B7D78389B /* SessionListModelPrivacy.swift */,
 				C92E34FDE91396BD9E0D08B5 /* SessionListModelRefresh.swift */,
 				2B69BEB8165C340600932A01 /* SessionListModelRename.swift */,
 				BA00AFA2A7924E9318DC3443 /* SessionListModelSessionOpening.swift */,
@@ -1347,6 +1418,7 @@
 				15B181212C7D102912B42FD8 /* GatewayModelCodec.swift */,
 				345B621242868AFD76DF88BA /* GatewayModelService.swift */,
 				25B5052C02015D54766E93CA /* GatewayMutationCodec.swift */,
+				AEB8D20065DC3E9018A0BDA2 /* GatewayNetworkPrivacyPolicy.swift */,
 				9C0304757996548F063E990B /* GatewayRPCRequesting.swift */,
 				6C7C5CC5E2174CFF12CE994A /* GatewaySessionCodec.swift */,
 				1ACE7D11A7299F00AD65EE0A /* GatewaySessionMessagePolicy.swift */,
@@ -1362,6 +1434,7 @@
 				D4E5DB5BFA62D9B2E107F58F /* GatewayURLOriginPolicy.swift */,
 				A7EBC8C7B4C8240A88BC365F /* GatewayUsageCodec.swift */,
 				BE5E518376FB1B7B1E1447C5 /* GatewayUsageService.swift */,
+				16F63624D548838350E89C86 /* GatewayWebsiteDataCleaner.swift */,
 				25D2C3913C6017E3EB1264E5 /* GatewayWebSocket.swift */,
 				4D7FA9596827E56F45F4ECA9 /* JSONValue.swift */,
 				6BF96045A4B38895D204067C /* TuiGatewayClient.swift */,
@@ -1376,6 +1449,7 @@
 		60B27A7EDBD4D2E3C4A8F13E /* NileTests */ = {
 			isa = PBXGroup;
 			children = (
+				727B1D741209D458CC244436 /* AppStoreBundleTests.swift */,
 				729165557CF820063213DE17 /* ArchitectureBoundaryCapabilityRuntimeTests.swift */,
 				8500C33DDEC3168BB0201E15 /* ArchitectureBoundaryCommandRuntimeTests.swift */,
 				52B825EDA8784934C79D4055 /* ArchitectureBoundaryCompositionTests.swift */,
@@ -1406,9 +1480,11 @@
 				184B013C56BD6AF3130E09E5 /* GatewayFrameCodecTests.swift */,
 				03CAC5E99EC44526BF7D335B /* GatewayGoalUsageCodecTests.swift */,
 				14893A4B698E1DCF6AC6F371 /* GatewayModelArgumentPolicyTests.swift */,
+				14D3FE50432E70D0778FBC45 /* GatewayNetworkPrivacyPolicyTests.swift */,
 				03C47B05838B69A6001C8B04 /* GatewayProfileStoreCodecTests.swift */,
 				3607F02E5DB217876DCB6ABA /* GatewayProfileStoreTests.swift */,
 				FCAE30305D0ADCF39AFBB4A6 /* GatewayReconnectCoordinatorTests.swift */,
+				1CCB33BF689B7DDEAC2DAB44 /* GatewayRemovalCleanupTests.swift */,
 				B5FE4CE37F1C6BF198D53BDE /* GatewaySecureStorageIntegrationTests.swift */,
 				44CCD8F2A563894070662F06 /* GatewaySessionCodecTests.swift */,
 				A881BFF3240A608E986A0273 /* GatewaySetupModelConnectionTestDoubles.swift */,
@@ -1422,6 +1498,8 @@
 				CE5F73629463B7A29842D6FF /* GatewaySetupModelTestSupport.swift */,
 				B1EDDF20AFD74DB2B86D21DC /* GatewaySetupModelVoiceTestDouble.swift */,
 				1FC6080F3D88B86B016F4C1A /* GatewaySetupModelVoiceTests.swift */,
+				B8E6FC9F78F4B4AECEA2606B /* GatewaySharingConsentTests.swift */,
+				E830129D2FA91E30CED22C4B /* GatewaySharingConsentTestSupport.swift */,
 				7D6262695CAC12595E10FF7A /* GatewayStatusClientTests.swift */,
 				C6CC4F2A562C69DCF04CD7BE /* GoalRuntimePolicyTests.swift */,
 				E295FED09E4998F449C4ED51 /* GoalStatusRuntimeTests.swift */,
@@ -1440,6 +1518,9 @@
 				4D65C5132AEB02382BADC031 /* NileTactilePressFeedbackTests.swift */,
 				B9B0B4B2C85E041A34916997 /* NileTextRendererTests.swift */,
 				EB64319D725F7DB06CE73794 /* NileTypographyTests.swift */,
+				7175473FE6529E9A45AA5F79 /* PrivacyCleanupModelTests.swift */,
+				19E005D3551E7A8189A069A8 /* PrivacyLinksTests.swift */,
+				B1200E4E81E8E9D2A213BAF5 /* PrivateAttachmentCacheCleanupTests.swift */,
 				5A85666053D75A67176A1DF6 /* PrivateAttachmentCacheTests.swift */,
 				E69A0B2E2B9224AC9EA60BB2 /* RepositorySourceOfTruthTests.swift */,
 				D88A3159C6C571F7C6F10F0C /* SessionAttachmentPersistenceRuntimeTests.swift */,
@@ -1475,6 +1556,7 @@
 				8B93E57C7BDC95BDA1C82112 /* SessionListModelTestSupport.swift */,
 				1B8B32E911DDB1E90A634B53 /* SessionListModelTurnDraftTests.swift */,
 				6EFF31AD147125FCAC4149CC /* SessionListModelVoiceUsageDelegationTests.swift */,
+				282E9E75A455337F6A8F21D2 /* SessionMediaPrivacyTests.swift */,
 				D7ABE4CD547E8CDEB5C68E2A /* SessionMediaRuntimeTests.swift */,
 				7AC995767955787D563763E4 /* SessionNavigationRuntimeTests.swift */,
 				FC5428CEE697A0FDCCCB65D0 /* SessionPinRuntimeTests.swift */,
@@ -1485,6 +1567,8 @@
 				54CA3E0D1A721DE126101ACF /* SessionTimelineRuntimeTests.swift */,
 				F6F780EF265266991B1CFF40 /* SessionTurnRuntimeTests.swift */,
 				4F75FA7900F4F47DA1B7B852 /* SessionVoiceInputRuntimeTests.swift */,
+				E3B333D56D7370487AA29E94 /* SharingConsentSessionRaceTests.swift */,
+				091E82AE1B21FFBC2009211D /* SharingConsentSessionTeardownTests.swift */,
 				B4B28638D1BFE2A7C31E0757 /* SpeechCoreTests.swift */,
 				849D27286C1FB6B03551D2C3 /* TalkPresentationTests.swift */,
 				AD2E3EDAF3787CB3C61B84E8 /* TalkSubmissionPolicyTests.swift */,
@@ -1520,6 +1604,7 @@
 				28BF0CD8029D4E543B9AEC36 /* GatewayProfileSecureStorage.swift */,
 				CC87275CC801F7AC6C258438 /* GatewayProfileStore.swift */,
 				5D01E44D97BC8EE26C6836D9 /* GatewayProfileStoreCodec.swift */,
+				AE5C540B1A13337BF6472603 /* GatewaySharingConsentStore.swift */,
 				194B6CC430454ABEACE83BA2 /* ModelPinStore.swift */,
 				68A988ED36B86E87AC7BEDC3 /* ProtectedFileStorage.swift */,
 				0E890A118D1452677BD42D09 /* SessionPinStore.swift */,
@@ -1547,6 +1632,16 @@
 				0C12C45F44D950CD15F905D0 /* SessionRepositoryCapabilities.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		6EF73577B6218AF1CDD5CD5B /* ThirdPartyNotices */ = {
+			isa = PBXGroup;
+			children = (
+				54FCF45479B54815CFFB0CE1 /* FreeType-FTL.txt */,
+				A2E357BAF4D21D2D6F43ECE1 /* HarfBuzz-COPYING.txt */,
+				B28118B706F667C30666C266 /* Nile-Attributions.txt */,
+			);
+			path = ThirdPartyNotices;
 			sourceTree = "<group>";
 		};
 		70024B9D450D5AEE2C662C66 /* Media */ = {
@@ -1582,6 +1677,7 @@
 			isa = PBXGroup;
 			children = (
 				2C93F21A7B943CB34BC4F130 /* Gateway */,
+				CF9B32027C9628EEFB22A5A6 /* Privacy */,
 				46D9DCA23372FA5F96C53131 /* Sessions */,
 				0C5768FE8DC593DB322A96F8 /* Transcript */,
 			);
@@ -1593,7 +1689,9 @@
 			children = (
 				1C090BC0FF7F3CBEE546F726 /* NileAccessibilityTests.swift */,
 				FD87022D17D38F11E4E15D2A /* NileLaunchTests.swift */,
+				2EE831A0249F9CD8C3441114 /* NilePrivacyTests.swift */,
 				7F23016D31D8DA8E9DF7E79C /* NileRealHermesTests.swift */,
+				ECF7E661790A7192ABFA5489 /* NileTextInput.swift */,
 			);
 			path = NileUITests;
 			sourceTree = "<group>";
@@ -1616,6 +1714,17 @@
 				AA3B31D1155B9725D253B948 /* NileUITests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CF9B32027C9628EEFB22A5A6 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				6193A837272BCFF3CAA7F599 /* GatewaySharingConsentView.swift */,
+				BE23742FFC50D53F85374CAF /* PrivacyInformationView.swift */,
+				4CD2A0B11C7A110A2659AA79 /* PrivacyLinks.swift */,
+				FB345E63156A31E3AC414587 /* SoftwareNoticesView.swift */,
+			);
+			path = Privacy;
 			sourceTree = "<group>";
 		};
 		D35B0A25D510B03FD4C8BE5D /* Design */ = {
@@ -1774,6 +1883,10 @@
 			files = (
 				9FA766AD4B83F126F659ABEC /* Assets.xcassets in Resources */,
 				595B6E4C87C8C54D642D944E /* DroidSansMono.ttf in Resources */,
+				BC6A6759882AD5D38D14D3F0 /* FreeType-FTL.txt in Resources */,
+				1CBCF322C64EB30B7E6440A4 /* HarfBuzz-COPYING.txt in Resources */,
+				0383981A746385CF7901C838 /* Nile-Attributions.txt in Resources */,
+				5D7D8EED67A916C32371872F /* PrivacyInfo.xcprivacy in Resources */,
 				F40805EFAA6B900E116694FF /* Roboto-LICENSE.txt in Resources */,
 				38690A60ABA0CD9477D0AAA0 /* Roboto-Regular.ttf in Resources */,
 			);
@@ -1788,7 +1901,9 @@
 			files = (
 				6FD8F8ABF94FD8D935E1E2D1 /* NileAccessibilityTests.swift in Sources */,
 				BF90C1C1F438B3E240C72EBF /* NileLaunchTests.swift in Sources */,
+				BDD3A9073A2FF1390EA02FCF /* NilePrivacyTests.swift in Sources */,
 				216D41E715FB4C2612D28145 /* NileRealHermesTests.swift in Sources */,
+				19C0E647DDAFAE430B79A0DD /* NileTextInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1796,6 +1911,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918EEEEE0ED5BD9AD182923A /* AppStoreBundleTests.swift in Sources */,
 				9566A9E9286708B76F5CB466 /* ArchitectureBoundaryCapabilityRuntimeTests.swift in Sources */,
 				4151C0EC735511577E477B63 /* ArchitectureBoundaryCommandRuntimeTests.swift in Sources */,
 				09F4D6B11A9809B949EF28CB /* ArchitectureBoundaryCompositionTests.swift in Sources */,
@@ -1826,9 +1942,11 @@
 				1956CE1EE3644BE328E1F47A /* GatewayFrameCodecTests.swift in Sources */,
 				30CE04E144AB7FA75BA494D2 /* GatewayGoalUsageCodecTests.swift in Sources */,
 				4EDC0893B38D1DDB552BDF9E /* GatewayModelArgumentPolicyTests.swift in Sources */,
+				F0E704881E06A0ED3FFCCFB2 /* GatewayNetworkPrivacyPolicyTests.swift in Sources */,
 				C93D0F25AFB90092DCFA1331 /* GatewayProfileStoreCodecTests.swift in Sources */,
 				866C7391796CA6663A3085F9 /* GatewayProfileStoreTests.swift in Sources */,
 				60EBFB04BB9E877ACE82D0C1 /* GatewayReconnectCoordinatorTests.swift in Sources */,
+				4B80749AD0A752329A483C76 /* GatewayRemovalCleanupTests.swift in Sources */,
 				957D8A81E5115D1BCEBB0872 /* GatewaySecureStorageIntegrationTests.swift in Sources */,
 				A58A5E7119F1F22DE55B68A8 /* GatewaySessionCodecTests.swift in Sources */,
 				1951CC9179095C5F805C7120 /* GatewaySetupModelConnectionTestDoubles.swift in Sources */,
@@ -1842,6 +1960,8 @@
 				D8A783B82301AEBC19CBADC3 /* GatewaySetupModelTests.swift in Sources */,
 				9EC1CBD04A1FD8485D9E6594 /* GatewaySetupModelVoiceTestDouble.swift in Sources */,
 				03AD1E3C145B184F114A8648 /* GatewaySetupModelVoiceTests.swift in Sources */,
+				04B5AEAFC4C156BEFB204324 /* GatewaySharingConsentTestSupport.swift in Sources */,
+				E3637DC4B1FBA631202C54C2 /* GatewaySharingConsentTests.swift in Sources */,
 				DA34845A80439F64866EC433 /* GatewayStatusClientTests.swift in Sources */,
 				980B686E9776FAE975E8604F /* GoalRuntimePolicyTests.swift in Sources */,
 				CECE805BD0FF7AB6855C965D /* GoalStatusRuntimeTests.swift in Sources */,
@@ -1860,6 +1980,9 @@
 				024E838A7BC1DB55797DDAB7 /* NileTactilePressFeedbackTests.swift in Sources */,
 				3C1BA8145397D44D3DD511FA /* NileTextRendererTests.swift in Sources */,
 				053A858F0E4347C3A85FE563 /* NileTypographyTests.swift in Sources */,
+				06B9C0EF1FD94DA121E02F9E /* PrivacyCleanupModelTests.swift in Sources */,
+				F8EC95F0DB16ACE9D2BCCA23 /* PrivacyLinksTests.swift in Sources */,
+				CEBB08E16BD0C6083FEFD33A /* PrivateAttachmentCacheCleanupTests.swift in Sources */,
 				E6D1A48A58510D43AF387EE6 /* PrivateAttachmentCacheTests.swift in Sources */,
 				4E27B9FF93493D1B26DBCA53 /* RepositorySourceOfTruthTests.swift in Sources */,
 				92B53A1969C66CEBCC045655 /* SessionAttachmentPersistenceRuntimeTests.swift in Sources */,
@@ -1895,6 +2018,7 @@
 				76DF3E87141DEDEEBBE444D2 /* SessionListModelTests.swift in Sources */,
 				3563E62DFF93CF2EA0EC0643 /* SessionListModelTurnDraftTests.swift in Sources */,
 				E8D0F215DD8D1AF347C508AB /* SessionListModelVoiceUsageDelegationTests.swift in Sources */,
+				7F7863FC750ECA5E06E36AD4 /* SessionMediaPrivacyTests.swift in Sources */,
 				DE27B740403DE31BADBEC5CC /* SessionMediaRuntimeTests.swift in Sources */,
 				624044510B74978D84BDD944 /* SessionNavigationRuntimeTests.swift in Sources */,
 				C8A4A8DB553420D9E00AAB16 /* SessionPinRuntimeTests.swift in Sources */,
@@ -1905,6 +2029,8 @@
 				D5BEDF8BDA6DCAA5FFC056D8 /* SessionTimelineRuntimeTests.swift in Sources */,
 				4D8CFB9EAF0E6CB71CEB4868 /* SessionTurnRuntimeTests.swift in Sources */,
 				96FF32A588E528DAF65B3544 /* SessionVoiceInputRuntimeTests.swift in Sources */,
+				E80211AA3F3DB747882C90FB /* SharingConsentSessionRaceTests.swift in Sources */,
+				B3E7B5669F6F3CA1A59368A5 /* SharingConsentSessionTeardownTests.swift in Sources */,
 				96EE5F2B7FE0B8E40463BF6B /* SpeechCoreTests.swift in Sources */,
 				8F3442ACF138B00356E16B9A /* TalkPresentationTests.swift in Sources */,
 				C19AB7EA3AAD2CB0869C8394 /* TalkSubmissionPolicyTests.swift in Sources */,
@@ -2004,10 +2130,12 @@
 				1F55D0ED8705BE449D6A2AAD /* GatewayModelCodec.swift in Sources */,
 				E5004CF811A4F2F3EFFB81EE /* GatewayModelService.swift in Sources */,
 				7208DB7833EEA82A8F40570C /* GatewayMutationCodec.swift in Sources */,
+				DB3C2690D7D7EEE5912FD4BD /* GatewayNetworkPrivacyPolicy.swift in Sources */,
 				07E8143C34E3F05F650BDF9D /* GatewayProfileContracts.swift in Sources */,
 				6FBE10E2407CC02FB8009B3F /* GatewayProfileSecureStorage.swift in Sources */,
 				2DCE14017920244E69B506F3 /* GatewayProfileStore.swift in Sources */,
 				5DCC2701505AE3860A721346 /* GatewayProfileStoreCodec.swift in Sources */,
+				55CD0613AEEDCD11B6377990 /* GatewayProtectedDataCleanup.swift in Sources */,
 				8C50896A7D52F773413D1756 /* GatewayRPCRequesting.swift in Sources */,
 				B1A74E3BD664EAA8BBEA9CB4 /* GatewayReconnectCoordinator.swift in Sources */,
 				ED73A885621B723BC22AE40E /* GatewayRemovalConfirmationDialog.swift in Sources */,
@@ -2017,10 +2145,15 @@
 				2FECAFA83A6D4CFF9AAF3EDF /* GatewaySetupDependencies.swift in Sources */,
 				1A44EED77D4D19A1F5FC4A7A /* GatewaySetupModel.swift in Sources */,
 				8F45728B6054C26F1CBB0DC2 /* GatewaySetupModelConnection.swift in Sources */,
+				030426ADC4B2E6B77581FCCA /* GatewaySetupModelConnectionErrors.swift in Sources */,
 				0A855CA74F72582A11B02130 /* GatewaySetupModelDebugFixtures.swift in Sources */,
+				77553D967F257D4E936E460D /* GatewaySetupModelFormConnection.swift in Sources */,
 				D0530CDFD794548E368F3161 /* GatewaySetupModelPresentation.swift in Sources */,
 				11F1E23E09117E60666D3975 /* GatewaySetupModelProfiles.swift in Sources */,
+				01A02B843A739ECCB4AD4905 /* GatewaySetupModelSharingConsent.swift in Sources */,
 				38F7C492B9BE06240D0EDF80 /* GatewaySetupModelVoice.swift in Sources */,
+				8132ACB24D4C2C9515C09C9A /* GatewaySharingConsentStore.swift in Sources */,
+				29327ADCB412252ABCE769ED /* GatewaySharingConsentView.swift in Sources */,
 				95F8DACE8B5750A9F88FD362 /* GatewaySignInView.swift in Sources */,
 				91B1F29DF8972CFD2DF40A89 /* GatewaySpeechCodec.swift in Sources */,
 				50DE3B7629E76AD346C6E06C /* GatewaySpeechService.swift in Sources */,
@@ -2043,6 +2176,7 @@
 				8D63D34E14A1A1E8861E3AC9 /* GatewayUsageCodec.swift in Sources */,
 				B503774E21B24633308D7EE6 /* GatewayUsageService.swift in Sources */,
 				EA2077BB382EDE9211375736 /* GatewayWebSocket.swift in Sources */,
+				3273B07D9BCC30E90AAF78EB /* GatewayWebsiteDataCleaner.swift in Sources */,
 				FBFA3782CD5DA29F280DB9D7 /* GoalModels.swift in Sources */,
 				7EF593D0AFF75DF1A5EC77D2 /* GoalPresentationPolicy.swift in Sources */,
 				7772227135D44A5BF10BF292 /* GoalRuntimePolicy.swift in Sources */,
@@ -2084,6 +2218,7 @@
 				A78E7133BF00377ACC2E59BF /* NileAccessibilityIDDelegation.swift in Sources */,
 				D04891E1AF098673BA21E040 /* NileAccessibilityIDGoalPrompt.swift in Sources */,
 				B0B614194A32E4D34901B81C /* NileAccessibilityIDModel.swift in Sources */,
+				AB5E6C1675429426E4B4435E /* NileAccessibilityIDPrivacy.swift in Sources */,
 				B258B2113EDA5BF0A1F7D9AA /* NileAccessibilityIDSession.swift in Sources */,
 				0EF581217376C1A404F0D0C5 /* NileAccessibilityIDTranscript.swift in Sources */,
 				B43CED044550D05DFDAED4DD /* NileApp.swift in Sources */,
@@ -2117,6 +2252,9 @@
 				9E5ABA55E73218D75E606F4F /* NotificationEducation.swift in Sources */,
 				275B3CEECC826BDB15E79D81 /* NotificationEducationView.swift in Sources */,
 				5DC48DE3BD7CE0FED68520F4 /* PcmSpeech.swift in Sources */,
+				00EC8D0B75E5D3EF4D709B3F /* PrivacyCleanupModel.swift in Sources */,
+				FC2DC4682BCA4C03C00E5070 /* PrivacyInformationView.swift in Sources */,
+				CA90F58AB50C6DD4F88187CC /* PrivacyLinks.swift in Sources */,
 				36053447EACCDA514B6B10E1 /* PrivateAttachmentCache.swift in Sources */,
 				B4186A622DFC7A99FA3B9BA9 /* ProtectedFileStorage.swift in Sources */,
 				E550C4696FA07D5D7816AA41 /* SessionAttachmentDelivery.swift in Sources */,
@@ -2175,6 +2313,7 @@
 				6219F9029A9CBCFA347099E5 /* SessionListModelModelControl.swift in Sources */,
 				9948EA54E0EDBA09877A3B33 /* SessionListModelNavigation.swift in Sources */,
 				C21780EEDA08D73C4FCAD193 /* SessionListModelPresentation.swift in Sources */,
+				9774018C300246CCD17636F2 /* SessionListModelPrivacy.swift in Sources */,
 				9C2B7D1021DC1A82D47785F0 /* SessionListModelRefresh.swift in Sources */,
 				5D1103A6975C608C7CBEED50 /* SessionListModelRename.swift in Sources */,
 				E388B29EC89B6C89329FB890 /* SessionListModelSessionOpening.swift in Sources */,
@@ -2214,6 +2353,7 @@
 				D38CEDE387E08F1ED3567798 /* SettingsCards.swift in Sources */,
 				5C6EA5D81E9FF50F4AEB9640 /* SettingsView.swift in Sources */,
 				8D6E736F0AE3B174E90AB784 /* SlashCommandPalette.swift in Sources */,
+				87C48EFBE46F51DBD5C3165D /* SoftwareNoticesView.swift in Sources */,
 				C426D6AF9E8928F28F54513B /* SpeechAudioConverter.swift in Sources */,
 				2EE65A6B19E4AB9093FB702C /* SpeechAudioSession.swift in Sources */,
 				5EE525B35C2D36E370A2BB1E /* SpeechOutput.swift in Sources */,

@@ -55,7 +55,7 @@ final class NileRealHermesTests: XCTestCase {
         )
         attachCheckpoint(app, name: "00-auth-rejected")
 
-        replace(app.secureTextFields["niles.gateway.token"], with: gatewayToken)
+        replaceText(in: app.secureTextFields["niles.gateway.token"], with: gatewayToken, app: app)
         app.buttons["niles.gateway.connect"].tap()
 
         let readOnly = app.descendants(matching: .any)[
@@ -103,7 +103,7 @@ final class NileRealHermesTests: XCTestCase {
         switchReasoning(app, to: "low")
         attachCheckpoint(app, name: "05-reasoning-switched")
 
-        replace(composer, with: "Reply with exactly NILE-IOS-REAL-TURN-OK")
+        replaceText(in: composer, with: "Reply with exactly NILE-IOS-REAL-TURN-OK", app: app)
         let send = app.buttons["niles.composer.send"]
         XCTAssertTrue(send.isEnabled)
         send.tap()
@@ -120,9 +120,10 @@ final class NileRealHermesTests: XCTestCase {
         )
         attachCheckpoint(app, name: "06-real-turn")
 
-        replace(
-            app.textFields["niles.composer"],
-            with: "Write a long numbered explanation of every month of the year."
+        replaceText(
+            in: app.textFields["niles.composer"],
+            with: "Write a long numbered explanation of every month of the year.",
+            app: app
         )
         app.buttons["niles.composer.send"].tap()
         let stop = app.buttons["niles.composer.stop"]
@@ -149,7 +150,7 @@ final class NileRealHermesTests: XCTestCase {
         XCTAssertTrue(
             app.scrollViews["niles.goal.sheet"].waitForExistence(timeout: 15)
         )
-        replace(app.textViews["niles.goal.objective"], with: goalPrompt)
+        replaceText(in: app.textViews["niles.goal.objective"], with: goalPrompt, app: app)
         let budget = app.buttons["niles.goal.budget.\(goalBudget)"]
         XCTAssertTrue(budget.waitForExistence(timeout: 10))
         budget.tap()
@@ -270,18 +271,15 @@ final class NileRealHermesTests: XCTestCase {
         app.buttons["niles.gateway.add"].tap()
         let urlField = app.textFields["niles.gateway.url"]
         XCTAssertTrue(urlField.waitForExistence(timeout: 10))
-        replace(urlField, with: gatewayURL)
-        replace(app.secureTextFields["niles.gateway.token"], with: token)
+        replaceText(in: urlField, with: gatewayURL, app: app)
+        replaceText(in: app.secureTextFields["niles.gateway.token"], with: token, app: app)
+        let cleartext = app.buttons["niles.gateway.approve_cleartext"]
+        if gatewayURL.hasPrefix("http://"), cleartext.exists { cleartext.tap() }
         let connect = app.buttons["niles.gateway.connect"]
         XCTAssertTrue(connect.isEnabled)
         connect.tap()
-    }
-
-    private func replace(_ element: XCUIElement, with value: String) {
-        XCTAssertTrue(element.waitForExistence(timeout: 10))
-        element.tap()
-        element.typeKey("a", modifierFlags: .command)
-        element.typeText(value)
+        let sharing = app.buttons["niles.privacy.sharing.approve"]
+        if sharing.waitForExistence(timeout: 5) { sharing.tap() }
     }
 
     private func switchModel(
@@ -296,7 +294,7 @@ final class NileRealHermesTests: XCTestCase {
         let picker = app.otherElements["niles.model_picker.surface"]
         XCTAssertTrue(picker.waitForExistence(timeout: 60))
         let search = app.textFields["niles.model_picker.search"]
-        replace(search, with: modelTarget)
+        replaceText(in: search, with: modelTarget, app: app)
         let modelOption = app.buttons[
             "niles.model_picker.option.openrouter.\(modelTarget)"
         ]

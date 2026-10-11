@@ -401,6 +401,27 @@ ensure_project_is_generated() {
     ) >"$RESULT_DIR/xcodegen.log" 2>&1
 }
 
+ensure_simulator_ready() {
+    # Xcode can finish a test run while its device is still shutting down.
+    # Wait on that observable transition before applying accessibility settings.
+    local state
+    local attempt
+    for ((attempt = 0; attempt < 120; attempt++)); do
+        state="$(xcrun simctl list devices --json | jq -r --arg id "$SIMULATOR_UDID" \
+            '[.devices[][] | select(.udid == $id) | .state][0] // "Missing"')" || return 1
+        case "$state" in
+            "Shutting Down") sleep 0.5 ;;
+            "Shutdown"|"Booted"|"Booting")
+                xcrun simctl bootstatus "$SIMULATOR_UDID" -b
+                return $?
+                ;;
+            *) printf 'Disposable Simulator is unavailable: %s\n' "$state" >&2; return 1 ;;
+        esac
+    done
+    printf 'Disposable Simulator did not finish shutting down within 60 seconds.\n' >&2
+    return 1
+}
+
 run_xcodebuild() {
     local log_file="$1"
     shift
@@ -470,6 +491,7 @@ run_ui_lane() {
 run_accessibility_lane() {
     local result_bundle="$RESULT_DIR/accessibility.xcresult"
     local test_status=0
+    ensure_simulator_ready || return 1
     xcrun simctl ui "$SIMULATOR_UDID" \
         content_size accessibility-extra-large
     xcrun simctl ui "$SIMULATOR_UDID" content_size \
@@ -489,6 +511,7 @@ run_accessibility_lane() {
         -resultBundlePath "$result_bundle" \
         test -only-testing:NileUITests/NileAccessibilityTests \
         || test_status=$?
+    ensure_simulator_ready || return 1
     xcrun simctl ui "$SIMULATOR_UDID" content_size large || {
         printf 'Could not restore the Simulator content size.\n' >&2
         return 1

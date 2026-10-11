@@ -18,6 +18,8 @@
     <string>$(MARKETING_VERSION)</string>
     <key>CFBundleVersion</key>
     <string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
     <key>UIAppFonts</key>
     <array>
         <string>DroidSansMono.ttf</string>
@@ -29,15 +31,15 @@
         <true/>
     </dict>
     <key>NSLocalNetworkUsageDescription</key>
-    <string>Nile connects to Hermes gateways on networks you choose.</string>
+    <string>Nile connects to the Hermes gateway you add on your local network to send messages, attachments, and voice recordings.</string>
     <key>NSCameraUsageDescription</key>
-    <string>Nile takes photos only when you choose the camera attachment action.</string>
+    <string>Nile uses the camera to take photos you choose to send to your Hermes gateway as conversation attachments.</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>Nile records speech only while you use voice input or Talk mode.</string>
+    <string>Nile records voice input and Talk audio, then sends the recordings to your Hermes gateway for speech recognition.</string>
     <key>NSFaceIDUsageDescription</key>
     <string>Nile uses Face ID only when you enable biometric app lock.</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>Nile uses selected images as attachments in Hermes conversations.</string>
+    <string>Nile lets you choose photos to send to your Hermes gateway as conversation attachments.</string>
     <key>UIApplicationSupportsIndirectInputEvents</key>
     <true/>
     <key>UILaunchScreen</key>

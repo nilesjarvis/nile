@@ -172,6 +172,7 @@ struct SessionComposerView: View {
                                 )
                                 .frame(width: 28, height: 28)
                                 .frame(width: 44, height: 44)
+                                .contentShape(Rectangle())
                         }
                         .buttonStyle(NileTactileButtonStyle())
                         .disabled(
@@ -399,6 +400,12 @@ struct SessionComposerView: View {
                                     NileColors.background.opacity(0.7)
                                 )
                                 .clipShape(Circle())
+                                .frame(
+                                    width: 44,
+                                    height: 44,
+                                    alignment: .topTrailing
+                                )
+                                .contentShape(Rectangle())
                         }
                         .buttonStyle(NileTactileButtonStyle())
                         .disabled(
@@ -451,6 +458,7 @@ struct SessionComposerView: View {
             }
             .frame(width: 28, height: 28)
             .frame(width: 44, height: 44)
+            .contentShape(Rectangle())
         }
         .buttonStyle(NileTactileButtonStyle())
         .disabled(
@@ -538,6 +546,7 @@ struct SessionComposerView: View {
                     RoundedRectangle(cornerRadius: NileRadii.control)
                 )
                 .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
             }
             .buttonStyle(NileTactileButtonStyle())
             .disabled(model.isOpeningSession || model.isStopping)
@@ -582,6 +591,7 @@ struct SessionComposerView: View {
                         RoundedRectangle(cornerRadius: NileRadii.control)
                     )
                     .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(NileTactileButtonStyle())
             .disabled(
@@ -611,6 +621,7 @@ struct SessionComposerView: View {
                         RoundedRectangle(cornerRadius: NileRadii.control)
                     )
                     .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(NileTactileButtonStyle())
             .disabled(!model.composerCanSend)
@@ -647,6 +658,7 @@ struct SessionComposerView: View {
                         RoundedRectangle(cornerRadius: NileRadii.control)
                     )
                     .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(NileTactileButtonStyle())
             .accessibilityLabel("Automatically speak new Hermes replies")
@@ -718,6 +730,8 @@ struct SessionComposerView: View {
                     .padding(.vertical, 3)
                     .background(NileColors.surfaceHighest)
                     .clipShape(RoundedRectangle(cornerRadius: 7))
+                    .frame(minWidth: 44, minHeight: 44)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(NileTactileButtonStyle())
                 .menuOrder(.fixed)
@@ -789,7 +803,8 @@ struct SessionComposerView: View {
                         }
                     }
                 }
-                .frame(minHeight: 36, alignment: .center)
+                .frame(minWidth: 44, minHeight: 44, alignment: .center)
+                .contentShape(Rectangle())
             }
             .buttonStyle(NileTactileButtonStyle())
             .disabled(model.usage == nil)

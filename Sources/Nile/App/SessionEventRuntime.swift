@@ -45,13 +45,14 @@ final class SessionEventRuntime {
         onVisibleAssistantDelta: @escaping VisibleAssistantDeltaHandler,
         onHiddenAssistantDelta: @escaping EventHandler
     ) {
-        guard let repository, eventTask == nil else {
+        guard let repository else {
             return
         }
         self.visibleSessionID = visibleSessionID
         orderedEventHandler = onOrderedEvent
         visibleAssistantDeltaHandler = onVisibleAssistantDelta
         hiddenAssistantDeltaHandler = onHiddenAssistantDelta
+        guard eventTask == nil else { return }
         eventTask = Task { [weak self] in
             for await event in repository.events {
                 guard !Task.isCancelled else {
@@ -65,8 +66,15 @@ final class SessionEventRuntime {
     func cancel() {
         eventTask?.cancel()
         eventTask = nil
+        suspendDelivery()
+    }
+
+    /// Keep draining the reusable repository stream without projecting events
+    /// or triggering follow-up work while sharing permission is withdrawn.
+    func suspendDelivery() {
         assistantDeltaFlushTask?.cancel()
         assistantDeltaFlushTask = nil
+        assistantDeltaCoalescer = AssistantDeltaEventCoalescer()
         visibleSessionID = nil
         orderedEventHandler = nil
         visibleAssistantDeltaHandler = nil

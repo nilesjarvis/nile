@@ -18,6 +18,7 @@ extension GatewaySetupModelTests {
                 profiles: [active],
                 activeID: active.id
             ),
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: ModelGatewayClient(),
             hermesVoiceService: voice,
             automaticallyRestore: false

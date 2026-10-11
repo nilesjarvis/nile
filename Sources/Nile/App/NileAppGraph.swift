@@ -9,6 +9,7 @@ final class NileAppGraph {
     let sessionList: SessionListModel
     let notificationEducation: NotificationEducationModel
     let appLock: BiometricAppLockModel
+    let privacyCleanup: PrivacyCleanupModel
     let showsSessionFixture: Bool
     let forcesReducedMotionFixture: Bool
     private(set) var pendingTurnNotificationRoute: TurnNotificationRoute?
@@ -48,6 +49,7 @@ final class NileAppGraph {
             fixturePlan.makeGatewayConnectionClientFixture()
                 ?? repository
         let draftStore = ProtectedComposerDraftStore()
+        let attachmentCache = PrivateAttachmentCache()
         let attachmentDraftStore = ProtectedAttachmentDraftStore()
         let sessionPinStore = ProtectedSessionPinStore()
         let sessionPinWriteQueue = SessionPinWriteQueue(
@@ -89,8 +91,16 @@ final class NileAppGraph {
                 sessionPinWriteQueue: sessionPinWriteQueue,
                 modelPinStore: modelPinStore,
                 modelPinWriteQueue: modelPinWriteQueue,
+                attachmentCache: attachmentCache,
                 backgroundController: IOSTurnBackgroundController()
             )
+        privacyCleanup = PrivacyCleanupModel(
+            gatewaySetup: gatewaySetup,
+            attachmentCache: attachmentCache,
+            onBegin: { [weak sessions = sessionList] in
+                sessions?.runtimes.mediaRuntime.reset()
+            }
+        )
         streamingStressFixtureTask = NileAppGraphFixtureInstaller.install(
             fixturePlan,
             on: sessionList
@@ -106,6 +116,10 @@ final class NileAppGraph {
         gatewaySetup.installGatewayWillConnectHandler {
             [weak sessions = sessionList] gatewayID in
             sessions?.stopBackgroundTurnsOutsideGateway(gatewayID)
+        }
+        gatewaySetup.installSharingConsentRevokedHandler {
+            [weak sessions = sessionList] in
+            sessions?.stopForSharingConsentWithdrawal()
         }
         gatewaySetup.installGatewaySwitchNeedsConfirmationHandler {
             [weak sessions = sessionList] gatewayID in

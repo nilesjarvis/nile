@@ -135,6 +135,9 @@ extension SessionListModel {
         } else {
             []
         }
+        guard isCurrentGateway(gatewayID, generation: loadGeneration) else {
+            return
+        }
         do {
             async let directory = runtimes.navigationRuntime.loadDirectory(
                 owner: navigationOwner
@@ -148,10 +151,11 @@ extension SessionListModel {
             sessions = fetched
             recordListedSessionOwnership(fetched)
             activeStatuses = snapshot.activeStatuses
+            let catalog = await discoveredCatalog
             guard isCurrentGateway(gatewayID, generation: loadGeneration) else {
                 return
             }
-            runtimes.commandRuntime.applyCatalog(await discoveredCatalog)
+            runtimes.commandRuntime.applyCatalog(catalog)
             state = .loaded
             operationError = nil
 
@@ -170,11 +174,11 @@ extension SessionListModel {
                     navigationOwner: navigationOwner
                 )
             }
-            if !draftRestoreErrors.isEmpty {
-                operationError = draftRestoreErrors.joined(separator: "\n")
-            }
             guard isCurrentGateway(gatewayID, generation: loadGeneration) else {
                 return
+            }
+            if !draftRestoreErrors.isEmpty {
+                operationError = draftRestoreErrors.joined(separator: "\n")
             }
             startRefreshingIfNeeded()
             reconcileDelegations()

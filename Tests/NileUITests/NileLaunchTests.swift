@@ -295,6 +295,8 @@ final class NileLaunchTests: XCTestCase {
         dialog = app.staticTexts["Switch to Lab Hermes?"]
         XCTAssertTrue(dialog.waitForExistence(timeout: 3))
         app.buttons["niles.gateway.switch.confirm"].tap()
+        let sharing = app.buttons["niles.privacy.sharing.approve"]
+        if sharing.waitForExistence(timeout: 3) { sharing.tap() }
 
         XCTAssertTrue(
             app.otherElements["niles.session.shell"].waitForExistence(
@@ -1536,6 +1538,19 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertFalse(send.isEnabled)
         XCTAssertGreaterThanOrEqual(send.frame.width, 44)
         XCTAssertGreaterThanOrEqual(send.frame.height, 44)
+        for identifier in [
+            "niles.goal.button",
+            "niles.composer.attach_photo",
+            "niles.composer.speak_replies",
+            "niles.composer.model_name",
+            "niles.composer.usage",
+            "niles.sessions.pull_handle",
+        ] {
+            let control = app.buttons[identifier]
+            XCTAssertTrue(control.exists, identifier)
+            XCTAssertGreaterThanOrEqual(control.frame.width, 44, identifier)
+            XCTAssertGreaterThanOrEqual(control.frame.height, 44, identifier)
+        }
 
         composer.tap()
         composer.typeText("Run the visual checks")
@@ -1554,7 +1569,17 @@ final class NileLaunchTests: XCTestCase {
                 .hasPrefix("Working, ") == true
         )
 
+        let dismissNotificationEducation = app.buttons[
+            "niles.notifications.education.dismiss"
+        ]
+        if dismissNotificationEducation.waitForExistence(timeout: 3) {
+            dismissNotificationEducation.tap()
+            XCTAssertTrue(
+                dismissNotificationEducation.waitForNonExistence(timeout: 3)
+            )
+        }
         composer.tap()
+        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 3))
         composer.typeText("Also check the spacing")
         let steer = app.buttons["niles.composer.send"]
         XCTAssertTrue(steer.waitForExistence(timeout: 3))
@@ -1591,6 +1616,14 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertLessThan(sessionSheet.frame.height, app.frame.height * 0.70)
         XCTAssertTrue(app.buttons["niles.session.new"].exists)
         XCTAssertTrue(app.buttons["niles.session.search.toggle"].exists)
+        for identifier in [
+            "niles.session.new",
+            "niles.session.search.toggle",
+        ] {
+            let control = app.buttons[identifier]
+            XCTAssertGreaterThanOrEqual(control.frame.width, 44, identifier)
+            XCTAssertGreaterThanOrEqual(control.frame.height, 44, identifier)
+        }
         XCTAssertFalse(app.textFields["niles.session.search"].exists)
         let expanded = XCTAttachment(screenshot: app.screenshot())
         expanded.name = "session-shell-expanded"
@@ -1630,6 +1663,14 @@ final class NileLaunchTests: XCTestCase {
         search.typeText("CLI")
         XCTAssertTrue(app.buttons["niles.session.row.cli"].exists)
         XCTAssertFalse(app.buttons["niles.session.row.brand"].exists)
+        for control in [
+            app.buttons["Clear search"],
+            app.buttons["niles.session.search.cancel"],
+        ] {
+            XCTAssertTrue(control.exists)
+            XCTAssertGreaterThanOrEqual(control.frame.width, 44)
+            XCTAssertGreaterThanOrEqual(control.frame.height, 44)
+        }
 
         app.buttons["niles.session.search.cancel"].tap()
         XCTAssertFalse(search.exists)
@@ -1977,12 +2018,18 @@ final class NileLaunchTests: XCTestCase {
         XCTAssertEqual(handle.label, "Show all sessions")
         XCTAssertTrue(handle.isHittable)
 
-        handle.coordinate(
+        let dragStart = handle.coordinate(
             withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)
-        ).press(
+        )
+        let dragDistance = min(
+            app.frame.height * 0.35,
+            app.frame.maxY - handle.frame.midY - 44
+        )
+        XCTAssertGreaterThan(dragDistance, 44)
+        dragStart.press(
             forDuration: 0.05,
-            thenDragTo: handle.coordinate(
-                withNormalizedOffset: CGVector(dx: 0.5, dy: 20.5)
+            thenDragTo: dragStart.withOffset(
+                CGVector(dx: 0, dy: dragDistance)
             ),
             withVelocity: .fast,
             thenHoldForDuration: 0
@@ -2220,9 +2267,7 @@ final class NileLaunchTests: XCTestCase {
             "Save accessibility width"
         )
 
-        field.tap()
-        field.typeKey("a", modifierFlags: .command)
-        field.typeText("  Release polish  ")
+        replaceText(in: field, with: "  Release polish  ", app: app)
         XCTAssertTrue(save.isEnabled)
 
         let screenshot = XCTAttachment(screenshot: app.screenshot())
@@ -2240,9 +2285,7 @@ final class NileLaunchTests: XCTestCase {
         openRenameDialog()
         XCTAssertTrue(dialog.waitForExistence(timeout: 3))
         XCTAssertEqual(field.value as? String, "Release polish")
-        field.tap()
-        field.typeKey("a", modifierFlags: .command)
-        field.typeText("Discard this edit")
+        replaceText(in: field, with: "Discard this edit", app: app)
         cancel.tap()
         XCTAssertFalse(dialog.waitForExistence(timeout: 1))
         XCTAssertTrue(app.staticTexts["Release polish"].exists)

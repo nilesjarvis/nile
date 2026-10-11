@@ -36,6 +36,10 @@ extension GatewaySetupModel {
         }
 
         dashboardURL = active.normalizedBaseURL
+        guard !requireSharingConsent(
+            for: active.endpoint, name: active.displayName, profileID: active.id
+        ) else { return }
+        let consentGeneration = sharingConsentGeneration
         resetHermesVoice()
         gatewayWillConnectHandler?(active.id)
         state = .checking
@@ -44,12 +48,15 @@ extension GatewaySetupModel {
                 active.connection,
                 timeoutMilliseconds: 15_000
             )
+            guard sharingConsentIsCurrent(for: active.endpoint, generation: consentGeneration) else { return }
             connectedProfile = active
             state = .connected
             reconnectPhaseHandler?(.online)
             isSettingsVisible = false
         } catch {
+            guard sharingConsentIsCurrent(for: active.endpoint, generation: consentGeneration) else { return }
             await connectionClient.close()
+            guard sharingConsentIsCurrent(for: active.endpoint, generation: consentGeneration) else { return }
             if presentSignIn(
                 for: error,
                 pending: PendingSignIn(
@@ -83,6 +90,10 @@ extension GatewaySetupModel {
         setPendingGatewaySwitch(nil)
         reconnectCoordinator.cancel()
         operationError = nil
+        guard !requireSharingConsent(
+            for: profile.endpoint, name: profile.displayName, profileID: profile.id
+        ) else { return }
+        let consentGeneration = sharingConsentGeneration
         resetHermesVoice()
         gatewayWillConnectHandler?(profile.id)
         state = .checking
@@ -91,14 +102,18 @@ extension GatewaySetupModel {
                 profile.connection,
                 timeoutMilliseconds: 15_000
             )
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return }
             try await profileStore.selectGateway(id: id)
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return }
             connectedProfile = profile
             activeGatewayID = id
             state = .connected
             reconnectPhaseHandler?(.online)
             isSettingsVisible = false
         } catch {
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return }
             await connectionClient.close()
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return }
             if presentSignIn(
                 for: error,
                 pending: PendingSignIn(
@@ -171,6 +186,13 @@ extension GatewaySetupModel {
             operationError = "This gateway is no longer saved."
             return
         }
+        let previousState = state
+        state = .checking
+        defer {
+            if state == .checking {
+                state = previousState
+            }
+        }
         let removingActive = activeGatewayID == id
         if removingActive {
             reconnectCoordinator.cancel()
@@ -204,19 +226,9 @@ extension GatewaySetupModel {
             return
         }
         do {
+            try await eraseProtectedGatewayData(id: id)
             try await profileStore.removeGateway(id: id)
             let snapshot = try await profileStore.load()
-            let draftCleanupError: String?
-            do {
-                try await composerDraftStore?.removeGateway(id: id)
-                try await attachmentDraftStore?.removeGateway(id: id)
-                try await sessionPinStore?.removeGateway(id: id)
-                try await modelPinStore?.removeGateway(id: id)
-                draftCleanupError = nil
-            } catch {
-                draftCleanupError =
-                    "The gateway was removed, but Nile could not erase all of its protected local data: \(error.localizedDescription)"
-            }
             savedGateways = snapshot.profiles
             activeGatewayID = snapshot.activeProfile?.id
             if pendingGatewaySwitch?.id == id {
@@ -228,13 +240,6 @@ extension GatewaySetupModel {
             } else if snapshot.profiles.isEmpty {
                 state = .idle
                 isSettingsVisible = true
-            }
-            if let draftCleanupError {
-                if case .failed = state {
-                    // Preserve the more actionable connection failure.
-                } else {
-                    operationError = draftCleanupError
-                }
             }
         } catch {
             if removingActive {

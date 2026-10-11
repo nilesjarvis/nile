@@ -116,6 +116,11 @@ extension SessionListModel {
                     retryable: false
                 )
             }
+            guard isCurrentDisplayRequest(
+                request.displayToken,
+                sessionID: id,
+                gatewayGeneration: request.gatewayGeneration
+            ) else { return }
             finishSessionDisplay(
                 settlingIncomingContent: request.settlingIncomingContent
             )

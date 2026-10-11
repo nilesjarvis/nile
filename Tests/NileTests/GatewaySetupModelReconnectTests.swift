@@ -21,6 +21,7 @@ extension GatewaySetupModelTests {
         let model = GatewaySetupModel(
             arguments: [],
             profileStore: store,
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: client,
             reconnectCoordinator: GatewayReconnectCoordinator(
                 network: network,
@@ -56,6 +57,7 @@ extension GatewaySetupModelTests {
                 profiles: [saved],
                 activeID: saved.id
             ),
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: ModelGatewayClient(),
             reconnectCoordinator: GatewayReconnectCoordinator(
                 network: network,
@@ -104,6 +106,7 @@ extension GatewaySetupModelTests {
                 profiles: [saved],
                 activeID: saved.id
             ),
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: ModelGatewayClient(
                 failure: GatewaySignInRequiredError(loginURL: login)
             ),
@@ -147,6 +150,7 @@ extension GatewaySetupModelTests {
                 profiles: [saved],
                 activeID: saved.id
             ),
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: client,
             automaticallyRestore: false
         )
@@ -192,6 +196,7 @@ extension GatewaySetupModelTests {
                 profiles: [saved],
                 activeID: saved.id
             ),
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: client,
             reconnectCoordinator: GatewayReconnectCoordinator(
                 network: ModelGatewayNetwork(available: true),

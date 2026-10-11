@@ -1,0 +1,12 @@
+Nile third-party acknowledgements
+
+Nile is based in part on the work of the FreeType Team.
+https://www.freetype.org
+The complete FreeType Project License is included in FreeType-FTL.txt.
+
+Nile uses HarfBuzz for text shaping.
+https://harfbuzz.github.io
+Copyright notices and the complete license are included in HarfBuzz-COPYING.txt.
+
+Nile includes the Roboto and Droid Sans Mono fonts under the Apache License,
+Version 2.0. The complete license is included in Roboto-LICENSE.txt.

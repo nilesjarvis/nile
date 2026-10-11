@@ -601,6 +601,7 @@ final class GatewayAuthenticationTests: XCTestCase, @unchecked Sendable {
         let model = GatewaySetupModel(
             arguments: [],
             profileStore: store,
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: client,
             automaticallyRestore: false
         )
@@ -647,6 +648,7 @@ final class GatewayAuthenticationTests: XCTestCase, @unchecked Sendable {
         let model = GatewaySetupModel(
             arguments: [],
             profileStore: store,
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: SignInSequenceClient(outcomes: []),
             sessionCleaner: cleaner,
             automaticallyRestore: false

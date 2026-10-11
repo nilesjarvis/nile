@@ -64,12 +64,13 @@ private struct GatewayRootView: View {
                             get: { model.isSettingsVisible },
                             set: { visible in if !visible { model.dismissSettings() } }
                         )) {
-                            SettingsView(model: model, appLock: graph.appLock)
+                            SettingsView(model: model, appLock: graph.appLock, privacyCleanup: graph.privacyCleanup)
                         }
                     } else {
                         SettingsView(
                             model: model,
-                            appLock: graph.appLock
+                            appLock: graph.appLock,
+                            privacyCleanup: graph.privacyCleanup
                         )
                     }
                 }

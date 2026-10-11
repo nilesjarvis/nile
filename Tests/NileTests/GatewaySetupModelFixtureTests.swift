@@ -25,6 +25,7 @@ extension GatewaySetupModelTests {
         let model = GatewaySetupModel(
             arguments: ["--nile-fixture-gateway-sign-in"],
             profileStore: store,
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: ModelGatewayClient()
         )
         await Task.yield()

@@ -98,4 +98,29 @@ final class SessionEventRuntimeTests: XCTestCase {
         case visibleDelta(HermesStreamEvent)
         case hiddenDelta(HermesStreamEvent)
     }
+
+    func testSuspendedDeliveryCanResumeTheSameRepositoryStream() async {
+        let repository = SessionRepositoryStub(sessions: [])
+        let runtime = SessionEventRuntime(repository: repository)
+        let before = expectation(description: "first stream delivery")
+        runtime.beginRouting(
+            visibleSessionID: { nil },
+            onOrderedEvent: { _ in before.fulfill() },
+            onVisibleAssistantDelta: { _ in false },
+            onHiddenAssistantDelta: { _ in }
+        )
+        await repository.yield(.assistantCompleted(sessionID: "one", text: "before", usage: nil))
+        await fulfillment(of: [before], timeout: 1)
+
+        runtime.suspendDelivery()
+        let after = expectation(description: "stream resumes without replacement")
+        runtime.beginRouting(
+            visibleSessionID: { nil },
+            onOrderedEvent: { _ in after.fulfill() },
+            onVisibleAssistantDelta: { _ in false },
+            onHiddenAssistantDelta: { _ in }
+        )
+        await repository.yield(.assistantCompleted(sessionID: "one", text: "after", usage: nil))
+        await fulfillment(of: [after], timeout: 1)
+    }
 }

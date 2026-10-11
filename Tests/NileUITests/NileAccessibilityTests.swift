@@ -6,6 +6,69 @@ final class NileAccessibilityTests: XCTestCase {
         continueAfterFailure = false
     }
 
+    func testLargeTextSharingConsentRemainsReachableAndCanBeDeclined() {
+        let app = XCUIApplication()
+        app.launchArguments = [
+            "--nile-fixture-reduced-motion",
+            "-AppleLanguages", "(en)",
+            "-AppleLocale", "en_US",
+            "-AppleInterfaceStyle", "Dark",
+        ]
+        app.launch()
+
+        let settings = app.scrollViews["niles.settings"]
+        XCTAssertTrue(settings.waitForExistence(timeout: 10))
+        let addGateway = app.buttons["niles.gateway.add"]
+        revealSharingControl(addGateway, in: settings)
+        addGateway.tap()
+
+        let url = app.textFields["niles.gateway.url"]
+        revealSharingControl(url, in: settings)
+        replaceText(
+            in: url,
+            with: "https://privacy-accessibility.example",
+            app: app
+        )
+        let connect = app.buttons["niles.gateway.connect"]
+        revealSharingControl(connect, in: settings)
+        connect.tap()
+
+        let consent = app.scrollViews["niles.privacy.sharing"]
+        XCTAssertTrue(consent.waitForExistence(timeout: 5))
+        let destination = app.staticTexts["niles.privacy.sharing.destination"]
+        XCTAssertTrue(destination.waitForExistence(timeout: 5))
+        XCTAssertEqual(destination.label, "https://privacy-accessibility.example")
+
+        let disclosure = XCTAttachment(screenshot: app.screenshot())
+        disclosure.name = "accessibility-large-text-sharing-disclosure"
+        disclosure.lifetime = .keepAlways
+        add(disclosure)
+
+        let approve = app.buttons["niles.privacy.sharing.approve"]
+        let cancel = app.buttons["niles.privacy.sharing.cancel"]
+        for button in [approve, cancel] {
+            revealSharingControl(button, in: consent)
+            XCTAssertGreaterThanOrEqual(
+                button.frame.height,
+                44,
+                "Sharing choices must preserve a 44-point touch target."
+            )
+            XCTAssertTrue(button.isEnabled)
+        }
+
+        let choices = XCTAttachment(screenshot: app.screenshot())
+        choices.name = "accessibility-large-text-sharing-choices"
+        choices.lifetime = .keepAlways
+        add(choices)
+
+        cancel.tap()
+        XCTAssertTrue(consent.waitForNonExistence(timeout: 5))
+        XCTAssertTrue(connect.waitForExistence(timeout: 5))
+        XCTAssertEqual(url.value as? String, "https://privacy-accessibility.example")
+        XCTAssertFalse(app.staticTexts["niles.gateway.error"].exists)
+        XCTAssertFalse(app.otherElements["niles.session.shell"].exists)
+    }
+
     func testLargeTextReducedMotionAndKeyboardJourneyRemainReachable() {
         let app = XCUIApplication()
         app.launchArguments = [
@@ -120,5 +183,21 @@ final class NileAccessibilityTests: XCTestCase {
         hierarchy.name = "accessibility-large-text-keyboard-hierarchy"
         hierarchy.lifetime = .keepAlways
         add(hierarchy)
+    }
+
+    private func revealSharingControl(
+        _ element: XCUIElement,
+        in scrollView: XCUIElement
+    ) {
+        for _ in 0..<12 {
+            if element.waitForExistence(timeout: 0.5), element.isHittable {
+                return
+            }
+            scrollView.swipeUp()
+        }
+        XCTAssertTrue(
+            element.isHittable,
+            "The sharing flow must remain reachable by scrolling at accessibility text sizes."
+        )
     }
 }

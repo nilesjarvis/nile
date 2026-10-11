@@ -2,6 +2,7 @@ import SwiftUI
 struct SettingsView: View {
     @Bindable var model: GatewaySetupModel
     @Bindable var appLock: BiometricAppLockModel
+    var privacyCleanup: PrivacyCleanupModel? = nil
     @State private var pendingRemoval: GatewayProfile?
     @State private var isRemovingGateway = false
     @State private var isGatewayFormExpanded = false
@@ -41,6 +42,16 @@ struct SettingsView: View {
                 set: { model.setHermesVoiceSheetVisible($0) }
             )
         ) { HermesVoiceSheetView(model: model) }
+        .sheet(item: Binding(
+            get: { model.pendingSharingConsent },
+            set: { if $0 == nil { model.cancelSharingConsent() } }
+        )) { request in
+            GatewaySharingConsentView(
+                request: request,
+                onApprove: { Task { await model.approveSharingConsent() } },
+                onCancel: model.cancelSharingConsent
+            )
+        }
         .presentationDetents([.large])
         .presentationDragIndicator(model.connectedProfile == nil ? .hidden : .visible)
         .presentationCornerRadius(NileRadii.window)
@@ -58,6 +69,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 18) {
                 hermesSettingsGroup
                 securityCard
+                privacyLink
             }
             .padding(.horizontal, 16)
             .padding(.top, 12).padding(.bottom, 28)
@@ -145,7 +157,7 @@ struct SettingsView: View {
                                 relativeTo: .largeTitle
                             )
                         )
-                    Text("Add a gateway to begin using Nile from your iPhone.")
+                    Text("Nile requires access to a compatible Hermes gateway. Enter the HTTPS address provided by your gateway operator to get started.")
                         .font(NileTypography.bodyMedium)
                         .foregroundStyle(NileColors.muted)
                         .multilineTextAlignment(.center)
@@ -170,6 +182,7 @@ struct SettingsView: View {
                 }
                 .buttonStyle(.plain)
                 .nilePanel()
+                privacyLink
             }
             .padding(.horizontal, 16)
             .padding(.top, 48)
@@ -200,6 +213,19 @@ struct SettingsView: View {
             errorMessage: appLock.errorMessage,
             unavailableMessage: appLock.capability.unavailableMessage
         )
+    }
+    private var privacyLink: some View {
+        NavigationLink {
+            PrivacyInformationView(gateway: model, cleanup: privacyCleanup)
+        } label: {
+            Label("Privacy & Data", systemImage: "hand.raised")
+                .font(NileTypography.bodyMedium.weight(.semibold))
+                .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
+                .padding(.horizontal, 14)
+        }
+        .buttonStyle(.plain)
+        .nilePanel()
+        .accessibilityIdentifier(NileAccessibilityID.privacyEntry)
     }
     private var activeProfile: GatewayProfile? {
         model.savedGateways.first { $0.id == model.activeGatewayID }

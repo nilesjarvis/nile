@@ -18,6 +18,7 @@ extension GatewaySetupModelTests {
         let model = GatewaySetupModel(
             arguments: [],
             profileStore: store,
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             connectionClient: client,
             automaticallyRestore: false
         )
@@ -82,6 +83,7 @@ extension GatewaySetupModelTests {
         let model = GatewaySetupModel(
             arguments: [],
             profileStore: profileStore,
+            sharingConsentStore: AcceptedGatewaySharingConsentStore(),
             composerDraftStore: draftStore,
             sessionPinStore: sessionPinStore,
             modelPinStore: pinStore,

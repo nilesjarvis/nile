@@ -810,7 +810,7 @@ extension ArchitectureBoundaryTests {
 
     func testGatewaySetupKeepsModelAndSurfaceResponsibilitiesBounded() throws {
         let appDirectory = repositoryRoot.appendingPathComponent("Sources/Nile/App", isDirectory: true)
-        let appNames = ["GatewaySetupModel.swift", "GatewaySetupModelPresentation.swift", "GatewaySetupDependencies.swift", "GatewaySetupModelDebugFixtures.swift", "GatewaySetupModelConnection.swift", "GatewaySetupModelProfiles.swift", "GatewaySetupModelVoice.swift"]
+        let appNames = ["GatewaySetupModel.swift", "GatewaySetupModelPresentation.swift", "GatewaySetupDependencies.swift", "GatewaySetupModelDebugFixtures.swift", "GatewaySetupModelConnection.swift", "GatewaySetupModelProfiles.swift", "GatewaySetupModelVoice.swift", "GatewaySetupModelSharingConsent.swift", "GatewaySetupModelFormConnection.swift", "GatewaySetupModelConnectionErrors.swift"]
         let appSources = try appNames.map { try source(in: appDirectory, named: $0) }
         let ownership: [(markers: [String], excluded: [String])] = [
             (["final class GatewaySetupModel", "GatewaySetupDependencies.resolve(", "func connect() async", "private(set) var pendingGatewaySwitch: GatewayProfile?", "func setPendingGatewaySwitch(", "func observeAuthenticationEvents(", "var usesDeterministicFixtureCopy = false"], ["import WebKit", "SecureGatewayProfileStore(", "GatewayAuthenticationService(", "TuiGatewayClient(", "NileDebugFixturePolicy", "--nile-fixture-", "usesDeterministicFixtureCopy = true", "var isChecking: Bool", "var errorMessage: String?", "func updateDashboardURL(", "var showsSessionShell: Bool", "func restoreSavedGateway()", "func completeGatewaySignIn()", "func applyHermesVoice("]),
@@ -820,16 +820,19 @@ extension ArchitectureBoundaryTests {
             (["extension GatewaySetupModel", "func completeGatewaySignIn()", "func handleConnectionLoss(", "func attemptReconnect(", "func handleAuthenticationExpiry("], ["func removeGateway(id:", "func applyHermesVoice("]),
             (["extension GatewaySetupModel", "func restoreSavedGateway()", "func useGateway(id:", "func removeGateway(id:", "func showSettings()"], ["pendingGatewaySwitch =", "func attemptReconnect(", "func applyHermesVoice("]),
             (["extension GatewaySetupModel", "func setHermesVoiceSheetVisible(", "func applyHermesVoice(", "func resetHermesVoice()"], ["func useGateway(id:", "func attemptReconnect("]),
+            (["struct GatewaySharingConsentRequest:", "func requireSharingConsent(", "func approveSharingConsent()", "func revokeSharingConsent()"], ["UserDefaults", "import WebKit", "connectionClient.connect("]),
+            (["extension GatewaySetupModel", "func connectApprovedForm(to"], ["UserDefaults", "func approveSharingConsent()"]),
+            (["extension GatewaySetupModel", "static func isRetryableConnectionFailure(", "static func connectionMessage("], ["connectionClient.connect(", "UserDefaults"]),
         ]
         for (index, boundary) in ownership.enumerated() { boundary.markers.forEach { XCTAssertTrue(appSources[index].contains($0)) }; boundary.excluded.forEach { XCTAssertFalse(appSources[index].contains($0)) } }
-        for marker in ownership.flatMap(\.markers) where !["extension GatewaySetupModel", "#if DEBUG"].contains(marker) { XCTAssertEqual(appSources.filter { $0.contains(marker) }.count, 1) }
+        for marker in ownership.flatMap(\.markers) where !["extension GatewaySetupModel", "#if DEBUG"].contains(marker) { XCTAssertEqual(appSources.filter { $0.contains(marker) }.count, 1, "Keep \(marker) in exactly one setup boundary") }
         let lineCounts = appSources.map { $0.components(separatedBy: .newlines).count }
-        XCTAssertTrue(zip(lineCounts, [260, 80, 100, 80, 310, 300, 175]).allSatisfy { $0.0 < $0.1 })
-        XCTAssertLessThan(lineCounts.reduce(0, +), 1_220, "Do not hide gateway-setup growth behind the source split")
+        XCTAssertTrue(zip(lineCounts, [225, 80, 100, 80, 310, 300, 175, 100, 85, 45]).allSatisfy { $0.0 < $0.1 })
+        XCTAssertLessThan(lineCounts.reduce(0, +), 1_400, "Keep consent, connection, and settings responsibilities bounded")
 
         let featureDirectory = repositoryRoot.appendingPathComponent("Sources/Nile/Features/Gateway", isDirectory: true)
         let surfaceBoundaries: [(file: String, marker: String, limit: Int)] = [
-            ("SettingsView.swift", "struct SettingsView: View", 275),
+            ("SettingsView.swift", "struct SettingsView: View", 310),
             ("SettingsCards.swift", "struct SettingsSecurityCard: View", 210),
             ("HermesVoiceEntryView.swift", "struct HermesVoiceEntryView: View", 75),
             ("HermesVoiceSettingsView.swift", "struct HermesVoiceSheetView: View", 175),
@@ -853,7 +856,9 @@ extension ArchitectureBoundaryTests {
         for marker in ["SettingsSecurityCard(", "SettingsGatewayCard(", "GatewayRemovalConfirmationDialog(", "Task {"] { XCTAssertTrue(surfaceSources[0].contains(marker)) }
         for marker in ["struct SettingsSecurityCard: View", "struct SettingsGatewayCard: View", "let isEnabled: Binding<Bool>", "let onUse: (String) -> Void", "let onRemove: (GatewayProfile) -> Void"] { XCTAssertTrue(surfaceSources[1].contains(marker)) }
         for forbidden in ["GatewaySetupModel", "BiometricAppLockModel", "@Bindable", "Task {", "requestGatewayUse(", "setEnabled(", "GatewayRemovalConfirmationDialog"] { XCTAssertFalse(surfaceSources[1].contains(forbidden)) }
-        XCTAssertLessThan(surfaceSources.prefix(2).map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 470)
+        for marker in ["PrivacyInformationView(", "GatewaySharingConsentView(", "model.pendingSharingConsent", "model.approveSharingConsent()"] { XCTAssertTrue(surfaceSources[0].contains(marker)) }
+        XCTAssertFalse(surfaceSources[0].contains("sharingConsentStore.accept"))
+        XCTAssertLessThan(surfaceSources.prefix(2).map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 515)
         XCTAssertEqual(surfaceSources.filter { $0.contains("struct HermesVoicePreset") }.count, 1)
         XCTAssertTrue(surfaceSources[3].contains("@Bindable var model: GatewaySetupModel"))
         for forbidden in ["GatewaySetupModel", "@Bindable", "setHermesVoiceSheetVisible", "applyHermesVoice"] { XCTAssertFalse(surfaceSources[4].contains(forbidden)) }
@@ -862,9 +867,9 @@ extension ArchitectureBoundaryTests {
         for (index, forbidden) in [(9, ["import WebKit", "struct GatewayLoginNavigationPolicy"]), (10, ["struct GatewaySignInView", "func gatewayOriginKey"]), (11, ["import SwiftUI", "import WebKit", "WKWebView"])] { forbidden.forEach { XCTAssertFalse(surfaceSources[index].contains($0)) } }
         for (source, markers) in [(surfaceSources[12], ["@Bindable var model: GatewaySetupModel", "Task {", "GatewayCleartextWarning(", "GatewayCleartextApproval("]), (surfaceSources[13], ["struct GatewayCleartextApproval: View", "NileComposeText(", "NileAccessibilityID.gatewayCleartextWarning", "NileAccessibilityID.approveCleartext"])] { markers.forEach { XCTAssertTrue(source.contains($0)) } }
         for (source, markers) in [(surfaceSources[12], ["NileMaterialButtonStyle", "materialButtonHeight", "connectButtonRasterBackground", "exactFieldText(", "struct GatewayCleartextWarning", "struct GatewayCleartextApproval"]), (surfaceSources[13], ["GatewaySetupModel", "@Bindable", "Task {", "func connect("])] { markers.forEach { XCTAssertFalse(source.contains($0)) } }
-        XCTAssertLessThan(surfaceSources.prefix(9).map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 1_350)
+        XCTAssertLessThan(surfaceSources.prefix(9).map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 1_400)
         XCTAssertLessThan(
-            surfaceSources.map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 2_100,
+            surfaceSources.map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 2_170,
             "Keep every gateway surface in one bounded aggregate"
         )
 
@@ -902,8 +907,8 @@ extension ArchitectureBoundaryTests {
             XCTAssertEqual(occurrences, 1)
         }
         XCTAssertLessThan(
-            splitSources.map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 1_580,
-            "Do not hide setup-test growth behind behavior and fake splits"
+            splitSources.map { $0.components(separatedBy: .newlines).count }.reduce(0, +), 1_620,
+            "Allow explicit post-consent fixture injection while keeping setup tests bounded"
         )
     }
 

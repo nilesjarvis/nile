@@ -114,10 +114,7 @@ final class URLSessionGatewayWebSocketFactory: GatewayWebSocketFactory, @uncheck
     private let configuration: URLSessionConfiguration
 
     init() {
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.httpShouldSetCookies = false
-        configuration.httpCookieAcceptPolicy = .never
-        self.configuration = configuration
+        configuration = GatewayNetworkPrivacyPolicy.configuration()
     }
 
     init(configuration: URLSessionConfiguration) {

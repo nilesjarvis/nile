@@ -12,9 +12,14 @@ protocol AttachmentCaching: Sendable {
         -> CachedAttachment
 }
 
+protocol AttachmentCacheClearing: Sendable {
+    func removeAll() async throws
+}
+
 enum AttachmentCacheError: LocalizedError, Equatable, Sendable {
     case attachmentTooLarge
     case storageAccess
+    case cleanupFailed
 
     var errorDescription: String? {
         switch self {
@@ -22,11 +27,13 @@ enum AttachmentCacheError: LocalizedError, Equatable, Sendable {
             "Attachment exceeds the private viewer cache limit"
         case .storageAccess:
             "Nile could not prepare the attachment for viewing"
+        case .cleanupFailed:
+            "Nile could not erase downloaded attachments. Try again."
         }
     }
 }
 
-actor PrivateAttachmentCache: AttachmentCaching {
+actor PrivateAttachmentCache: AttachmentCaching, AttachmentCacheClearing {
     private let directory: URL
     private let fileManager: FileManager
     private let maximumEntries: Int
@@ -58,6 +65,7 @@ actor PrivateAttachmentCache: AttachmentCaching {
     func prepare(
         _ attachment: DownloadedAttachment
     ) throws -> CachedAttachment {
+        try Task.checkCancellation()
         guard Int64(attachment.bytes.count) <= maximumBytes else {
             throw AttachmentCacheError.attachmentTooLarge
         }
@@ -116,6 +124,17 @@ actor PrivateAttachmentCache: AttachmentCaching {
             throw error
         } catch {
             throw AttachmentCacheError.storageAccess
+        }
+    }
+
+    func removeAll() throws {
+        guard fileManager.fileExists(atPath: directory.path) else {
+            return
+        }
+        do {
+            try fileManager.removeItem(at: directory)
+        } catch {
+            throw AttachmentCacheError.cleanupFailed
         }
     }
 

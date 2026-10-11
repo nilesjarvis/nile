@@ -13,6 +13,11 @@ extension GatewaySetupModel {
         else {
             return
         }
+        guard sharingConsentStore.isAccepted(for: pending.connection.endpoint) else {
+            await revokeSharingConsent()
+            return
+        }
+        let consentGeneration = sharingConsentGeneration
         gatewaySignInURL = nil
         operationError = nil
         if let profile = pending.profile {
@@ -30,6 +35,7 @@ extension GatewaySetupModel {
                 pending.connection,
                 timeoutMilliseconds: 15_000
             )
+            guard sharingConsentIsCurrent(for: pending.connection.endpoint, generation: consentGeneration) else { return }
             let profile: GatewayProfile
             if let saved = pending.profile {
                 try await profileStore.selectGateway(id: saved.id)
@@ -41,6 +47,7 @@ extension GatewaySetupModel {
                 )
             }
             let snapshot = try await profileStore.load()
+            guard sharingConsentIsCurrent(for: pending.connection.endpoint, generation: consentGeneration) else { return }
             savedGateways = snapshot.profiles
             activeGatewayID = profile.id
             connectedProfile = profile
@@ -50,7 +57,9 @@ extension GatewaySetupModel {
             reconnectPhaseHandler?(.online)
             isSettingsVisible = false
         } catch {
+            guard sharingConsentIsCurrent(for: pending.connection.endpoint, generation: consentGeneration) else { return }
             await connectionClient.close()
+            guard sharingConsentIsCurrent(for: pending.connection.endpoint, generation: consentGeneration) else { return }
             if presentSignIn(for: error, pending: pending) {
                 return
             }
@@ -105,6 +114,7 @@ extension GatewaySetupModel {
     }
 
     func scheduleReconnect(for profile: GatewayProfile) {
+        guard sharingConsentStore.isAccepted(for: profile.endpoint) else { return }
         reconnectCoordinator.schedule(
             onPhase: { [weak self] phase in
                 self?.applyReconnectPhase(phase, profileID: profile.id)
@@ -156,17 +166,21 @@ extension GatewaySetupModel {
         _ profile: GatewayProfile
     ) async -> GatewayReconnectDirective {
         guard connectedProfile?.id == profile.id,
+              sharingConsentStore.isAccepted(for: profile.endpoint),
               !isSettingsVisible,
               gatewaySignInURL == nil
         else {
             return .stop
         }
+        let consentGeneration = sharingConsentGeneration
         do {
             try await connectionClient.connect(
                 profile.connection,
                 timeoutMilliseconds: 15_000
             )
+            guard sharingConsentGeneration == consentGeneration else { return .stop }
             guard connectedProfile?.id == profile.id,
+                  sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration),
                   !isSettingsVisible,
                   gatewaySignInURL == nil
             else {
@@ -176,7 +190,9 @@ extension GatewaySetupModel {
             state = .restoring
             reconnectPhaseHandler?(.restoring)
             let restored = await reconnectRestorer?(profile) ?? true
+            guard sharingConsentGeneration == consentGeneration else { return .stop }
             guard connectedProfile?.id == profile.id,
+                  sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration),
                   !isSettingsVisible,
                   gatewaySignInURL == nil
             else {
@@ -185,18 +201,22 @@ extension GatewaySetupModel {
             }
             guard restored else {
                 await connectionClient.close()
+                guard sharingConsentGeneration == consentGeneration else { return .stop }
                 state = .reconnecting
                 reconnectPhaseHandler?(.reconnecting)
                 return .retry
             }
             try await profileStore.selectGateway(id: profile.id)
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
             activeGatewayID = profile.id
             state = .connected
             reconnectPhaseHandler?(.online)
             operationError = nil
             return .stop
         } catch {
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
             await connectionClient.close()
+            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
             let pending = PendingSignIn(
                 connection: profile.connection,
                 name: profile.name,
@@ -224,6 +244,7 @@ extension GatewaySetupModel {
         _ event: GatewayAuthenticationEvent
     ) async {
         guard let profile = connectedProfile,
+              sharingConsentStore.isAccepted(for: profile.endpoint),
               profile.id == event.profileID,
               gatewaySignInURL == nil
         else {
@@ -249,7 +270,8 @@ extension GatewaySetupModel {
         for error: any Error,
         pending: PendingSignIn
     ) -> Bool {
-        guard let signIn = error as? GatewaySignInRequiredError else {
+        guard sharingConsentStore.isAccepted(for: pending.connection.endpoint),
+              let signIn = error as? GatewaySignInRequiredError else {
             return false
         }
         pendingSignIn = pending
@@ -260,34 +282,4 @@ extension GatewaySetupModel {
         return true
     }
 
-    static func isRetryableConnectionFailure(
-        _ error: any Error
-    ) -> Bool {
-        if let hermes = error as? HermesError {
-            return hermes.isConnectionFailure && hermes.retryable
-        }
-        if let urlError = error as? URLError {
-            return urlError.code != .cancelled
-        }
-        if let probe = error as? GatewayProbeError {
-            guard case let .httpStatus(status) = probe else {
-                return false
-            }
-            return status == 408 || status == 429 || status >= 500
-        }
-        return false
-    }
-
-    static func connectionMessage(for error: any Error) -> String {
-        if let conflict = error as? GatewayCookieScopeConflictError {
-            return conflict.localizedDescription
-        }
-        if let tokenError = error as? GatewayTokenRequiredError {
-            return tokenError.localizedDescription
-        }
-        if let hermesError = error as? HermesError {
-            return hermesError.localizedDescription
-        }
-        return GatewayProbePresentation.message(for: error)
-    }
 }

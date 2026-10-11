@@ -107,9 +107,17 @@ final class SessionMediaRuntime {
                     path: path,
                     maxBytes: Self.viewerMaximumBytes
                 )
-                let cached = try await cache.prepare(downloaded)
+                try Task.checkCancellation()
                 guard let self,
                       self.openingGeneration == generation else {
+                    return
+                }
+                guard isCurrentOwner(owner) else {
+                    self.finishOpening(generation: generation)
+                    return
+                }
+                let cached = try await cache.prepare(downloaded)
+                guard self.openingGeneration == generation else {
                     return
                 }
                 guard isCurrentOwner(owner) else {

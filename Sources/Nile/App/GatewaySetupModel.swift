@@ -19,7 +19,7 @@ final class GatewaySetupModel {
 #if DEBUG || NILE_LOCAL_RELEASE
     var dashboardURL = "http://127.0.0.1:9119"
 #else
-    var dashboardURL = "https://hermes.example"
+    var dashboardURL = ""
 #endif
     var legacyToken = ""
     var cleartextApproved = false
@@ -29,6 +29,9 @@ final class GatewaySetupModel {
     var activeGatewayID: String?
     var connectedProfile: GatewayProfile?
     private(set) var pendingGatewaySwitch: GatewayProfile?
+    var pendingSharingConsent: GatewaySharingConsentRequest?
+    var sharingConsentGeneration: UInt64 = 0
+    var sharingConsentRevokedHandler: (@MainActor @Sendable () -> Void)?
     var isSettingsVisible = true
     var gatewaySignInURL: URL?
     var signInFixtureHTML: String?
@@ -40,6 +43,7 @@ final class GatewaySetupModel {
     var usesDeterministicFixtureCopy = false
     var operationError: String?
     let profileStore: any GatewayProfileStoring
+    let sharingConsentStore: any GatewaySharingConsentStoring
     let composerDraftStore: (any ComposerDraftStoring)?
     let attachmentDraftStore: (any AttachmentDraftStoring)?
     let sessionPinStore: (any SessionPinStoring)?
@@ -72,6 +76,7 @@ final class GatewaySetupModel {
     init(
         arguments: [String] = ProcessInfo.processInfo.arguments,
         profileStore: (any GatewayProfileStoring)? = nil,
+        sharingConsentStore: (any GatewaySharingConsentStoring)? = nil,
         composerDraftStore: (any ComposerDraftStoring)? = nil,
         attachmentDraftStore: (any AttachmentDraftStoring)? = nil,
         sessionPinStore: (any SessionPinStoring)? = nil,
@@ -97,6 +102,7 @@ final class GatewaySetupModel {
             reconnectCoordinator: reconnectCoordinator
         )
         self.profileStore = dependencies.profileStore
+        self.sharingConsentStore = sharingConsentStore ?? GatewaySharingConsentStore()
         self.composerDraftStore = dependencies.composerDraftStore
         self.attachmentDraftStore = dependencies.attachmentDraftStore
         self.sessionPinStore = dependencies.sessionPinStore
@@ -191,54 +197,10 @@ final class GatewaySetupModel {
             return
         }
 
-        resetHermesVoice()
-        gatewayWillConnectHandler?(nil)
-        state = .checking
-        let connection = GatewayConnection(
-            endpoint: endpoint,
-            token: legacyToken.trimmingCharacters(in: .whitespacesAndNewlines),
-            cleartextPermission: endpoint.isCleartext ? .approved : .denied
-        )
-        do {
-            try await connectionClient.connect(
-                connection,
-                timeoutMilliseconds: 15_000
-            )
-        } catch {
-            await connectionClient.close()
-            if presentSignIn(
-                for: error,
-                pending: PendingSignIn(
-                    connection: connection,
-                    name: gatewayName,
-                    profile: nil
-                )
-            ) {
-                return
-            }
-            connectedProfile = nil
-            state = .failed(Self.connectionMessage(for: error))
+        guard !requireSharingConsent(for: endpoint, name: gatewayName) else {
             return
         }
-
-        do {
-            let profile = try await profileStore.save(
-                connection: connection,
-                name: gatewayName
-            )
-            let snapshot = try await profileStore.load()
-            savedGateways = snapshot.profiles
-            activeGatewayID = profile.id
-            connectedProfile = profile
-            legacyToken = ""
-            state = .connected
-            reconnectPhaseHandler?(.online)
-            isSettingsVisible = false
-        } catch {
-            await connectionClient.close()
-            connectedProfile = nil
-            state = .failed(error.localizedDescription)
-        }
+        await connectApprovedForm(to: endpoint)
     }
 
     isolated deinit {

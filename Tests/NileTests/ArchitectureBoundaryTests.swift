@@ -71,8 +71,8 @@ final class ArchitectureBoundaryTests: XCTestCase {
         )
         XCTAssertLessThan(
             aggregateLines,
-            5_450,
-            "Do not hide architecture-test growth behind the source split"
+            5_500,
+            "Allow bounded privacy ownership coverage without hiding architecture-test growth"
         )
     }
 

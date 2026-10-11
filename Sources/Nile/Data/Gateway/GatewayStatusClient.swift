@@ -60,9 +60,7 @@ struct URLSessionGatewayHTTPTransport: GatewayHTTPTransport {
     private let session: URLSession
 
     init() {
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.httpShouldSetCookies = false
-        configuration.httpCookieAcceptPolicy = .never
+        let configuration = GatewayNetworkPrivacyPolicy.configuration()
         session = URLSession(
             configuration: configuration,
             delegate: GatewayNoRedirectDelegate.shared,

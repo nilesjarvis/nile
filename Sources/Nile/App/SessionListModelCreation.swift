@@ -193,6 +193,10 @@ extension SessionListModel {
                     gatewayGeneration: requestGatewayGeneration
                 )
             }
+            guard displayToken == displayGeneration,
+                  requestGatewayGeneration == gatewayGeneration else {
+                return
+            }
             isOpeningSession = false
             state = .loaded
         } catch is CancellationError {

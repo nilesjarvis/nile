@@ -1,0 +1,16 @@
+extension NileAccessibilityID {
+    static let privacyEntry = "niles.privacy.entry"
+    static let privacyInformation = "niles.privacy.information"
+    static let privacyPolicy = "niles.privacy.policy"
+    static let privacySupport = "niles.privacy.support"
+    static let privacyWithdraw = "niles.privacy.withdraw"
+    static let privacyWithdrawConfirm = "niles.privacy.withdraw.confirm"
+    static let privacyClear = "niles.privacy.clear"
+    static let privacyClearConfirm = "niles.privacy.clear.confirm"
+    static let privacyCleared = "niles.privacy.cleared"
+    static let softwareNotices = "niles.privacy.notices"
+    static let sharingConsent = "niles.privacy.sharing"
+    static let sharingDestination = "niles.privacy.sharing.destination"
+    static let sharingApprove = "niles.privacy.sharing.approve"
+    static let sharingCancel = "niles.privacy.sharing.cancel"
+}

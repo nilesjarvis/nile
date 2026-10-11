@@ -3,7 +3,11 @@ import Foundation
 /// Applies the gateway-wide teardown transaction for an ordered connection loss.
 @MainActor
 extension SessionListModel {
-    func applyVisibleConnectionLoss(message: String, retryable: Bool) {
+    func applyVisibleConnectionLoss(
+        message: String,
+        retryable: Bool,
+        notifyGateway: Bool = true
+    ) {
         cacheVisibleLiveTimeline()
         cancelVoiceForOwnershipChange()
         runtimes.speechRuntime.stop()
@@ -61,10 +65,12 @@ extension SessionListModel {
         operationError = nil
         state = .failed(message)
         connectionPhase = retryable ? .reconnecting : .failed
-        runtimes.lifecycleRuntime.notifyConnectionLoss(
-            GatewayConnectionLossNotice(
-                message: message, retryable: retryable
+        if notifyGateway {
+            runtimes.lifecycleRuntime.notifyConnectionLoss(
+                GatewayConnectionLossNotice(
+                    message: message, retryable: retryable
+                )
             )
-        )
+        }
     }
 }

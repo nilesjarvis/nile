@@ -442,7 +442,7 @@ private struct SessionWorkspaceView: View {
                     }
                 }
                 .frame(width: 16, height: 16)
-                .frame(width: 44, height: 44)
+                .frame(width: 48, height: 48)
                 .contentShape(Rectangle())
             }
             .buttonStyle(SessionHeaderActionButtonStyle())
@@ -467,7 +467,7 @@ private struct SessionWorkspaceView: View {
             Button(action: showSettings) {
                 NileMaterialIcon(kind: .settings)
                     .frame(width: 16, height: 16)
-                    .frame(width: 44, height: 44)
+                    .frame(width: 48, height: 48)
                     .contentShape(Rectangle())
             }
             .buttonStyle(SessionHeaderActionButtonStyle())
@@ -1352,8 +1352,8 @@ private struct SessionSectionView: View {
         }
         .frame(
             maxWidth: .infinity,
-            minHeight: model.isExpanded ? expandedHeight : 78,
-            maxHeight: model.isExpanded ? expandedHeight : 78,
+            minHeight: model.isExpanded ? expandedHeight : 102,
+            maxHeight: model.isExpanded ? expandedHeight : 102,
             alignment: .top
         )
         .animation(
@@ -1638,7 +1638,8 @@ private struct SessionSectionView: View {
                     Capsule()
                         .fill(NileColors.borderStrong)
                         .frame(width: 32, height: 4)
-                        .frame(width: 48, height: 20)
+                        .frame(width: 48, height: 44)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Show all sessions")
@@ -1659,7 +1660,7 @@ private struct SessionSectionView: View {
                         )
                 }
             }
-            .frame(height: 20)
+            .frame(height: 44)
         }
         .contentShape(Rectangle())
         .simultaneousGesture(expandSessionsSwipeGesture)
@@ -1696,9 +1697,10 @@ private struct SessionSectionView: View {
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(NileColors.text)
                     .frame(width: 30, height: 30)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .nileGlassButton()
-            .frame(width: 44, height: 44)
             .accessibilityLabel(
                 searchPresented ? "Hide session search" : "Search sessions"
             )
@@ -1715,9 +1717,10 @@ private struct SessionSectionView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(NileColors.text)
                     .frame(width: 30, height: 30)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .nileGlassButton()
-            .frame(width: 44, height: 44)
             .disabled(!model.canCreateSession)
             .accessibilityLabel("New session")
             .accessibilityIdentifier(NileAccessibilityID.newSession)
@@ -1973,6 +1976,8 @@ private struct SessionSearchBar: View {
                             .font(.system(size: 16, weight: .medium))
                             .foregroundStyle(NileColors.muted)
                             .frame(width: 28, height: 28)
+                            .frame(width: 44, height: 44)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel("Clear search")
@@ -1980,7 +1985,7 @@ private struct SessionSearchBar: View {
             }
             .padding(.leading, 12)
             .padding(.trailing, 8)
-            .frame(height: 40)
+            .frame(height: 44)
             .background(NileColors.inset)
             .clipShape(
                 RoundedRectangle(cornerRadius: NileRadii.small, style: .continuous)
@@ -1990,15 +1995,18 @@ private struct SessionSearchBar: View {
                     .strokeBorder(NileColors.border, lineWidth: 1)
             }
 
-            Button("Cancel", action: onCancel)
-                .font(NileTypography.bodyMedium)
-                .foregroundStyle(NileColors.accent)
-                .buttonStyle(.plain)
-                .frame(minWidth: 54, minHeight: 44)
-                .keyboardShortcut(.cancelAction)
-                .accessibilityIdentifier(
-                    NileAccessibilityID.sessionSearchCancel
-                )
+            Button(action: onCancel) {
+                Text("Cancel")
+                    .font(NileTypography.bodyMedium)
+                    .foregroundStyle(NileColors.accent)
+                    .frame(minWidth: 54, minHeight: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .keyboardShortcut(.cancelAction)
+            .accessibilityIdentifier(
+                NileAccessibilityID.sessionSearchCancel
+            )
         }
         .onAppear {
             Task { @MainActor in

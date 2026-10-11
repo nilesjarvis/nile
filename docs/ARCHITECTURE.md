@@ -179,9 +179,21 @@ Nile has no developer-operated cloud service or bundled analytics/advertising
 SDK. Runtime content is exchanged with the gateway and sign-in origins selected
 by the user.
 
-Known release work remains tracked in the README: the app still needs a bundled
-privacy manifest, a public privacy policy, and final cache and WebKit-data
-cleanup controls before App Store distribution.
+The app bundles its required-reason privacy manifest and software notices.
+Gateway sharing consent is versioned and scoped to a hashed canonical endpoint;
+connection, restoration, and switching wait for explicit permission. Withdrawal
+stops local session/voice work before disconnecting and fences stale connection
+callbacks. Consent records contain no endpoint text, credentials, or content.
+
+Privacy & Data offers explicit cleanup of all downloaded previews and WebKit
+website data while disconnected. Ordinary profile removal retains its identity
+until every protected local store has been erased so failed cleanup is retryable.
+Foundation response, cookie, and credential caches are disabled; authentication
+continues to supply only explicitly managed cookie headers.
+
+The publisher must still supply public privacy/support pages and review data
+labels before App Store distribution. See [`APP_STORE_READINESS.md`](APP_STORE_READINESS.md)
+and [`APP_STORE_PREFLIGHT.md`](APP_STORE_PREFLIGHT.md).
 
 ## Build configurations
 

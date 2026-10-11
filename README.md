@@ -7,9 +7,9 @@ work to iPhone in a SwiftUI/UIKit application.
 
 > [!IMPORTANT]
 > Nile is under active development. Its deterministic test suites cover the
-> core product extensively, but the credentialed real-Hermes release gate and
-> App Store privacy work are not complete. Treat the current build as
-> pre-release software.
+> core product extensively. App Store submission still requires verified public
+> privacy/support pages, reviewer access, App Store Connect declarations, and
+> complete release evidence. See [`docs/APP_STORE_READINESS.md`](docs/APP_STORE_READINESS.md).
 
 ## App preview
 
@@ -40,7 +40,8 @@ before the production app can connect.
 
 ## Requirements
 
-- macOS with Xcode and an iOS 17-or-newer SDK
+- macOS with Xcode 26 or newer and an iOS 26-or-newer SDK for App Store uploads
+- iOS 17 or newer on the target device
 - Swift 6 support
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) 2.46 or newer
 - an iPhone or iOS Simulator
@@ -75,9 +76,11 @@ On first launch:
 
 1. Choose **Add gateway**.
 2. Enter the HTTPS URL for your Hermes dashboard or gateway.
-3. Sign in through the dashboard, or supply a session token when using a legacy
+3. Review the data-sharing disclosure and explicitly allow the selected gateway
+   and its configured AI/speech/tool providers.
+4. Sign in through the dashboard, or supply a session token when using a legacy
    local gateway.
-4. After the connection succeeds, choose or create a Hermes session.
+5. After the connection succeeds, choose or create a Hermes session.
 
 Debug and LocalRelease builds can connect to explicitly approved HTTP/WS
 gateways for local development. Release builds do not include the cleartext
@@ -114,11 +117,18 @@ Current data-handling boundaries include:
 - downloaded attachments use a protected, backup-excluded cache bounded to 12
   entries and 96 MiB.
 
-Before App Store distribution, the project still needs a bundled
-`PrivacyInfo.xcprivacy`, a public privacy policy, and completion of the remaining
-cache and website-data cleanup work. See
-[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the implemented security
-boundaries.
+The app bundles `PrivacyInfo.xcprivacy` with audited required-reason API use.
+Settings → Privacy & Data explains the data flow, supports withdrawal of sharing
+consent, clears downloaded previews and all browser data while disconnected, and
+shows bundled software notices. Gateway removal erases its protected drafts and
+pins before removing the profile, retaining failed removals for retry.
+
+Public privacy/support pages and final App Store privacy-label answers still need
+publisher review. Run [`scripts/app-store-preflight.py`](scripts/app-store-preflight.py)
+before submission; it reports missing publishing configuration rather than using
+placeholder URLs. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the
+security boundaries and [`docs/APP_STORE_PREFLIGHT.md`](docs/APP_STORE_PREFLIGHT.md)
+for archive validation.
 
 ## Testing
 
@@ -171,6 +181,8 @@ scripts                   Project generation, vendor, asset, and test tools
 
 ## Documentation
 
+- [`docs/APP_STORE_READINESS.md`](docs/APP_STORE_READINESS.md): submission audit and remaining gates
+- [`docs/APP_STORE_PREFLIGHT.md`](docs/APP_STORE_PREFLIGHT.md): source and archive checks
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): architecture and security model
 - [`docs/PRODUCT_DESIGN.md`](docs/PRODUCT_DESIGN.md): visual system and interaction
   principles

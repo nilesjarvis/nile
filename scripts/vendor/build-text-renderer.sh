@@ -206,6 +206,13 @@ xcodebuild -create-xcframework \
 rm -rf "$output"
 ditto "$staged_output" "$output"
 
+# Static framework resources are not embedded in Nile.app. Keep its copies of
+# the licenses in sync with the same immutable sources used for the binary.
+app_notices_root="$repo_root/Resources/ThirdPartyNotices"
+mkdir -p "$app_notices_root"
+ditto "$freetype_root/docs/FTL.TXT" "$app_notices_root/FreeType-FTL.txt"
+ditto "$harfbuzz_root/COPYING" "$app_notices_root/HarfBuzz-COPYING.txt"
+
 find "$output" -type f -print0 \
     | sort -z \
     | xargs -0 shasum -a 256
