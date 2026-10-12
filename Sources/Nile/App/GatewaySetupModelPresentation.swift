@@ -23,6 +23,18 @@ extension GatewaySetupModel {
         state == .connected && connectedProfile != nil
     }
 
+    var connectionStatusText: String {
+        switch state {
+        case .loading, .checking: "Connecting…"
+        case .offline: "Waiting for network…"
+        case .reconnecting: "Reconnecting…"
+        case .restoring: "Restoring session…"
+        case .connected: "Connected"
+        case .failed: "Connection failed"
+        case .idle: "Manage"
+        }
+    }
+
     var cleartextGatewaysSupported: Bool {
 #if NILE_CLEARTEXT_GATEWAYS_SUPPORTED
         true

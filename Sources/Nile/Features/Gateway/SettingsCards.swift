@@ -75,7 +75,7 @@ struct SettingsGatewaySummaryRow: View {
     let profile: GatewayProfile?
     let savedCount: Int
     let isConnected: Bool
-    let isChecking: Bool
+    let statusText: String
 
     var body: some View {
         HStack(spacing: 12) {
@@ -91,9 +91,10 @@ struct SettingsGatewaySummaryRow: View {
                     .lineLimit(1)
             }
             Spacer(minLength: 8)
-            Text(isChecking ? "Connecting" : (isConnected ? "Connected" : "Manage"))
+            Text(statusText)
                 .font(NileTypography.bodySmall)
                 .foregroundStyle(isConnected ? NileColors.complete : NileColors.muted)
+                .accessibilityIdentifier(NileAccessibilityID.gatewayStatus)
             Image(systemName: "chevron.right")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(NileColors.faint)

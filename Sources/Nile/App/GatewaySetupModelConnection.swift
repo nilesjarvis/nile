@@ -100,12 +100,12 @@ extension GatewaySetupModel {
         }
         state = .reconnecting
         reconnectPhaseHandler?(.reconnecting)
-        isSettingsVisible = false
         scheduleReconnect(for: profile)
     }
 
     func onAppForeground() {
         guard let profile = connectedProfile,
+              sharingConsentStore.isAccepted(for: profile.endpoint),
               state == .offline || state == .reconnecting
         else {
             return
@@ -148,7 +148,7 @@ extension GatewaySetupModel {
     ) {
         guard connectedProfile?.id == profileID,
               gatewaySignInURL == nil,
-              !isSettingsVisible
+              !Task.isCancelled
         else {
             return
         }
@@ -167,7 +167,7 @@ extension GatewaySetupModel {
     ) async -> GatewayReconnectDirective {
         guard connectedProfile?.id == profile.id,
               sharingConsentStore.isAccepted(for: profile.endpoint),
-              !isSettingsVisible,
+              !Task.isCancelled,
               gatewaySignInURL == nil
         else {
             return .stop
@@ -178,10 +178,10 @@ extension GatewaySetupModel {
                 profile.connection,
                 timeoutMilliseconds: 15_000
             )
-            guard sharingConsentGeneration == consentGeneration else { return .stop }
+            guard !Task.isCancelled,
+                  sharingConsentGeneration == consentGeneration else { return .stop }
             guard connectedProfile?.id == profile.id,
                   sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration),
-                  !isSettingsVisible,
                   gatewaySignInURL == nil
             else {
                 await connectionClient.close()
@@ -190,10 +190,10 @@ extension GatewaySetupModel {
             state = .restoring
             reconnectPhaseHandler?(.restoring)
             let restored = await reconnectRestorer?(profile) ?? true
-            guard sharingConsentGeneration == consentGeneration else { return .stop }
+            guard !Task.isCancelled,
+                  sharingConsentGeneration == consentGeneration else { return .stop }
             guard connectedProfile?.id == profile.id,
                   sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration),
-                  !isSettingsVisible,
                   gatewaySignInURL == nil
             else {
                 await connectionClient.close()
@@ -201,22 +201,26 @@ extension GatewaySetupModel {
             }
             guard restored else {
                 await connectionClient.close()
-                guard sharingConsentGeneration == consentGeneration else { return .stop }
+                guard !Task.isCancelled,
+                      sharingConsentGeneration == consentGeneration else { return .stop }
                 state = .reconnecting
                 reconnectPhaseHandler?(.reconnecting)
                 return .retry
             }
             try await profileStore.selectGateway(id: profile.id)
-            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
+            guard !Task.isCancelled,
+                  sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
             activeGatewayID = profile.id
             state = .connected
             reconnectPhaseHandler?(.online)
             operationError = nil
             return .stop
         } catch {
-            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
+            guard !Task.isCancelled,
+                  sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
             await connectionClient.close()
-            guard sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
+            guard !Task.isCancelled,
+                  sharingConsentIsCurrent(for: profile.endpoint, generation: consentGeneration) else { return .stop }
             let pending = PendingSignIn(
                 connection: profile.connection,
                 name: profile.name,

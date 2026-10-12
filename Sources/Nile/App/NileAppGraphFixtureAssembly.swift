@@ -57,6 +57,17 @@ extension NileAppGraphFixturePlan {
 
     @MainActor
     func configureGatewaySetupFixture(_ gatewaySetup: GatewaySetupModel) {
+        if let phase = recoveryFixturePhase {
+            let profile = Self.gatewayRemovalProfile()
+            Self.configureConnectedGateway(profile, profiles: [profile], gatewaySetup: gatewaySetup)
+            switch phase {
+            case .offline: gatewaySetup.state = .offline
+            case .reconnecting: gatewaySetup.state = .reconnecting
+            case .restoring: gatewaySetup.state = .restoring
+            case .online, .failed: break
+            }
+            gatewaySetup.isSettingsVisible = false
+        }
         let profiles = gatewayVisualFixtureProfiles
         if let activeProfile = profiles.first {
             Self.configureConnectedGateway(

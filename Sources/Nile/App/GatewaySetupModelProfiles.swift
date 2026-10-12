@@ -42,7 +42,8 @@ extension GatewaySetupModel {
         let consentGeneration = sharingConsentGeneration
         resetHermesVoice()
         gatewayWillConnectHandler?(active.id)
-        state = .checking
+        // Keep the launch surface visible until the first saved connection
+        // settles. Settings is for setup or an actionable connection failure.
         do {
             try await connectionClient.connect(
                 active.connection,
@@ -88,11 +89,11 @@ extension GatewaySetupModel {
             return
         }
         setPendingGatewaySwitch(nil)
-        reconnectCoordinator.cancel()
         operationError = nil
         guard !requireSharingConsent(
             for: profile.endpoint, name: profile.displayName, profileID: profile.id
         ) else { return }
+        reconnectCoordinator.cancel()
         let consentGeneration = sharingConsentGeneration
         resetHermesVoice()
         gatewayWillConnectHandler?(profile.id)
@@ -259,14 +260,13 @@ extension GatewaySetupModel {
         guard !isUpdatingHermesVoice else {
             return
         }
-        reconnectCoordinator.cancel()
         resetHermesVoice()
         operationError = nil
         isSettingsVisible = true
     }
 
     func dismissSettings() {
-        guard isConnected, !isUpdatingHermesVoice else {
+        guard connectedProfile != nil, !isChecking, !isUpdatingHermesVoice else {
             return
         }
         resetHermesVoice()

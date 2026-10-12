@@ -86,6 +86,7 @@ struct SettingsView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { model.dismissSettings() }
                         .disabled(isConnectedMutationBusy)
+                        .accessibilityIdentifier(NileAccessibilityID.settingsDone)
                 }
             }
         }
@@ -99,7 +100,7 @@ struct SettingsView: View {
                         profile: activeProfile,
                         savedCount: model.savedGateways.count,
                         isConnected: model.isConnected,
-                        isChecking: model.isChecking
+                        statusText: model.connectionStatusText
                     )
                 }
                 .buttonStyle(.plain)

@@ -707,6 +707,21 @@ final class NileLaunchTests: XCTestCase {
             screenshot.name = fixture.screenshot
             screenshot.lifetime = .keepAlways
             add(screenshot)
+            let settings = app.buttons["niles.session.settings"]
+            XCTAssertTrue(settings.waitForExistence(timeout: 3))
+            settings.tap()
+            XCTAssertTrue(app.scrollViews["niles.settings"].waitForExistence(timeout: 3))
+            XCTAssertEqual(app.staticTexts["niles.gateway.status"].label, fixture.status)
+            let done = app.buttons["niles.settings.done"]
+            XCTAssertTrue(done.isEnabled)
+            let settingsCapture = XCTAttachment(screenshot: app.screenshot())
+            settingsCapture.name = "\(fixture.screenshot)-settings"
+            settingsCapture.lifetime = .keepAlways
+            add(settingsCapture)
+            done.tap()
+            XCTAssertTrue(app.scrollViews["niles.settings"].waitForNonExistence(timeout: 3))
+            XCTAssertTrue(status.waitForExistence(timeout: 3))
+            XCTAssertEqual(status.label, fixture.status)
             app.terminate()
         }
     }

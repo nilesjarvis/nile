@@ -4,6 +4,7 @@ extension NileAccessibilityID {
     static let reducedMotionFixture =
         "niles.accessibility.reduced_motion"
     static let settings = "niles.settings"
+    static let settingsDone = "niles.settings.done"
     static let gatewayManagement = "niles.gateway.management"
     static let gatewayList = "niles.gateway.list"
     static let gatewayActions = "niles.gateway.actions"

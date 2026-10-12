@@ -171,7 +171,6 @@ final class GatewaySetupModel {
         guard state != .checking, !isUpdatingHermesVoice else {
             return
         }
-        reconnectCoordinator.cancel()
         operationError = nil
         let endpoint: GatewayEndpoint
         do {

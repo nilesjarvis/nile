@@ -158,12 +158,17 @@ struct NileAppGraphFixturePlan {
             && gatewayVisualFixture == nil
     }
 
+    var bypassesGatewaySetup: Bool {
+        showsSessionFixture && recoveryFixturePhase == nil
+    }
+
 }
 #else
 struct NileAppGraphFixturePlan {
     let forcesReducedMotionFixture = false
     let showsNotificationEducationFixture = false
     let showsSessionFixture = false
+    let bypassesGatewaySetup = false
     let confirmsGatewaySwitchFixture = false
 
     init(arguments: [String]) {}

@@ -4,6 +4,7 @@ import Foundation
 extension GatewaySetupModel {
     func connectApprovedForm(to endpoint: GatewayEndpoint) async {
         guard sharingConsentStore.isAccepted(for: endpoint) else { return }
+        reconnectCoordinator.cancel()
         let consentGeneration = sharingConsentGeneration
 
         resetHermesVoice()

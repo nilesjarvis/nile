@@ -237,7 +237,10 @@ extension GatewaySetupModelTests {
         )
         try await waitUntil { model.gatewaySignInURL == login }
         await client.finishConnect()
-        try await waitUntil { await client.closeCount == 2 }
+        // Authentication expiry owns the close; a cancelled retry must not
+        // close a connection established by a newer attempt.
+        let closeCount = await client.closeCount
+        XCTAssertEqual(closeCount, 1)
 
         let restoreCount = await restoreRecorder.count
         XCTAssertEqual(restoreCount, 0)

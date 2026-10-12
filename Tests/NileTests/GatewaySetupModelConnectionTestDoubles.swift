@@ -89,6 +89,13 @@ actor ModelGatewayNetwork: GatewayNetworkWaiting {
         available
     }
 
+    func setAvailable() {
+        available = true
+        let pending = waiters
+        waiters.removeAll()
+        pending.forEach { $0.resume() }
+    }
+
     func waitUntilNetworkAvailable() async throws {
         guard !available else {
             return

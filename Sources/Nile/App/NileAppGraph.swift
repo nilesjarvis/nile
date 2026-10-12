@@ -63,7 +63,7 @@ final class NileAppGraph {
         let gatewaySessionCleaner: any GatewaySessionCleaning =
             fixturePlan.makeGatewaySessionCleanerFixture()
                 ?? authentication
-        showsSessionFixture = fixturePlan.showsSessionFixture
+        showsSessionFixture = fixturePlan.bypassesGatewaySetup
         notificationEducation = NotificationEducationModel(
             initiallyVisible:
                 fixturePlan.showsNotificationEducationFixture
